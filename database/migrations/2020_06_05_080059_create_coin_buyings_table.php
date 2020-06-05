@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 
 class CreateCoinBuyingsTable extends Migration
 {
@@ -14,20 +15,23 @@ class CreateCoinBuyingsTable extends Migration
     public function up()
     {
         Schema::create('coin_buyings', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->integer('amount');
             $table->double('buying_rate');
-            $table->integer('coin_rate_id');
-            $table->integer('coin_id');
+            $table->unsignedBigInteger('coin_rate_id');
+            $table->unsignedBigInteger('coin_id');
             $table->string('coin_wallet');
             $table->integer('status');
             $table->string('reason')->nullable();
             $table->string('link')->nullable();
             $table->string('payment_proof');
             $table->string('platform_payment_proof')->nullable();
-            $table->integer('user_id');
-            $table->string('token');
+            $table->unsignedBigInteger('user_id');
+            $table->string('token')->default(Str::random(15));
             $table->timestamps();
+            $table->foreign('coin_rate_id')->references('id')->on('coin_rates');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('coin_id')->references('id')->on('coins');
         });
     }
 

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 
 class CreateMessagesTable extends Migration
 {
@@ -14,12 +15,12 @@ class CreateMessagesTable extends Migration
     public function up()
     {
         Schema::create('messages', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('full_name');
             $table->string('email');
             $table->string('subject');
-            $table->string('body');
-            $table->string('token');
+            $table->string('body')->nullable();
+            $table->string('token')->default(Str::random(15));
             $table->timestamps();
         });
     }

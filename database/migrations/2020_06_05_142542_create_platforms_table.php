@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 
 class CreatePlatformsTable extends Migration
 {
@@ -14,13 +15,14 @@ class CreatePlatformsTable extends Migration
     public function up()
     {
         Schema::create('platforms', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')->unique();
+            $table->bigIncrements('id');
+            $table->string('name');
             $table->string('wallet_address');
             $table->string('qr_code');
-            $table->integer('coin_id');
-            $table->string('token');
+            $table->unsignedBigInteger('coin_id');
+            $table->string('token')->default(Str::random(15));
             $table->timestamps();
+            $table->foreign('coin_id')->references('id')->on('coins');
         });
     }
 

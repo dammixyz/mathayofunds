@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 
 class CreateDenominationsTable extends Migration
 {
@@ -14,9 +15,9 @@ class CreateDenominationsTable extends Migration
     public function up()
     {
         Schema::create('denominations', function (Blueprint $table) {
-            $table->id();
-            $table->integer('value')->unique();
-            $table->string('token');
+            $table->bigIncrements('id');
+            $table->integer('value');
+            $table->string('token')->default(Str::random(15));
             $table->timestamps();
         });
     }
