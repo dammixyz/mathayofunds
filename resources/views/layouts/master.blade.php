@@ -46,6 +46,25 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
 
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="{{asset('assets/vendor_components/bootstrap-daterangepicker/daterangepicker.css')}}">
+
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="{{asset('assets/vendor_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
+
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="{{asset('assets/vendor_plugins/iCheck/all.css')}}">
+
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet" href="{{asset('assets/vendor_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css')}}">
+
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="{{asset('assets/vendor_plugins/timepicker/bootstrap-timepicker.min.css')}}">
+
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{asset('assets/vendor_components/select2/dist/css/select2.min.css')}}">
+
+
 
     <!-- theme style -->
     <link rel="stylesheet" href="{{asset('assets/css/master_style.css')}}">
@@ -204,7 +223,7 @@
                     </a>
                 </div>
                 <div class="image">
-                    <img src="mathayo-profile.png" class="rounded-circle" alt="User Image">
+                    <img src="{{asset('mathayo-profile.png')}}" class="rounded-circle" alt="User Image">
                 </div>
                 <div class="info">
                     <p>Welcome, Stunner</p>
@@ -214,8 +233,8 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="nav-devider"></li>
                 <li class="header nav-small-cap">PERSONAL</li>
-                <li class="active">
-                    <a href="index.html">
+                <li class="{{ Request::is('home') ? 'active' : '' }}">
+                    <a href="{{route('home')}}">
                         <i class="icon-home"></i> <span>Overview</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-right pull-right"></i>
@@ -246,7 +265,7 @@
                         </span>
                     </a>
                 </li>
-                <li>
+                <li class="{{ Request::is('trade-with-us')||Request::is('trade-with-us/buy-coin')||Request::is('trade-with-us/sell-coin')||Request::is('trade-with-us/sell-giftcard') ? 'active' : '' }}">
                     <a href="{{asset('trade-with-us')}}">
                         <i class="icon-wallet"></i> <span>Trade with us</span>
                         <span class="pull-right-container">
@@ -270,7 +289,9 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @yield('content')
+        <div class="container">
+            @yield('content')
+        </div>
     </div>
     <!-- /.content-wrapper -->
 
@@ -332,6 +353,28 @@
 <!-- Crypto_Admin for demo purposes -->
 <script src="{{asset('assets/js/demo.js')}}"></script>
 
+
+
+<!-- Select2 -->
+<script src="{{asset('assets/vendor_components/select2/dist/js/select2.full.js')}}"></script>
+
+<!-- bootstrap datepicker -->
+<script src="{{asset('assets/vendor_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+
+<!-- iCheck 1.0.1 -->
+<script src="{{asset('assets/vendor_plugins/iCheck/icheck.min.js')}}"></script>
+
+<!-- FastClick -->
+<script src="{{asset('assets/vendor_components/fastclick/lib/fastclick.js')}}"></script>
+
+<!-- Crypto_Admin App -->
+<script src="{{asset('assets/js/template.js')}}"></script>
+
+<!-- Crypto_Admin for demo purposes -->
+<script src="{{asset('assets/js/demo.js')}}"></script>
+
+<!-- Crypto_Admin for advanced form element -->
+<script src="{{asset('assets/js/pages/advanced-form-element.js')}}"></script>
 
 </body>
 
