@@ -1,5 +1,5 @@
 {{--Get css necessary for styling this page--}}
-@extends('layouts.app2')
+@extends('layouts.app')
 @section('content')
     <header class="header-base">
         <div class="container">

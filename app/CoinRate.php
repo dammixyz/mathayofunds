@@ -19,4 +19,9 @@ class CoinRate extends Model
     public function coinSellings(){
         return  $this->hasMany(CoinSelling::class);
     }
+    public static function getRate($id){
+        $rate = CoinRate::where('coin_id', $id)->first();
+        return $rate;
+    }
+
 }

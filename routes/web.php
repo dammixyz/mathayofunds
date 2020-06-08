@@ -13,19 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
-
-Auth::routes();
-
-Route::get('home', 'HomeController@index')->name('home');
-Route::get('trade-with-us', 'Trade\TradeController@index')->name('trade-with-us');
-Route::get('trade-with-us/buy-coin', 'Trade\TradeController@buyCoinForm')->name('coin.buy-form');
-Route::get('trade-with-us/sell-coin', 'Trade\TradeController@sellCoinForm')->name('coin.sell-form');
-Route::get('trade-with-us/sell-giftcard', 'Trade\TradeController@sellGiftCardForm')->name('giftcard.sell-form');
+Route::get('/', [
+    'as' => 'homepage',
+    'uses' => 'Homepage\HomepageController@Homepage'
+]);
 
 Route::post('/newsletter-subscription', [
-    'as' => 'newsletter-subscription',
+    'as' => 'newsletter',
     'uses' => 'Newsletter\NewsletterController@newsletterSubscription'
 ]);
