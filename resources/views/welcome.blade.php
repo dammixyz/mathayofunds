@@ -1,3 +1,5 @@
+@extends('layouts.master2')
+{{--
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,10 +38,12 @@
                 <li><i class="im-envelope"></i> contact@mathayofunds.com</li>
             </ul>
             <div class="menu-right">
-                {{--<form role="search" method="get" id="searchform" class="search-bar">
+                --}}
+{{--<form role="search" method="get" id="searchform" class="search-bar">
                     <input type="text" class="form-control" placeholder="Search for...">
                     <input type="submit" value="Go">
-                </form>--}}
+                </form>--}}{{--
+
                 <div class="icon-links icon-social social-colors-hover">
                     <a target="_blank" class="facebook" href="#"><i class="icon-facebook"></i></a>
                     <a target="_blank" class="twitter" href="#"><i class="icon-twitter"></i></a>
@@ -52,8 +56,10 @@
     <div class="container">
         <div class="menu-brand">
             <a href="#">
-                {{--<h4 class="logo-default" style="text-decoration: none; text-underline: none;">Mathayo Funds</h4>
-                <h4 class="logo-retina" style="text-decoration: none; text-underline: none;">Mathayo Funds</h4>--}}
+                --}}
+{{--<h4 class="logo-default" style="text-decoration: none; text-underline: none;">Mathayo Funds</h4>
+                <h4 class="logo-retina" style="text-decoration: none; text-underline: none;">Mathayo Funds</h4>--}}{{--
+
 
                 <img class="logo-default" src="{{asset('mathayofunds.png')}}" alt="logo" />
                 <img class="logo-retina" src="{{asset('mathayofunds.png')}}" alt="logo" />
@@ -85,18 +91,22 @@
             </ul>
             <div class="menu-right">
                 <!--SEARCH B-->
-                {{--<form role="search" method="get" id="searchform" class="search-btn">
+                --}}
+{{--<form role="search" method="get" id="searchform" class="search-btn">
                     <div class="search-box-menu">
                         <input type="text" placeholder="Search ...">
                         <i></i>
                     </div>
-                </form>--}}
+                </form>--}}{{--
+
                 <!--SOCIAL ICONS-->
-                {{--<div class="icon-links icon-social social-colors-hover">
+                --}}
+{{--<div class="icon-links icon-social social-colors-hover">
                     <a target="_blank" class="facebook" href="#"><i class="icon-facebook"></i></a>
                     <a target="_blank" class="twitter" href="#"><i class="icon-twitter"></i></a>
                     <a target="_blank" class="linkedin" href="#"><i class="icon-linkedin"></i></a>
-                </div>--}}
+                </div>--}}{{--
+
 
                 <!--LAN MEMU-->
                 @guest()
@@ -387,3 +397,4 @@
 
 <!-- Mirrored from templates.themekit.dev/codrop/elements/navs/classic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Jun 2020 21:34:49 GMT -->
 </html>
+--}}
