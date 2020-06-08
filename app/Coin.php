@@ -18,4 +18,7 @@ class Coin extends Model
     public function platforms(){
         return  $this->hasMany(Platform::class);
     }
+    public static function getCoins(){
+        return Coin::get();
+    }
 }

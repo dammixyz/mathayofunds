@@ -82,10 +82,8 @@
 
 
 </head>
-
 <body class="hold-transition skin-yellow sidebar-mini">
 <div class="wrapper">
-
     <header class="main-header">
         <!-- Logo -->
         <a href="index.html" class="logo">
