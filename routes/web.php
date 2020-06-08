@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+<<<<<<< HEAD
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/trade-with-us', 'TradeWithUsController@index')->name('trade-with-us');
 
@@ -26,3 +27,10 @@ Route::get('/trade-with-us', 'TradeWithUsController@index')->name('trade-with-us
         'as' => 'newsletter-subscription',
         'uses' => 'Newsletter\NewsletterController@newsletterSubscription'
     ]);
+=======
+Route::get('home', 'HomeController@index')->name('home');
+Route::get('trade-with-us', 'TradeWithUsController@index')->name('trade-with-us');
+Route::get('trade-with-us/buy-coin', 'TradeWithUsController@buyCoinForm')->name('coin.buy-form');
+Route::get('trade-with-us/sell-coin', 'TradeWithUsController@sellCoinForm')->name('coin.sell-form');
+Route::get('trade-with-us/sell-giftcard', 'TradeWithUsController@sellGiftCardForm')->name('giftcard.sell-form');
+>>>>>>> upstream/master

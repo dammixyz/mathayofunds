@@ -81,4 +81,17 @@ class TradeWithUsController extends Controller
     {
         //
     }
+
+    public function buyCoinForm(){
+        return view('trade-with-us.buy-coin-form');
+    }
+
+    public function sellCoinForm(){
+        return view('trade-with-us.sell-coin-form');
+    }
+
+    public function sellGiftCardForm(){
+        return view('trade-with-us.sell-giftcard-form');
+    }
+
 }
