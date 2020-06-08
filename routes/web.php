@@ -21,3 +21,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/trade-with-us', 'TradeWithUsController@index')->name('trade-with-us');
+
+    Route::post('/newsletter', [
+        'as' => 'newsletter-subscription',
+        'uses' => 'Newsletter\NewsletterController@newsletterSubscription'
+    ]);

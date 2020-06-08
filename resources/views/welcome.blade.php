@@ -1,143 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from templates.themekit.dev/codrop/elements/navs/classic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Jun 2020 21:34:49 GMT -->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>MathayoFunds</title>
-    <meta name="description" content="">
-    <script src="{{asset('themekit/scripts/jquery.min.js')}}"></script>
-    <script src="{{asset('themekit/scripts/main.js')}}"></script>
-    <link rel="stylesheet" href="{{asset('themekit/css/bootstrap-grid.css')}}">
-    <link rel="stylesheet" href="{{asset('themekit/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('themekit/css/glide.css')}}">
-    <link rel="stylesheet" href="{{asset('themekit/css/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{asset('themekit/css/content-box.css')}}">
-    <link rel="stylesheet" href="{{asset('themekit/css/contact-form.css')}}">
-    <link rel="stylesheet" href="{{asset('themekit/css/media-box.css')}}">
-    <link rel="stylesheet" href="{{asset('themekit/css/social.css')}}">
-    <link rel="stylesheet" href="{{asset('skin.css')}}">
-    <link rel="icon" href="{{asset('media/favicon.png')}}">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-
-</head>
-<body>
-<div id="preloader"></div>
-<nav class="menu-classic menu-fixed" data-menu-anima="fade-in">
-    <div class="menu-mini scroll-hide">
-        <div class="container">
-            <ul>
-                <li><i class="im-phone"></i> +2348186818135 </li>
-                <li><i class="im-envelope"></i> contact@mathayofunds.com</li>
-            </ul>
-            <div class="menu-right">
-                {{--<form role="search" method="get" id="searchform" class="search-bar">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <input type="submit" value="Go">
-                </form>--}}
-                <div class="icon-links icon-social social-colors-hover">
-                    <a target="_blank" class="facebook" href="#"><i class="icon-facebook"></i></a>
-                    <a target="_blank" class="twitter" href="#"><i class="icon-twitter"></i></a>
-                    <a target="_blank" class="linkedin" href="#"><i class="icon-linkedin"></i></a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="menu-brand">
-            <a href="#">
-                {{--<h4 class="logo-default" style="text-decoration: none; text-underline: none;">Mathayo Funds</h4>
-                <h4 class="logo-retina" style="text-decoration: none; text-underline: none;">Mathayo Funds</h4>--}}
-
-                <img class="logo-default" src="{{asset('mathayofunds.png')}}" alt="logo" />
-                <img class="logo-retina" src="{{asset('mathayofunds.png')}}" alt="logo" />
-            </a>
-        </div>
-        <i class="menu-btn"></i>
-        <div class="menu-cnt">
-            <ul>
-                <li>
-                    <a href="#">Rates</a>
-                </li>
-                <li>
-                    <a href="#">About Us</a>
-                </li>
-                <li>
-                    <a href="#">Contact Us</a>
-                </li>
-                <li>
-                    <a href="#">FAQs</a>
-                </li>
-                <li class="dropdown">
-                    <a href="#">Transactions</a>
-                    <ul>
-                        <li><a href="#">Sell</a></li>
-                        <li><a href="#">Buy</a></li>
-                    </ul>
-                </li>
-
-            </ul>
-            <div class="menu-right">
-                <!--SEARCH B-->
-                {{--<form role="search" method="get" id="searchform" class="search-btn">
-                    <div class="search-box-menu">
-                        <input type="text" placeholder="Search ...">
-                        <i></i>
-                    </div>
-                </form>--}}
-                <!--SOCIAL ICONS-->
-                {{--<div class="icon-links icon-social social-colors-hover">
-                    <a target="_blank" class="facebook" href="#"><i class="icon-facebook"></i></a>
-                    <a target="_blank" class="twitter" href="#"><i class="icon-twitter"></i></a>
-                    <a target="_blank" class="linkedin" href="#"><i class="icon-linkedin"></i></a>
-                </div>--}}
-
-                <!--LAN MEMU-->
-                @guest()
-                    <div class="menu-custom-area">
-                        <a class="btn btn-xs btn-circle" href="{{route('register')}}">Sign up</a>
-                        <a href="{{route('login')}}" class="btn btn-xs btn-circle btn-border text-bold">Login</a>
-                    </div>
-                @else
-                    <ul class="lan-menu">
-                        <li>
-                            <a href="{{route('home')}}" style="font-size: 16px;">Dashboard</a>
-                        </li>
-                    </ul>
-                    <div class="menu-cnt">
-                        <ul>
-                            <li class="dropdown">
-                                <a href="#" style="font-size: 16px;">{{ Auth::user()->username }}</a>
-                                <ul>
-                                    <li><a href="#">Profile</a></li>
-                                    <li>
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                @endguest
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-</nav>
-<main>
+@extends('layouts.app2')
+@section('content')
     <section class="section-base section-full-width-right">
         <div class="container">
             <hr class="space" />
@@ -275,9 +137,8 @@
             </ul>
         </div>
     </section>
-</main>
-<i class="scroll-top-btn scroll-top show"></i>
-<footer class="light">
+@endsection
+@section('footer')
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
@@ -353,37 +214,15 @@
                 </div>
             </div>
             <div class="col-lg-3">
-                <h4>Email Newsletter</h4>
-                <p style="font-size: 13px">Subscribe to our new letter</p>
-                <div class="input-text-btn">
-                    <input class="input-text" type="text" placeholder="Enter your E-mail" /><input type="submit" value="Subscribe" class="btn"/>
-                </div>
+                <form method="post" action="{{route('newsletter-subscription')}}">
+                    @csrf
+                    <h4>Email Newsletter</h4>
+                    <p style="font-size: 13px">Subscribe to our new letter</p>
+                    <div class="input-text-btn">
+                        <input name="email" class="input-text" type="text" placeholder="Enter your E-mail" /><input type="submit" value="Subscribe" class="btn"/>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-    <div class="footer-bar">
-        <div class="container">
-            <span>All right reserved. Mathayofunds © 2020</span>
-            <span><img src="{{asset('mathayofunds.png')}}" /></span>
-        </div>
-    </div>
-
-    <link rel="stylesheet" href="{{asset('themekit/media/icons/iconsmind/line-icons.min.css')}}">
-    <script src="{{asset('themekit/scripts/parallax.min.js')}}"></script>
-    <script src="{{asset('themekit/scripts/glide.min.js')}}"></script>
-    <script src="{{asset('themekit/scripts/magnific-popup.min.js')}}"></script>
-    <script src="{{asset('themekit/scripts/tab-accordion.js')}}"></script>
-    <script src="{{asset('themekit/scripts/imagesloaded.min.js')}}"></script>
-    <script src="{{asset('themekit/scripts/contact-form/contact-form.js')}}"></script>
-    <script src="{{asset('themekit/scripts/progress.js')}}"></script>
-    <script src="{{asset('themekit/scripts/pagination.min.js')}}"></script>
-    <script src="{{asset('themekit/scripts/social.min.js')}}"></script>
-    <script src="{{asset('media/custom.js')}}"></script>
-    <script data-setting="codrop" src="{{asset('../../themekit.dev/tools/sidebar/sidebar.js')}}"></script>
-
-    <script src="{{asset('../../themekit/scripts/tab-accordion.js')}}"></script>
-</footer>
-</body>
-
-<!-- Mirrored from templates.themekit.dev/codrop/elements/navs/classic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Jun 2020 21:34:49 GMT -->
-</html>
+@endsection
