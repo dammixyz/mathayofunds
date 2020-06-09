@@ -39,7 +39,7 @@
                     <div class="bitcoin-calculator">
                         <div class="clearfix">
                             <div class="form-field form-m-bttm">
-                                <input id="coin-amount" name="btc-amount" value="0" placeholder="Coin Amount" class="form-control required" aria-required="true" type="number" min="0">
+                                <input id="coin-amount" name="btc-amount" value="0" placeholder="Worth of Coin in ($)" class="form-control required" aria-required="true" type="number" min="0">
                             </div>
                             <div class="form-field form-m-bttm">
                                 <select id="coin-type" name="quote-request-hear" class="form-control" aria-invalid="false">
@@ -58,7 +58,6 @@
                 <div class="col-md-6 col-md-offset-1">
                     <div class="text-block text-center">
                         <h2><span class="price-for">Currency Calculator</span></h2>
-                        <h4> <span class="price-for"> We will pay you </span></h4>
                         <h1 id="calculate-result">&#8358; 0</h1>
                         <h4> <span class="price-for"> Happy Trading </span></h4>
                     </div>
@@ -299,7 +298,7 @@
                     $('#calculate-result').html('&#8358; ' + result);
                 }
                 if (coin_type === '2'){
-                    let result = eth_rate * coin_amount;
+                    let result = eth_rate * coin_amount ;
                     $('#calculate-result').html('&#8358; ' + result);
                 }
             });
