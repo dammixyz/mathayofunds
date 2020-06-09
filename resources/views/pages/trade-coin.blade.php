@@ -176,18 +176,21 @@
                                 </div>
                                 <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
                                     <div class="pricing-box highlited light ucap shadow">
-                                        <span class="pricing-title">Rate</span>
+                                        <span class="pricing-title">Our Rates</span>
                                         <div class="inline-form text-center">
                                             <div class="row">
                                                 <div class="col-md-8 col-md-offset-2">
                                                     <div class="clearfix">
-                                                        <h4>1BTC = &#8358;3,750,000</h4>
-                                                        <h4>1ETH = &#8358;94,000</h4>
+                                                        <h4>Bitcoin</h4>
+                                                        <h4>$1 = &#8358;450</h4>
+                                                        <hr>
+                                                        <h4>Ethereum</h4>
+                                                        <h4>$1 = &#8358;500</h4>
                                                     </div>
                                                     <hr>
                                                     <h4>Quick Converter</h4>
-                                                    <h6>We will pay &#8358;0 for 0BTC</h6>
-                                                    <h6>We will pay &#8358;0 for 0ETH</h6>
+                                                    <h6>We will pay &#8358;0 for $0 (Bitcoin trade)</h6>
+                                                    <h6>We will pay &#8358;0 for $0 (Ethereum trade)</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -196,69 +199,6 @@
                             </div>
                         </div>
                     </div>
-                    <!--End Features Box -->
-                    {{--<div class="row">
-                        <div class="col-md-8 col-sm-6 res-m-bttm">
-                            <div class="pricing-box ucap shadow">
-                                <form action="#" method="post">
-                                    <div class="row">
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <h4>Please Fill All Fields Correctly</h4>
-                                            <div class="clearfix">
-                                                <div class="form-field form-m-bttm">
-                                                    <input name="amount" placeholder="Enter Coin Amount" class="form-control required" aria-required="true" type="number" required>
-                                                </div>
-                                                <div class="form-field form-m-bttm">
-                                                    <select name="quote-request-hear" class="form-control" aria-invalid="false">
-                                                        <option selected disabled>Select Coin</option>
-                                                        <option value="bitcoin">Bitcoin</option>
-                                                        <option value="ethereum">Ethereum</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-field form-m-bttm">
-                                                    <input name="wallet_address" placeholder="Enter Your Wallet Address" class="form-control required" aria-required="true" type="text" required>
-                                                </div>
-                                                <div class="form-field form-m-bttm">
-                                                    <select name="quote-request-hear" class="form-control" aria-invalid="false">
-                                                        <option selected disabled>Select platform</option>
-                                                        <option value="blockchain">Blockchain</option>
-                                                        <option value="paxfull">Paxful</option>
-                                                    </select>
-                                                </div>
-                                                <br>
-                                                <div class="form-field form-m-bttm">
-                                                    <label for="payment_proof" class="text-sm">Upload payment proof</label>
-                                                    <input name="payment_proof" placeholder="Upload payment proof" class="form-control required" aria-required="true" type="file" required>
-                                                </div>
-                                                <div class="form-field form-button form-m-bttm">
-                                                    <button type="submit" class="btn btn-xs btn-color">Proceed</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 res-m-bttm">
-                            <div class="pricing-box highlited light ucap shadow">
-                                <span class="pricing-title">Rate</span>
-                                <div class="inline-form text-center">
-                                    <div class="row">
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <div class="clearfix">
-                                                <h4>1BTC = &#8358;3,750,000</h4>
-                                                <h4>1ETH = &#8358;94,000</h4>
-                                            </div>
-                                            <hr>
-                                            <h4>Quick Converter</h4>
-                                            <h6>You will pay &#8358;0 for 0BTC</h6>
-                                            <h6>You will pay &#8358;0 for 0ETH</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>--}}
                 </div>
                 <div class="tab-pane fade" id="tab2">
                     <!-- Features Box -->
@@ -368,6 +308,14 @@
                                                                 <option value="bank">Bank</option>
                                                             </select>
                                                         </div>
+                                                        <div id="walletPayment">
+                                                            <div class="form-field form-m-bttm">
+                                                                <label for="wallet_balance" class="text-sm">Wallet Balance</label>
+                                                                <input name="wallet_balance" value="&#8358;30,000"
+                                                                       class="form-control required" aria-required="true"
+                                                                       type="text" disabled required>
+                                                            </div>
+                                                        </div>
                                                         <div id="bankPayment">
                                                             <div class="form-field form-m-bttm">
                                                                 <label for="bank" class="text-sm">Bank Name</label>
@@ -412,18 +360,21 @@
                                 </div>
                                 <div class="col-md-3 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
                                     <div class="pricing-box highlited light ucap shadow">
-                                        <span class="pricing-title">Rate</span>
+                                        <span class="pricing-title">Our Rates</span>
                                         <div class="inline-form text-center">
                                             <div class="row">
                                                 <div class="col-md-8 col-md-offset-2">
                                                     <div class="clearfix">
-                                                        <h4>1BTC = &#8358;3,750,000</h4>
-                                                        <h4>1ETH = &#8358;94,000</h4>
+                                                        <h4>Bitcoin</h4>
+                                                        <h4>$1 = &#8358;450</h4>
+                                                        <hr>
+                                                        <h4>Ethereum</h4>
+                                                        <h4>$1 = &#8358;500</h4>
                                                     </div>
                                                     <hr>
                                                     <h4>Quick Converter</h4>
-                                                    <h6>We will pay &#8358;0 for 0BTC</h6>
-                                                    <h6>We will pay &#8358;0 for 0ETH</h6>
+                                                    <h6>We will pay &#8358;0 for $0 (Bitcoin trade)</h6>
+                                                    <h6>We will pay &#8358;0 for $0 (Ethereum trade)</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -590,14 +541,17 @@
     }
     $(document).ready(function () {
         $('#bankPayment').hide();
+        $('#walletPayment').hide();
     })
 
     $('#walletBank').change(function(){
         //alert();
         if ($(this).val() === "wallet"){
             $('#bankPayment').hide();
+            $('#walletPayment').show();
         }
         else if ($(this).val() === "bank"){
+            $('#walletPayment').hide();
             $('#bankPayment').show();
         }
     })
