@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -51,5 +52,16 @@ class User extends Authenticatable
     }
      public function coinSellings(){
         return  $this->hasMany(CoinSelling::class);
+    }
+
+    public static function registerUser($request){
+        $user = User::create([
+            'email' => $request->email,
+            'username' => $request->username,
+            'phone_number' => $request->phone_number,
+            'password' => bcrypt($request->password),
+            'role_id' => 1,
+            'token' => Str::random(15),
+        ]);
     }
 }

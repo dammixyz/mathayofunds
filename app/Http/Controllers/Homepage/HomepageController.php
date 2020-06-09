@@ -12,7 +12,9 @@ class HomepageController extends Controller
     public function Homepage(){
         $eth_rate = CoinRate::getRate(2);
         $btc_rate = CoinRate::getRate(1);
+        $btc_price = 9744.17;
+        $eth_price = 250;
         $coins = Coin::getCoins();
-        return view('welcome', compact('eth_rate', 'btc_rate', 'coins'));
+        return view('welcome', compact('eth_rate', 'btc_rate', 'coins', "btc_price", 'eth_price'));
     }
 }

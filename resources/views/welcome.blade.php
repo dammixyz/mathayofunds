@@ -294,12 +294,14 @@
                 let coin_amount = $('#coin-amount').val();
                 let eth_rate = '{{$eth_rate->usd_rate}}';
                 let btc_rate = '{{$btc_rate->usd_rate}}';
+                let btc_price = '{{$btc_price}}';
+                let eth_price = '{{$eth_price}}';
                 if(coin_type === '1'){
-                    let result = btc_rate * coin_amount;
+                    let result = btc_rate * coin_amount * btc_price;
                     $('#calculate-result').html('&#8358; ' + result);
                 }
                 if (coin_type === '2'){
-                    let result = eth_rate * coin_amount;
+                    let result = eth_rate * coin_amount * eth_price;
                     $('#calculate-result').html('&#8358; ' + result);
                 }
             });
@@ -308,12 +310,14 @@
                 let coin_amount = $('#coin-amount').val();
                 let eth_rate = '{{$eth_rate->usd_rate}}';
                 let btc_rate = '{{$btc_rate->usd_rate}}';
+                let btc_price = '{{$btc_price}}';
+                let eth_price = '{{$eth_price}}';
                 if(coin_type === '1'){
-                    let result = btc_rate * coin_amount;
+                    let result = btc_rate * coin_amount * btc_price;
                     $('#calculate-result').html('&#8358; ' + result);
                 }
                 if (coin_type === '2'){
-                    let result = eth_rate * coin_amount;
+                    let result = eth_rate * coin_amount * eth_price;
                     $('#calculate-result').html('&#8358; ' + result);
                 }
             });
