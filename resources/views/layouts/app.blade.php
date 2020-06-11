@@ -6,10 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="CryptoCoin is a powerful Bitcoin Crypto Currency Wallet and Mining Template with full of customization options and features">
         <!-- Fav Icon  -->
-{{--
-        <link rel="shortcut icon" href="images/favicon.png">
---}}
-        <!-- Site Title  -->
         <title>Mathayo Funds - Home</title>
         <!-- Vendor Bundle CSS -->
         <link rel="stylesheet" href="{{asset('assets/css/vendor.bundle.css')}}" >
@@ -17,6 +13,8 @@
         <link rel="stylesheet" href="{{asset('assets/css/style5152.css?ver=1.0')}}">
         <link rel="stylesheet" id="layoutstyle" href="{{asset('assets/css/theme5152.css?ver=1.0')}}">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+        <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('file-upload/file-upload-with-preview.min.css')}}" rel="stylesheet" type="text/css" />
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -34,8 +32,11 @@
         @include('includes.footer')
         <script src="{{asset('assets/js/jquery.bundle.js')}}"></script>
         <script src="{{asset('assets/js/script.js')}}"></script>
+        <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
+        <script src="{{asset('file-upload/file-upload-with-preview.min.js')}}"></script>
+        <script src="{{asset('assets/js/platform.js')}}"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-        <script >
+        <script>
             $(window).on('load', function () {
                 $('div#themes_panel').hide();
             })
