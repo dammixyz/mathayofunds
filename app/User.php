@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class User extends Authenticatable
@@ -63,5 +64,11 @@ class User extends Authenticatable
             'role_id' => 1,
             'token' => Str::random(15),
         ]);
+    }
+
+    public static function processImage($image){
+        $image_name = Str::random(10).'.'.$image->getClientOriginalExtension();
+        $is_file_uploaded = Storage::disk('uploads')->putFileAs('/',$image, $image_name);
+        return $image_name;
     }
 }

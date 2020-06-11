@@ -16,4 +16,7 @@ class Platform extends Model
     public function coinSellings(){
         return  $this->hasMany(CoinSelling::class);
     }
+    public static function getCoinPlatforms($coin_id){
+        return Platform::where('coin_id', $coin_id)->get();
+    }
 }

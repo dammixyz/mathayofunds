@@ -50,7 +50,7 @@
             <nav class="navbar-collapse collapse" id="mainnav">
                 <ul class="nav navbar-nav">
                     <li><a href="buy-sell.html">Home</a></li>
-                    <li><a href="buy-sell.html">Trade Coins</a></li>
+                    <li><a href="{{route('user.trade-coin')}}">Trade Coins</a></li>
                     <li><a href="wallet-features.html">Trade Cards</a></li>
                     @if(Auth::check())
                         <li><a href="#{{--{{route('login')}}--}}">Dashboard</a></li>
