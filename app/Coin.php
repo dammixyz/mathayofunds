@@ -21,4 +21,10 @@ class Coin extends Model
     public static function getCoins(){
         return Coin::get();
     }
+    public static function getBitCoin(){
+        return Coin::where('name', 'Bitcoin')->first();
+    }
+    public static function getEthereum(){
+        return Coin::where('name', 'Ethereum')->first();
+    }
 }

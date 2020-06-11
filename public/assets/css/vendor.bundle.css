@@ -1518,6 +1518,10 @@ small, .small {
     font-size: 85%
 }
 
+small, .small-wallet {
+    font-size: 100%
+}
+
 mark, .mark {
     background-color: #fcf8e3;
     padding: .2em

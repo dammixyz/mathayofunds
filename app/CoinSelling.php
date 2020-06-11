@@ -8,7 +8,7 @@ class CoinSelling extends Model
 {
     protected $fillable = [
         'platform_id', 'coin_amount', 'coin_rate_id', 'rate_amount', 'payment_proof', 'status', 'platform_payment_proof'
-        , 'user_id', 'token',
+        , 'user_id', 'token', 'coin_id', 'payment_type', 'amount_payable'
     ];
 
       public function platform(){

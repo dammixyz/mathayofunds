@@ -31,16 +31,14 @@ class AuthenticationController extends Controller
                 // check role for redirection
                 switch ($role){
                     case 1:
-                        /*if (session()->get('intended_url')){
+                        if (session()->get('intended_url')){
                             return redirect(route(session()->get('intended_url')))->with('success', 'Login Successful');
                             break;
                         }
                         else{
-                            return redirect(route('user.dashboard'))->with('success', 'Login Successful');
+                            return redirect(route('homepage'))->with('success', 'Login Successful');
                             break;
-                        }*/
-                        return redirect(route('homepage'))->with('success', 'Login Successful');
-                        break;
+                        }
                     case 2:
                         return redirect(route('admin.dashboard'))->with('success', 'Login Successful');
                         break;
@@ -73,16 +71,14 @@ class AuthenticationController extends Controller
                 // check role for redirection
                 switch ($role){
                     case 1:
-                        /*if (session()->get('intended_url')){
+                        if (session()->get('intended_url')){
                             return redirect(route(session()->get('intended_url')))->with('success', 'Login Successful');
                             break;
                         }
                         else{
-                            return redirect(route('user.dashboard'))->with('success', 'Login Successful');
+                            return redirect(route('homepage'))->with('success', 'Login Successful');
                             break;
-                        }*/
-                        return redirect(route('homepage'))->with('success', 'Login Successful');
-                        break;
+                        }
                     case 2:
                         return redirect(route('admin.dashboard'))->with('success', 'Login Successful');
                         break;
