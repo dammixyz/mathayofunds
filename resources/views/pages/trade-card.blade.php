@@ -195,6 +195,14 @@
                                                                    class="form-control required" aria-required="true"
                                                                    type="text" required>
                                                         </div>
+                                                        <div class="form-field form-m-bttm">
+                                                            <select name="receipt_type" class="form-control" id="receipt-type"
+                                                                    aria-invalid="false">
+                                                                <option selected disabled>Select Amazon's Receipt Type</option>
+                                                                <option value="cash" id="cash">Cash</option>
+                                                                <option value="deposit" id="deposit">Deposit</option>
+                                                            </select>
+                                                        </div>
                                                         <div class="custom-file-container" id="card_upload_container" data-upload-id="cardUpload">
                                                             <label for="card_upload" class="text-sm"
                                                                    style="font-family: OpenSans, sans-serif; color: #373e45; font-size: 16px; margin-top: 20px"
@@ -224,6 +232,7 @@
                                                         <div class="custom-file-container" id="receipt_upload_container" data-upload-id="receiptUpload">
                                                             <label for="receipt_upload" class="text-sm"
                                                                    style="font-family: OpenSans, sans-serif; color: #373e45; font-size: 16px; margin-top: 20px"
+                                                                   id="upload-receipt-text"
                                                             >
                                                                 Upload Card's Receipt
                                                                 <a
@@ -440,33 +449,74 @@
         $('#ecode-option').hide()
         $('#card_upload_container').hide()
         $('#receipt_upload_container').hide()
+        $('#receipt-type').hide()
     })
     /*Select giftcard*/
     $("#giftcard-type").change(function() {
         var id = $(this).find('option:selected').attr('id')
         if (id === 'amazon-gc'){
+            var sell_opt = $("#giftcard-sell-option").find('option:selected').attr('id')
+            if (sell_opt === 'card-upload') {
+                /*This will clear upload input*/
+                $('#close_image_preview-card-upload').get(0).click()
+                $('#close_image_preview-receipt-upload').get(0).click()
+
+                $('#card_upload_container').hide()
+                $('#receipt_upload_container').hide()
+                $('#receipt-type').show()
+            }
             $('#gitfcard1').show()
             $('#gitfcard2').hide()
             $('#gitfcard3').hide()
             $('#gitfcard5').hide()
         }
         else if (id === 'playstation-gc'){
+            var sell_opt = $("#giftcard-sell-option").find('option:selected').attr('id')
+            if (sell_opt === 'card-upload') {
+                /*This will clear upload input*/
+                $('#close_image_preview-card-upload').get(0).click()
+                $('#close_image_preview-receipt-upload').get(0).click()
+
+                $('#card_upload_container').show()
+                $('#receipt_upload_container').show()
+            }
             $('#gitfcard1').hide()
             $('#gitfcard2').show()
             $('#gitfcard3').hide()
             $('#gitfcard5').hide()
+            $('#receipt-type').hide()
         }
         else if (id === 'itunes-gc'){
+            var sell_opt = $("#giftcard-sell-option").find('option:selected').attr('id')
+            if (sell_opt === 'card-upload') {
+                /*This will clear upload input*/
+                $('#close_image_preview-card-upload').get(0).click()
+                $('#close_image_preview-receipt-upload').get(0).click()
+
+                $('#card_upload_container').show()
+                $('#receipt_upload_container').show()
+            }
             $('#gitfcard1').hide()
             $('#gitfcard2').hide()
             $('#gitfcard3').show()
             $('#gitfcard5').hide()
+            $('#receipt-type').hide()
         }
         else if (id === 'playstore-gc'){
+            var sell_opt = $("#giftcard-sell-option").find('option:selected').attr('id')
+            if (sell_opt === 'card-upload') {
+                /*This will clear upload input*/
+                $('#close_image_preview-card-upload').get(0).click()
+                $('#close_image_preview-receipt-upload').get(0).click()
+
+                $('#card_upload_container').show()
+                $('#receipt_upload_container').show()
+            }
             $('#gitfcard1').hide()
             $('#gitfcard2').hide()
             $('#gitfcard3').hide()
             $('#gitfcard5').show()
+            $('#receipt-type').hide()
         }
     });
     /*Select Card's Country*/
@@ -490,6 +540,18 @@
     $("#giftcard-sell-option").change(function() {
         var id = $(this).find('option:selected').attr('id')
         if (id === 'ecode'){
+            var gc_id = $("#giftcard-type").find('option:selected').attr('id')
+            if (gc_id === 'amazon-gc') {
+                /*This will clear upload input*/
+                $('#close_image_preview-card-upload').get(0).click()
+                $('#close_image_preview-receipt-upload').get(0).click()
+
+                $('#receipt-type').hide()
+                $('#card_upload_container').hide()
+                $('#receipt_upload_container').hide()
+                $('#ecode-option').show()
+                return
+            }
             /*This will clear upload input*/
             $('#close_image_preview-card-upload').get(0).click()
             $('#close_image_preview-receipt-upload').get(0).click()
@@ -500,6 +562,17 @@
             $('#receipt_upload_container').hide()
         }
         else if (id === 'card-upload'){
+            var gc_id = $("#giftcard-type").find('option:selected').attr('id')
+            if (gc_id === 'amazon-gc') {
+                /*This will clear upload input*/
+                $('#close_image_preview-card-upload').get(0).click()
+                $('#close_image_preview-receipt-upload').get(0).click()
+
+                $('#receipt-type').show()
+                $('#ecode-option').hide()
+                return
+            }
+
             $('#ecode-option').hide()
             $('#card_upload_container').show()
             $('#receipt_upload_container').show()
@@ -507,7 +580,31 @@
             $('#close_image_preview-card-upload').hide()
             $('#image-preview-placeholder-receipt-upload').hide()
             $('#close_image_preview-receipt-upload').hide()
+        }
+    });
 
+    /*Receipt Type*/
+    $("#receipt-type").change(function() {
+        var rt = $(this).find('option:selected').attr('id')
+        if (rt === 'cash'){
+            /*This will clear upload input*/
+            $('#close_image_preview-card-upload').get(0).click()
+            $('#close_image_preview-receipt-upload').get(0).click()
+
+
+            $('#ecode-option').hide()
+            $('#card_upload_container').show()
+            $('#receipt_upload_container').show()
+        }
+        else if (rt === 'deposit'){
+            /*This will clear upload input*/
+            $('#close_image_preview-card-upload').get(0).click()
+            $('#close_image_preview-receipt-upload').get(0).click()
+
+
+            $('#ecode-option').hide()
+            $('#card_upload_container').show()
+            $('#receipt_upload_container').show()
         }
     });
 
