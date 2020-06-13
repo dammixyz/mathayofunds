@@ -15,62 +15,62 @@
     <title>Mathayo Funds</title>
 
     <!-- Bootstrap 4.0-->
-    <link rel="stylesheet" href="{{asset('assets/vendor_components/bootstrap/dist/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('assets_dashboard/vendor_components/bootstrap/dist/css/bootstrap.css')}}">
 
     <!--amcharts -->
     <link href="https://www.amcharts.com/lib/3/plugins/export/export.css" rel="stylesheet" type="text/css"/>
 
     <!-- Bootstrap-extend -->
-    <link rel="stylesheet" href="{{asset('assets/css/bootstrap-extend.css')}}">
+    <link rel="stylesheet" href="{{asset('assets_dashboard/css/bootstrap-extend.css')}}">
 
-    {{--<link rel="stylesheet" href="{{asset('assets/vendor_components/font-awesome/css/font-awesome.css')}}">--}}
+    {{--<link rel="stylesheet" href="{{asset('assets_dashboard/vendor_components/font-awesome/css/font-awesome.css')}}">--}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.1.0-0/collection/components/icon/icon.css')}}">
-    {{--    <link rel="stylesheet" href="{{asset('assets/vendor_components/Ionicons/css/ionicons.css')}}">--}}
+    {{--    <link rel="stylesheet" href="{{asset('assets_dashboard/vendor_components/Ionicons/css/ionicons.css')}}">--}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-    {{--    <link rel="stylesheet" href="{{asset('assets/vendor_components/themify-icons/themify-icons.css')}}">--}}
-    <link rel="stylesheet" href="http://www.ncb.dk/wp-content/themes/conall/assets/css/linea-icons/style.css">
-    {{--    <link rel="stylesheet" href="{{asset('assets/vendor_components/linea-icons/linea.css')}}">--}}
-    <link rel="stylesheet" href="{{asset('assets/vendor_components/glyphicons/glyphicon.css')}}">
+    {{--    <link rel="stylesheet" href="{{asset('assets_dashboard/vendor_components/themify-icons/themify-icons.css')}}">--}}
+    <link rel="stylesheet" href="http://www.ncb.dk/wp-content/themes/conall/assets_dashboard/css/linea-icons/style.css">
+    {{--    <link rel="stylesheet" href="{{asset('assets_dashboard/vendor_components/linea-icons/linea.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('assets_dashboard/vendor_components/glyphicons/glyphicon.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css">
-    {{--    <link rel="stylesheet" href="{{asset('assets/vendor_components/flag-icon/css/flag-icon.css')}}">--}}
+    {{--    <link rel="stylesheet" href="{{asset('assets_dashboard/vendor_components/flag-icon/css/flag-icon.css')}}">--}}
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css">
-    {{--    <link rel="stylesheet" href="{{asset('assets/vendor_components/material-design-iconic-font/css/materialdesignicons.css')}}">--}}
+    {{--    <link rel="stylesheet" href="{{asset('assets_dashboard/vendor_components/material-design-iconic-font/css/materialdesignicons.css')}}">--}}
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
-    {{--    <link rel="stylesheet" href="{{asset('assets/vendor_components/simple-line-icons-master/css/simple-line-icons.css')}}">--}}
+    {{--    <link rel="stylesheet" href="{{asset('assets_dashboard/vendor_components/simple-line-icons-master/css/simple-line-icons.css')}}">--}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cryptocoins-icons@2.9.0/webfont/cryptocoins.css">
-    {{--    <link rel="stylesheet" href="{{asset('assets/vendor_components/cryptocoins-master/webfont/cryptocoins.css')}}">--}}
+    {{--    <link rel="stylesheet" href="{{asset('assets_dashboard/vendor_components/cryptocoins-master/webfont/cryptocoins.css')}}">--}}
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
 
     <!-- daterange picker -->
-    <link rel="stylesheet" href="{{asset('assets/vendor_components/bootstrap-daterangepicker/daterangepicker.css')}}">
+    <link rel="stylesheet" href="{{asset('assets_dashboard/vendor_components/bootstrap-daterangepicker/daterangepicker.css')}}">
 
     <!-- bootstrap datepicker -->
-    <link rel="stylesheet" href="{{asset('assets/vendor_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets_dashboard/vendor_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
 
     <!-- iCheck for checkboxes and radio inputs -->
-    <link rel="stylesheet" href="{{asset('assets/vendor_plugins/iCheck/all.css')}}">
+    <link rel="stylesheet" href="{{asset('assets_dashboard/vendor_plugins/iCheck/all.css')}}">
 
     <!-- Bootstrap Color Picker -->
-    <link rel="stylesheet" href="{{asset('assets/vendor_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets_dashboard/vendor_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css')}}">
 
     <!-- Bootstrap time Picker -->
-    <link rel="stylesheet" href="{{asset('assets/vendor_plugins/timepicker/bootstrap-timepicker.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets_dashboard/vendor_plugins/timepicker/bootstrap-timepicker.min.css')}}">
 
     <!-- Select2 -->
-    <link rel="stylesheet" href="{{asset('assets/vendor_components/select2/dist/css/select2.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets_dashboard/vendor_components/select2/dist/css/select2.min.css')}}">
 
 
 
     <!-- theme style -->
-    <link rel="stylesheet" href="{{asset('assets/css/master_style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets_dashboard/css/master_style.css')}}">
 
     <!-- Crypto_Admin skins -->
-    <link rel="stylesheet" href="{{asset('assets/css/skins/_all-skins.css')}}">
+    <link rel="stylesheet" href="{{asset('assets_dashboard/css/skins/_all-skins.css')}}">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -89,13 +89,13 @@
         <a href="index.html" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <b class="logo-mini">
-                <span class="light-logo"><img src="../images/logo-light.png" alt="logo"></span>
-                <span class="dark-logo"><img src="../images/logo-dark.png" alt="logo"></span>
+                <span class="light-logo"><img src="../assets_dashboard/logo-light.png" alt="logo"></span>
+                <span class="dark-logo"><img src="../assets_dashboard/logo-dark.png" alt="logo"></span>
             </b>
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg">
-		  <img src="../images/logo-light-text.png" alt="logo" class="light-logo">
-	  	  <img src="../images/logo-dark-text.png" alt="logo" class="dark-logo">
+		  <img src="../assets_dashboard/logo-light-text.png" alt="logo" class="light-logo">
+	  	  <img src="../assets_dashboard/logo-dark-text.png" alt="logo" class="dark-logo">
 	  </span>
         </a>
         <!-- Header Navbar -->
@@ -164,12 +164,12 @@
                     <!-- User Account -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../images/user5-128x128.jpg" class="user-image rounded-circle" alt="User Image">
+                            <img src="../assets_dashboard/user5-128x128.jpg" class="user-image rounded-circle" alt="User Image">
                         </a>
                         <ul class="dropdown-menu scale-up">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="../images/user5-128x128.jpg" class="float-left rounded-circle"
+                                <img src="../assets_dashboard/user5-128x128.jpg" class="float-left rounded-circle"
                                      alt="User Image">
 
                                 <p>
@@ -231,8 +231,8 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="nav-devider"></li>
                 <li class="header nav-small-cap">PERSONAL</li>
-                <li class="{{ Request::is('home') ? 'active' : '' }}">
-                    <a href="{{route('home')}}">
+                <li class="{{--{{ Request::is('home') ? 'active' : '' }}--}}">
+                    <a href="{{--{{route('home')}}--}}">
                         <i class="icon-home"></i> <span>Overview</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-right pull-right"></i>
@@ -263,7 +263,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="{{ Request::is('trade-with-us')||Request::is('trade-with-us/buy-coin')||Request::is('trade-with-us/sell-coin')||Request::is('trade-with-us/sell-giftcard') ? 'active' : '' }}">
+                <li class="{{--{{ Request::is('trade-with-us')||Request::is('trade-with-us/buy-coin')||Request::is('trade-with-us/sell-coin')||Request::is('trade-with-us/sell-giftcard') ? 'active' : '' }}--}}">
                     <a href="{{asset('trade-with-us')}}">
                         <i class="icon-wallet"></i> <span>Trade with us</span>
                         <span class="pull-right-container">
@@ -306,19 +306,19 @@
 
 
 <!-- jQuery 3 -->
-<script src="{{asset('assets/vendor_components/jquery/dist/jquery.js')}}"></script>
+<script src="{{asset('assets_dashboard/vendor_components/jquery/dist/jquery.js')}}"></script>
 
 <!-- popper -->
-<script src="{{asset('assets/vendor_components/popper/dist/popper.min.js')}}"></script>
+<script src="{{asset('assets_dashboard/vendor_components/popper/dist/popper.min.js')}}"></script>
 
 <!-- Bootstrap 4.0-->
-<script src="{{asset('assets/vendor_components/bootstrap/dist/js/bootstrap.js')}}"></script>
+<script src="{{asset('assets_dashboard/vendor_components/bootstrap/dist/js/bootstrap.js')}}"></script>
 
 <!-- Slimscroll -->
-<script src="{{asset('assets/vendor_components/jquery-slimscroll/jquery.slimscroll.js')}}"></script>
+<script src="{{asset('assets_dashboard/vendor_components/jquery-slimscroll/jquery.slimscroll.js')}}"></script>
 
 <!-- FastClick -->
-<script src="{{asset('assets/vendor_components/fastclick/lib/fastclick.js')}}"></script>
+<script src="{{asset('assets_dashboard/vendor_components/fastclick/lib/fastclick.js')}}"></script>
 
 <!--amcharts charts -->
 <script src="https://www.amcharts.com/lib/3/amcharts.js" type="text/javascript"></script>
@@ -332,47 +332,47 @@
 <script src="https://www.amcharts.com/lib/3/themes/light.js" type="text/javascript"></script>
 
 <!-- webticker -->
-<script src="{{asset('assets/vendor_components/Web-Ticker-master/jquery.webticker.min.js')}}"></script>
+<script src="{{asset('assets_dashboard/vendor_components/Web-Ticker-master/jquery.webticker.min.js')}}"></script>
 
 <!-- EChartJS JavaScript -->
-<script src="{{asset('assets/vendor_components/echarts-master/dist/echarts-en.min.js')}}"></script>
-<script src="{{asset('assets/vendor_components/echarts-liquidfill-master/dist/echarts-liquidfill.min.js')}}"></script>
+<script src="{{asset('assets_dashboard/vendor_components/echarts-master/dist/echarts-en.min.js')}}"></script>
+<script src="{{asset('assets_dashboard/vendor_components/echarts-liquidfill-master/dist/echarts-liquidfill.min.js')}}"></script>
 
 <!-- This is data table -->
-<script src="{{asset('assets/vendor_plugins/DataTables-1.10.15/media/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('assets_dashboard/vendor_plugins/DataTables-1.10.15/media/js/jquery.dataTables.min.js')}}"></script>
 
 <!-- Crypto_Admin App -->
-<script src="{{asset('assets/js/template.js')}}"></script>
+<script src="{{asset('assets_dashboard/js/template.js')}}"></script>
 
 <!-- Crypto_Admin dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('assets/js/pages/dashboard.js')}}"></script>
-<script src="{{asset('assets/js/pages/dashboard-chart.js')}}"></script>
+<script src="{{asset('assets_dashboard/js/pages/dashboard.js')}}"></script>
+<script src="{{asset('assets_dashboard/js/pages/dashboard-chart.js')}}"></script>
 
 <!-- Crypto_Admin for demo purposes -->
-<script src="{{asset('assets/js/demo.js')}}"></script>
+<script src="{{asset('assets_dashboard/js/demo.js')}}"></script>
 
 
 
 <!-- Select2 -->
-<script src="{{asset('assets/vendor_components/select2/dist/js/select2.full.js')}}"></script>
+<script src="{{asset('assets_dashboard/vendor_components/select2/dist/js/select2.full.js')}}"></script>
 
 <!-- bootstrap datepicker -->
-<script src="{{asset('assets/vendor_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{asset('assets_dashboard/vendor_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 
 <!-- iCheck 1.0.1 -->
-<script src="{{asset('assets/vendor_plugins/iCheck/icheck.min.js')}}"></script>
+<script src="{{asset('assets_dashboard/vendor_plugins/iCheck/icheck.min.js')}}"></script>
 
 <!-- FastClick -->
-<script src="{{asset('assets/vendor_components/fastclick/lib/fastclick.js')}}"></script>
+<script src="{{asset('assets_dashboard/vendor_components/fastclick/lib/fastclick.js')}}"></script>
 
 <!-- Crypto_Admin App -->
-<script src="{{asset('assets/js/template.js')}}"></script>
+<script src="{{asset('assets_dashboard/js/template.js')}}"></script>
 
 <!-- Crypto_Admin for demo purposes -->
-<script src="{{asset('assets/js/demo.js')}}"></script>
+<script src="{{asset('assets_dashboard/js/demo.js')}}"></script>
 
 <!-- Crypto_Admin for advanced form element -->
-<script src="{{asset('assets/js/pages/advanced-form-element.js')}}"></script>
+<script src="{{asset('assets_dashboard/js/pages/advanced-form-element.js')}}"></script>
 
 </body>
 
