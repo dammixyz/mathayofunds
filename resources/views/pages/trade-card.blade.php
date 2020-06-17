@@ -354,7 +354,7 @@
                             <li><a href="#">Service</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
-                    </div>
+                     </div>
                 </div>
                 <!-- End Widget -->
             </div>
@@ -402,7 +402,7 @@
     <div class="container">
         <div class="row">
             <div class="site-copy col-sm-7">
-                <p>Copyright &copy; 2020 <a href="{{route('welcome')}}">Mathayo Funds </a>Cryptocurrency Trading Company
+                <p>Copyright &copy; 2020 <a href="{{--{{route('welcome')}}--}}">Mathayo Funds </a>Cryptocurrency Trading Company
                 </p>
             </div>
             <div class="col-sm-5 text-right mobile-left">
@@ -435,7 +435,6 @@
         $('div#themes_panel').hide();
     })
 </script>
-{{--Image Preview--}}
 <script>
     //First upload
     var secondUpload = new FileUploadWithPreview('cardUpload')
