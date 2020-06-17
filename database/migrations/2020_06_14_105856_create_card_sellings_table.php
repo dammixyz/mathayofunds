@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Str;
 
 class CreateCardSellingsTable extends Migration
 {
@@ -16,20 +15,24 @@ class CreateCardSellingsTable extends Migration
     {
         Schema::create('card_sellings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('card_id');
-            $table->double('amount');
-            $table->unsignedBigInteger('card_rate_id');
-            $table->unsignedBigInteger('denomination_id');
-            $table->string('payment_proof');
-            $table->integer('status');
+            $table->double('amount_payable')->nullable();
+            $table->double('rate')->nullable();
+            $table->integer('user_transaction_approval')->default(1);
             $table->string('platform_payment_proof')->nullable();
+            $table->unsignedBigInteger('card_id');
+            $table->unsignedBigInteger('country_id')->nullable();
+            $table->string('other_country')->nullable();
+            $table->unsignedBigInteger('denomination_id');
             $table->unsignedBigInteger('user_id');
-            $table->string('token')->default(Str::random(15));
-            $table->timestamps();
+            $table->integer('status')->default(0);
+            $table->integer('sell_option_id');
+            $table->integer('receipt_type')->nullable();
             $table->foreign('card_id')->references('id')->on('cards');
-            $table->foreign('card_rate_id')->references('id')->on('card_rates');
+            $table->foreign('country_id')->references('id')->on('countries');
             $table->foreign('denomination_id')->references('id')->on('denominations');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->string('token');
+            $table->timestamps();
         });
     }
 

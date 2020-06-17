@@ -435,7 +435,6 @@
         $('div#themes_panel').hide();
     })
 </script>
-{{--Image Preview--}}
 <script>
     //First upload
     var secondUpload = new FileUploadWithPreview('cardUpload')

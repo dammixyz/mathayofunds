@@ -16,4 +16,7 @@ class Card extends Model
     public function cardSellings(){
         return  $this->hasMany(CardSelling::class);
     }
+    public function ecode(){
+        return $this->hasOne(Ecode::class);
+    }
 }

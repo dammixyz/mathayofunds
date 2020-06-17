@@ -64,3 +64,14 @@ Route::get('/cards', function (){
         'as' => 'submit-buy-coin-form',
         'uses' => 'Trade\TradeController@submitBuyCoinForm'
     ])->middleware('checkAuth');
+
+    Route::get('/trade-card', [
+        'as' => 'user.trade-card',
+        'uses' => 'Trade\TradeController@tradeCard'
+    ])->middleware('checkAuth');
+
+    Route::post('/submit-trade-card-form', [
+        'as' => 'submit-trade-card-form',
+        'uses' => 'Trade\TradeController@submitTradeCardForm'
+    ])->middleware('checkAuth');
+
