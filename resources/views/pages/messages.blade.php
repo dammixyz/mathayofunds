@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zxx" class="js">
 
@@ -18,13 +17,14 @@
     <title>Mathayo Funds - Home</title>
     <!-- Vendor Bundle CSS -->
     <link rel="stylesheet" href="assets/css/vendor.bundle.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="assets/css/style5152.css?ver=1.0">
     <link rel="stylesheet" id="layoutstyle" href="assets/css/theme5152.css?ver=1.0">
     {{--File upload--}}
-    <link href="assets/css/scrollspyNav.css" rel="stylesheet" type="text/css" />
-    <link href="file-upload/file-upload-with-preview.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/scrollspyNav.css" rel="stylesheet" type="text/css"/>
+    <link href="file-upload/file-upload-with-preview.min.css" rel="stylesheet" type="text/css"/>
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -96,7 +96,8 @@
                     <li class="dropdown"><a href="#" class="dropdown-toggle">Tade With Us<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="index-2.html"><span class="fas fa-coins"></span> Trade Coin</a></li>
-                            <li><a href="index-wallet.html"> <span class="fa fa-credit-card"></span> Trade Gift Card</a></li>
+                            <li><a href="index-wallet.html"> <span class="fa fa-credit-card"></span> Trade Gift Card</a>
+                            </li>
                         </ul>
                     </li>
                     <li><a href="market-data.html">About Us</a></li>
@@ -119,7 +120,7 @@
 
 
 <!-- Transactions Count -->
-<div class="features-box section section-pad no-pt no-pb" style="margin-top: 12px;">
+<div class="features-box section section-pad no-pt pb-10" style="margin-top: 12px;">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-6 res-m-bttm">
@@ -135,129 +136,77 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-9 col-sm-6 res-m-bttm">
-                <!-- Transactions -->
-                <div class="features-box section section-pad no-pb no-pt">
-                    <div class="container">
-                        <div class="row">
-                                <div class="box round shadow-alt mb-15">
-                                    <h6 class="ucap">Transactions</h6>
-                                    <p class="small">Here are the list of your transactions with us so far</p>
-                                        <div class="table-responsive" >
-                                            <table class="table table-hover">
-                                                <thead>
-                                                <tr>
-                                                    <th scope="col">S/N</th>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Type</th>
-                                                    <th scope="col">Asset</th>
-                                                    <th scope="col">You Bought/Sold</th>
-                                                    <th scope="col">Status</th>
-                                                    <th scope="col">Action</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Coin</td>
-                                                    <td>Ethereum</td>
-                                                    <td>Sold</td>
-                                                    <td><div class="badge" style="background-color: orange">Pending</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Gift Card</td>
-                                                    <td>Amazon</td>
-                                                    <td>Sold</td>
-                                                    <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Coin</td>
-                                                    <td>Bitcoin</td>
-                                                    <td>Bought</td>
-                                                    <td><div class="badge" style="background-color: orangered">Canceled</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Coin</td>
-                                                    <td>Bitcoin</td>
-                                                    <td>Sold</td>
-                                                    <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Gift Card</td>
-                                                    <td>iTunes</td>
-                                                    <td>Sold</td>
-                                                    <td><div class="badge" style="background-color: orange">Pending</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Coin</td>
-                                                    <td>Ethereum</td>
-                                                    <td>Sold</td>
-                                                    <td><div class="badge" style="background-color: orange">Pending</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Gift Card</td>
-                                                    <td>Amazon</td>
-                                                    <td>Sold</td>
-                                                    <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Coin</td>
-                                                    <td>Bitcoin</td>
-                                                    <td>Bought</td>
-                                                    <td><div class="badge" style="background-color: orangered">Canceled</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Coin</td>
-                                                    <td>Bitcoin</td>
-                                                    <td>Sold</td>
-                                                    <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Gift Card</td>
-                                                    <td>iTunes</td>
-                                                    <td>Sold</td>
-                                                    <td><div class="badge" style="background-color: orange">Pending</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-
-                                                </tbody>
-                                            </table>
+            <div class="col-md-9 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
+                <div class="box round shadow-alt">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="sidebar-right wgs-box">
+                                <div class="wgs-search">
+                                    <div class="wgs-content">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"  placeholder="Search Message...">
+                                            <button class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                                         </div>
+                                    </div>
+                                    <div class="gaps size-1x"></div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <h5>My Messages</h5>
+                        <a href="#" data-toggle="modal" data-target="#sendMessageModal"><span><i class="fa fa-send"></i> &nbsp;</span><b>Send
+                                Message</b></a>
+                    </div>
+                    <div class="box round" style="background: #fff1e0; margin-bottom: 16px;">
+                        <h6>Admin <span><p>1 minute</p></span></h6>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus error...
+                            <span><a href="#" class="" data-toggle="modal" data-target="#readMessageModal">Read Message</a></span>
+                        </p>
+                    </div>
+                    <div class="box round" style="background: #fff1e0; margin-bottom: 16px;">
+                        <h6>Admin <span><p>25 minutes ago</p></span></h6>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus error...
+                            <span><a href="#" class="" data-toggle="modal" data-target="#readMessageModal">Read Message</a></span>
+                        </p>
+                    </div>
+                    <div class="box round shadow-alt  mb-15">
+                        <h6>You (Sent to admin) <span><p>39 minutes ago</p></span></h6>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus error...
+                            <span><a href="#" class="" data-toggle="modal" data-target="#readMessageModal">Read Message</a></span>
+                        </p>
+                    </div>
+                    <div class="box round" style="background: #fff1e0; margin-bottom: 16px;">
+                        <h6>Admin <span><p>2 weeks ago</p></span></h6>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus error...
+                            <span><a href="#" class="" data-toggle="modal" data-target="#readMessageModal">Read Message</a></span>
+                        </p>
+                    </div>
+                    <div class="box round shadow-alt mb-15">
+                        <h6>You (Sent to admin) <span><p>1 month ago</p></span></h6>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus error...
+                            <span><a href="#" class="" data-toggle="modal" data-target="#readMessageModal">Read Message</a></span>
+                        </p>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <ul class="pagination pagination-lg">
+                                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#"><span class="fa fa-angle-right"></span></a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <!--End Features Box -->
             </div>
-
         </div>
     </div>
 </div><!--End Features Box -->
@@ -369,6 +318,67 @@
     <div id="status">&nbsp;</div>
 </div>
 
+
+{{--Send Message Modal--}}
+<div class="modal" tabindex="-1" id="sendMessageModal" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="#">
+                <div class="modal-header">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="modal-title">Message</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-field form-m-bttm">
+                    <textarea name="message" cols="10" rows="8" style="resize: none" placeholder="Leave a message"
+                              class="form-control required" aria-required="true"
+                              type="text" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-xs btn-alt"><span><i class="fa fa-send"></i> &nbsp;</span><b>Send</b></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{{--Read Meassage Modal--}}
+<div class="modal fade" id="readMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex justify-content-between">
+                    <div class="">
+
+                        <h5 class="modal-title" style="color: #f7921a;">Admin: </h5><span><h6>Welcome to Mathayo Funds.
+                            Your No 1 Cryprocurrency Trading platform</h6></span>
+                        <p>1 minute ago</p>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deserunt dolores ea explicabo. Ad, cupiditate deserunt doloribus dolorum ea eveniet hic impedit molestias nam perspiciatis quaerat, quod sapiente velit veritatis.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deserunt dolores ea explicabo. Ad, cupiditate deserunt doloribus dolorum ea eveniet hic impedit molestias nam perspiciatis quaerat, quod sapiente velit veritatis.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deserunt dolores ea explicabo. Ad, cupiditate deserunt doloribus dolorum ea eveniet hic impedit molestias nam perspiciatis quaerat, quod sapiente velit veritatis.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deserunt dolores ea explicabo. Ad, cupiditate deserunt doloribus dolorum ea eveniet hic impedit molestias nam perspiciatis quaerat, quod sapiente velit veritatis.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deserunt dolores ea explicabo. Ad, cupiditate deserunt doloribus dolorum ea eveniet hic impedit molestias nam perspiciatis quaerat, quod sapiente velit veritatis.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deserunt dolores ea explicabo. Ad, cupiditate deserunt doloribus dolorum ea eveniet hic impedit molestias nam perspiciatis quaerat, quod sapiente velit veritatis.
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b></button>
+            </div>
+        </div>
+    </div>
+</div>
+
 {{--Main Scripts--}}
 <script src="{{asset('assets/js/jquery.bundle.js')}}"></script>
 <script src="{{asset('assets/js/script.js')}}"></script>
@@ -379,35 +389,30 @@
 <script>
     $(window).on('load', function () {
         $('div#themes_panel').hide();
-    })
-</script>
 
-<!-- Slimscroll -->
-<script src="{{asset('assets_dashboard/jquery.slimscroll.min.js')}}"></script>
-<script>
-    $(function(){
-        $('#latest-transaction-table').slimScroll({
-            height: '250px',
-            allowPageScroll: false,
-            size: '1px',
-            color: '#f7921a',
-            opacity: 0.5,
-        });
-        $('#coins-rates-table').slimScroll({
-            height: '250px',
-            allowPageScroll: false,
-            size: '1px',
-            color: '#f7921a',
-            opacity: 0.5
-        });
-        $('#giftcards-rates-table').slimScroll({
-            height: '250px',
-            allowPageScroll: false,
-            size: '1px',
-            color: '#f7921a',
-            opacity: 0.5
-        });
-    });
+        //ToolTip
+        $('#upload-1').tooltip()
+        $('#proof-1').tooltip()
+        $('#upload-2').tooltip()
+        $('#proof-2').tooltip()
+        $('#upload-3').tooltip()
+        $('#proof-3').tooltip()
+        $('#upload-4').tooltip()
+        $('#proof-4').tooltip()
+        $('#upload-5').tooltip()
+        $('#proof-5').tooltip()
+        $('#upload-6').tooltip()
+        $('#proof-6').tooltip()
+        $('#upload-7').tooltip()
+        $('#proof-7').tooltip()
+        $('#upload-8').tooltip()
+        $('#proof-8').tooltip()
+        $('#upload-9').tooltip()
+        $('#proof-9').tooltip()
+        $('#upload-10').tooltip()
+        $('#proof-10').tooltip()
+    })
+
 </script>
 
 </body>

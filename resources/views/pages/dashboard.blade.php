@@ -9,7 +9,8 @@
           content="CryptoCoin is a powerful Bitcoin Crypto Currency Wallet and Mining Template with full of customization options and features">
     <!-- Bootstrap-extend -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap-extend.css')}}">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    {{--Font-AWESOME--}}
+    <script src="{{asset('assets/js/fa.js')}}"></script>
     {{--Main Style--}}
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="images/favicon.png">

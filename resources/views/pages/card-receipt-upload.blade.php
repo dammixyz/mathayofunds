@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zxx" class="js">
 
@@ -11,20 +10,22 @@
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap-extend.css')}}">
     {{--Font-AWESOME--}}
     <script src="{{asset('assets/js/fa.js')}}"></script>
-{{--Main Style--}}
+    {{--Main Style--}}
 <!-- Fav Icon  -->
     <link rel="shortcut icon" href="images/favicon.png">
     <!-- Site Title  -->
     <title>Mathayo Funds - Home</title>
     <!-- Vendor Bundle CSS -->
     <link rel="stylesheet" href="assets/css/vendor.bundle.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="assets/css/style5152.css?ver=1.0">
     <link rel="stylesheet" id="layoutstyle" href="assets/css/theme5152.css?ver=1.0">
     {{--File upload--}}
-    <link href="assets/css/scrollspyNav.css" rel="stylesheet" type="text/css" />
-    <link href="file-upload/file-upload-with-preview.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/scrollspyNav.css" rel="stylesheet" type="text/css"/>
+    <link href="file-upload/file-upload-with-preview.min.css" rel="stylesheet" type="text/css"/>
+
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -96,7 +97,8 @@
                     <li class="dropdown"><a href="#" class="dropdown-toggle">Tade With Us<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="index-2.html"><span class="fas fa-coins"></span> Trade Coin</a></li>
-                            <li><a href="index-wallet.html"> <span class="fa fa-credit-card"></span> Trade Gift Card</a></li>
+                            <li><a href="index-wallet.html"> <span class="fa fa-credit-card"></span> Trade Gift Card</a>
+                            </li>
                         </ul>
                     </li>
                     <li><a href="market-data.html">About Us</a></li>
@@ -118,7 +120,7 @@
 <!-- End Header -->
 
 
-<!-- Transactions Count -->
+<!-- View Cards AND Receipts -->
 <div class="features-box section section-pad no-pt no-pb" style="margin-top: 12px;">
     <div class="container">
         <div class="row">
@@ -127,135 +129,62 @@
                     <div class="box round no-pt">
                         <img src="{{asset('mathayo-profile.png')}}" alt="box-icon" class="box-icon">
                         <h6 class="">Stunner</h6>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-dashboard"></i>&nbsp; Dashboard</span></a><br>
+                        <a href="#" class="btn btn-md btn-alt"><span><i
+                                    class="fa fa-dashboard"></i>&nbsp; Dashboard</span></a><br>
                         <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-credit-card"></i>&nbsp; Card Trades</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fas fa-coins"></i>&nbsp; Coin Trades</span></a><br>
+                        <a href="#" class="btn btn-md btn-alt"><span><i
+                                    class="fas fa-coins"></i>&nbsp; Coin Trades</span></a><br>
                         <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-user"></i>&nbsp; Profile</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-envelope"></i>&nbsp; Messages</span></a><br>
+                        <a href="#" class="btn btn-md btn-alt"><span><i
+                                    class="fa fa-envelope"></i>&nbsp; Messages</span></a><br>
                     </div>
                 </div>
             </div>
             <div class="col-md-9 col-sm-6 res-m-bttm">
-                <!-- Transactions -->
-                <div class="features-box section section-pad no-pb no-pt">
-                    <div class="container">
-                        <div class="row">
-                                <div class="box round shadow-alt mb-15">
-                                    <h6 class="ucap">Transactions</h6>
-                                    <p class="small">Here are the list of your transactions with us so far</p>
-                                        <div class="table-responsive" >
-                                            <table class="table table-hover">
-                                                <thead>
-                                                <tr>
-                                                    <th scope="col">S/N</th>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Type</th>
-                                                    <th scope="col">Asset</th>
-                                                    <th scope="col">You Bought/Sold</th>
-                                                    <th scope="col">Status</th>
-                                                    <th scope="col">Action</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Coin</td>
-                                                    <td>Ethereum</td>
-                                                    <td>Sold</td>
-                                                    <td><div class="badge" style="background-color: orange">Pending</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Gift Card</td>
-                                                    <td>Amazon</td>
-                                                    <td>Sold</td>
-                                                    <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Coin</td>
-                                                    <td>Bitcoin</td>
-                                                    <td>Bought</td>
-                                                    <td><div class="badge" style="background-color: orangered">Canceled</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Coin</td>
-                                                    <td>Bitcoin</td>
-                                                    <td>Sold</td>
-                                                    <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Gift Card</td>
-                                                    <td>iTunes</td>
-                                                    <td>Sold</td>
-                                                    <td><div class="badge" style="background-color: orange">Pending</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Coin</td>
-                                                    <td>Ethereum</td>
-                                                    <td>Sold</td>
-                                                    <td><div class="badge" style="background-color: orange">Pending</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Gift Card</td>
-                                                    <td>Amazon</td>
-                                                    <td>Sold</td>
-                                                    <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Coin</td>
-                                                    <td>Bitcoin</td>
-                                                    <td>Bought</td>
-                                                    <td><div class="badge" style="background-color: orangered">Canceled</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Coin</td>
-                                                    <td>Bitcoin</td>
-                                                    <td>Sold</td>
-                                                    <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>May 21 2020, 15:30</td>
-                                                    <td>Gift Card</td>
-                                                    <td>iTunes</td>
-                                                    <td>Sold</td>
-                                                    <td><div class="badge" style="background-color: orange">Pending</div></td>
-                                                    <td><button class="btn btn-xs" type="submit" style="font-size: 13px" title="Delete"><i class="fa fa-trash text-danger"></i> Delete</button></td>
-                                                </tr>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                </div>
+                <div class="row text-center">
+                    <h4>Gift Cards</h4>
+                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
+                        <div class="box round shadow-alt" >
+                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard3.png')}}" alt="box-image" class="box-image"></a><br>
+                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCard">View Card </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
+                        <div class="box round shadow-alt" >
+                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard1.png')}}" alt="box-image" class="box-image"></a><br>
+                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCard">View Card </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
+                        <div class="box round shadow-alt" >
+                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard5.jpg')}}" alt="box-image" class="box-image"></a><br>
+                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCard">View Card </a>
                         </div>
                     </div>
                 </div>
-                <!--End Features Box -->
+                <hr>
+                <div class="row text-center mb-15">
+                    <h4>Receipts</h4>
+                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
+                        <div class="box round shadow-alt" >
+                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard1.png')}}" alt="box-image" class="box-image"></a><br>
+                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCardReceipt">View Receipt </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
+                        <div class="box round shadow-alt" >
+                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard2.png')}}" alt="box-image" class="box-image"></a><br>
+                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCardReceipt">View Receipt </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
+                        <div class="box round shadow-alt" >
+                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard3.png')}}" alt="box-image" class="box-image"></a><br>
+                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCardReceipt">View Receipt </a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
         </div>
@@ -369,6 +298,83 @@
     <div id="status">&nbsp;</div>
 </div>
 
+{{--View Gift Card--}}
+<div class="modal" tabindex="-1" id="viewGiftCard" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex justify-content-between">
+                    <h5 class="modal-title">Your Uploaded Gift Card</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="form-field form-m-bttm">
+                    <img src="{{asset('giftcard1.png')}}" alt="">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{--View Gift Card Receipt--}}
+<div class="modal" tabindex="-1" id="viewGiftCardReceipt" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex justify-content-between">
+                    <h5 class="modal-title">Your Uploaded Gift Card's Receipt</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="form-field form-m-bttm">
+                    <img src="{{asset('giftcard3.png')}}" alt="">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{--User Payment/Transfer Proof For Coin Modal--}}
+<div class="modal" tabindex="-1" id="paymentTransferProof" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex justify-content-between">
+                    <h5 class="modal-title">Your Uploaded Payment/Transfer Snapshot</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="form-field form-m-bttm">
+                    <img src="{{asset('mathayo.jpg')}}" alt="">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 {{--Main Scripts--}}
 <script src="{{asset('assets/js/jquery.bundle.js')}}"></script>
 <script src="{{asset('assets/js/script.js')}}"></script>
@@ -376,38 +382,33 @@
 
 <script src="assets/js/scrollspyNav.js"></script>
 <script src="file-upload/file-upload-with-preview.min.js"></script>
+
 <script>
     $(window).on('load', function () {
         $('div#themes_panel').hide();
-    })
-</script>
 
-<!-- Slimscroll -->
-<script src="{{asset('assets_dashboard/jquery.slimscroll.min.js')}}"></script>
-<script>
-    $(function(){
-        $('#latest-transaction-table').slimScroll({
-            height: '250px',
-            allowPageScroll: false,
-            size: '1px',
-            color: '#f7921a',
-            opacity: 0.5,
-        });
-        $('#coins-rates-table').slimScroll({
-            height: '250px',
-            allowPageScroll: false,
-            size: '1px',
-            color: '#f7921a',
-            opacity: 0.5
-        });
-        $('#giftcards-rates-table').slimScroll({
-            height: '250px',
-            allowPageScroll: false,
-            size: '1px',
-            color: '#f7921a',
-            opacity: 0.5
-        });
-    });
+        //ToolTip
+        $('#upload-1').tooltip()
+        $('#proof-1').tooltip()
+        $('#upload-2').tooltip()
+        $('#proof-2').tooltip()
+        $('#upload-3').tooltip()
+        $('#proof-3').tooltip()
+        $('#upload-4').tooltip()
+        $('#proof-4').tooltip()
+        $('#upload-5').tooltip()
+        $('#proof-5').tooltip()
+        $('#upload-6').tooltip()
+        $('#proof-6').tooltip()
+        $('#upload-7').tooltip()
+        $('#proof-7').tooltip()
+        $('#upload-8').tooltip()
+        $('#proof-8').tooltip()
+        $('#upload-9').tooltip()
+        $('#proof-9').tooltip()
+        $('#upload-10').tooltip()
+        $('#proof-10').tooltip()
+    })
 </script>
 
 </body>
