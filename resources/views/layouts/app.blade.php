@@ -8,6 +8,9 @@
         <!-- Fav Icon  -->
         <title>Mathayo Funds - Home</title>
         <!-- Vendor Bundle CSS -->
+        <link rel="stylesheet" href="{{asset('assets/css/bootstrap-extend.css')}}">
+        {{--Font-AWESOME--}}
+        <script src="{{asset('assets/js/fa.js')}}"></script>
         <link rel="stylesheet" href="{{asset('assets/css/vendor.bundle.css')}}" >
         <!-- Custom styles for this template -->
         <link rel="stylesheet" href="{{asset('assets/css/style5152.css?ver=1.0')}}">
@@ -36,6 +39,8 @@
         <script src="{{asset('file-upload/file-upload-with-preview.min.js')}}"></script>
         <script src="{{asset('assets/js/platform.js')}}"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
         <script>
             $(window).on('load', function () {
                 $('div#themes_panel').hide();

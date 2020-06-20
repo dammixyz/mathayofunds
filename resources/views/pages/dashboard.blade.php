@@ -542,7 +542,9 @@
     <div class="container">
         <div class="row">
             <div class="site-copy col-sm-7">
+{{--
                 <p>Copyright &copy; 2020 <a href="{{route('welcome')}}">Mathayo Funds </a>Cryptocurrency Trading Company
+--}}
                 </p>
             </div>
             <div class="col-sm-5 text-right mobile-left">

@@ -75,3 +75,32 @@ use Illuminate\Support\Facades\Route;
         'uses' => 'Trade\TradeController@submitTradeCardForm'
     ])->middleware('checkAuth');
 
+    /*Route::get('/dashboard', function (){
+       return view('Pages.dashboard2');
+    });*/
+
+    //dashboard
+    Route::get('/dashboard', [
+        'as' => 'user.dashboard',
+        'uses' => 'Dashboard\DashboardController@Dashboard'
+    ])->middleware('checkAuth');
+
+    Route::get('/profile', [
+        'as' => 'user.profile',
+        'uses' => 'Dashboard\DashboardController@Profile'
+    ])->middleware('checkAuth');
+
+    Route::get('/my-messages', [
+        'as' => 'user.message',
+        'uses' => 'Dashboard\DashboardController@myMessage'
+    ])->middleware('checkAuth');
+
+    Route::get('/my-coin-transactions', [
+        'as' => 'user.coin-transactions',
+        'uses' => 'Dashboard\DashboardController@myCoinTransactions'
+    ])->middleware('checkAuth');
+
+    Route::get('/my-card-transactions', [
+        'as' => 'user.card-transactions',
+        'uses' => 'Dashboard\DashboardController@myCardTransactions'
+    ])->middleware('checkAuth');
