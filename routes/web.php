@@ -105,6 +105,11 @@ use Illuminate\Support\Facades\Route;
         'uses' => 'Dashboard\DashboardController@myMessage'
     ])->middleware('checkAuth');
 
+    Route::post('/user-send-chat', [
+        'as' => 'user.send-chat',
+        'uses' => 'Dashboard\DashboardController@sendChat'
+    ])->middleware('checkAuth');
+
     Route::get('/my-coin-transactions', [
         'as' => 'user.coin-transactions',
         'uses' => 'Dashboard\DashboardController@myCoinTransactions'
@@ -113,4 +118,14 @@ use Illuminate\Support\Facades\Route;
     Route::get('/my-card-transactions', [
         'as' => 'user.card-transactions',
         'uses' => 'Dashboard\DashboardController@myCardTransactions'
+    ])->middleware('checkAuth');
+
+    Route::get('/user-approve-transaction/{token}', [
+        'as' => 'user.approve-transaction',
+        'uses' => 'Dashboard\DashboardController@userApprovalTransaction'
+    ])->middleware('checkAuth');
+
+    Route::get('/user-cancel-transaction/{token}', [
+        'as' => 'user.cancel-transaction',
+        'uses' => 'Dashboard\DashboardController@userCancelTransaction'
     ])->middleware('checkAuth');

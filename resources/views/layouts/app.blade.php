@@ -27,6 +27,12 @@
             ga('create', 'UA-91615293-2', 'auto');
             ga('send', 'pageview');
         </script>
+        <style type="text/css">
+            .page-item.active .page-link{
+                background-color:#f7921a!important;
+                border-color:#f7921a!important;
+            }
+        </style>
     </head>
     <body>
         @include('includes.header')

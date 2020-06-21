@@ -11,13 +11,16 @@ class CoinSelling extends Model
         , 'user_id', 'token', 'coin_id', 'payment_type', 'amount_payable'
     ];
 
-      public function platform(){
+    public function platform(){
         return  $this->belongsTo(Platform::class);
     }
-      public function coinRate(){
+    public function coinRate(){
         return  $this->belongsTo(CoinRate::class);
     }
-      public function user(){
+    public function coin(){
+        return  $this->belongsTo(Coin::class);
+    }
+    public function user(){
         return  $this->belongsTo(User::class);
     }
 

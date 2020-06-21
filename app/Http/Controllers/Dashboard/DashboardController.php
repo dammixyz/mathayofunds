@@ -3,6 +3,12 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\AccountDetail;
+use App\CardRate;
+use App\CardSelling;
+use App\Chat;
+use App\CoinBuying;
+use App\CoinRate;
+use App\CoinSelling;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
@@ -12,7 +18,17 @@ use Illuminate\Support\Str;
 class DashboardController extends Controller
 {
     public function Dashboard(){
-        return view('actions.dashboard');
+        $coin_sellings = CoinSelling::where('user_id', Auth::user()->id)->get();
+        $coin_selling_transactions = CoinSelling::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->take(3)->get();
+        $coin_buyings_transactions = CoinBuying::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->take(3)->get();
+        $card_selling_transactions = CardSelling::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->take(6)->get();
+        $coin_buyings = CoinBuying::where('user_id', Auth::user()->id)->get();
+        $cards = CardSelling::where('user_id', Auth::user()->id)->get();
+        $coin_rates = CoinRate::get();
+        $some_card_rates = CardRate::inRandomOrder()->take(4)->get();
+        return view('actions.dashboard', compact('coin_buyings', 'coin_sellings',
+            'cards', 'coin_rates', 'some_card_rates',
+            'coin_buyings_transactions', 'coin_selling_transactions', 'card_selling_transactions'));
     }
 
     public function Profile(){
@@ -79,7 +95,60 @@ class DashboardController extends Controller
     }
 
     public function myMessage(){
-        return view('actions.my-message');
+        $chats = Chat::where('user_id',Auth::user()->id)->orderBy('id', 'desc')->paginate(3);
+        return view('actions.my-message', compact('chats'));
+    }
+
+    public function sendChat(Request $request){
+        $this->validate($request, [
+           'message' => 'bail|required'
+        ]);
+        try {
+            $new_chat = new Chat();
+            $new_chat->user_id = Auth::user()->id;
+            $new_chat->title = Str::limit($request->message,90, "...");
+            $new_chat->body = $request->message;
+            $new_chat->sender = 0;
+            $new_chat->save();
+            return redirect()->back()->with('success','Message Successfully Sent');
+        }
+        catch (\Exception $exception){
+            return redirect()->back()->with('failure','Message Could not be Sent');
+        }
+    }
+
+    public function userApprovalTransaction($token){
+        try {
+            $card_sellings = CardSelling::where('token', $token)->first();
+            if ($card_sellings && $card_sellings->amount_payable != 0){
+                $card_sellings->user_tansaction_approval = 1;
+                $card_sellings->save();
+                return redirect()->back()->with('success', "Transaction Details Successfully Updated");
+            }
+            else{
+                return redirect()->back()->with('failure', "This Transaction Does Not Exist");
+            }
+        }
+        catch(\Exception $exception){
+            return redirect()->back()->with('failure', "Error Occur in Processing this Action");
+        }
+    }
+
+    public function userCancelTransaction($token){
+        try {
+            $card_sellings = CardSelling::where('token', $token)->first();
+            if ($card_sellings && $card_sellings->amount_payable != 0){
+                $card_sellings->user_tansaction_approval = 2;
+                $card_sellings->save();
+                return redirect()->back()->with('success', "Transaction Details Successfully Updated");
+            }
+            else{
+                return redirect()->back()->with('failure', "This Transaction Does Not Exist");
+            }
+        }
+        catch(\Exception $exception){
+            return redirect()->back()->with('failure', "Error Occur in Processing this Action");
+        }
     }
 
     public function myCoinTransactions(){

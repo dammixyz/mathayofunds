@@ -9,17 +9,16 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-6 res-m-bttm">
                             <div class="pricing-box highlited light ucap shadow">
-                                <span class="pricing-title">Total Transactions</span>
+                                <span class="pricing-title">My Wallet</span>
                                 <span class="pricing-sap mt-10"></span>
-                                <span class="pricing-price">200</span>
-                                <a href="#" class="btn btn-xs btn-outline btn-alt">View Details</a>
+                                <span class="pricing-price">N {{number_format(Auth::user()->account_balance)}}</span>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 res-m-bttm">
                             <div class="pricing-box ucap shadow">
                                 <span class="pricing-title">Coin Trades</span>
                                 <span class="pricing-sap mt-10"></span>
-                                <span class="pricing-price">120</span>
+                                <span class="pricing-price">{{count($coin_sellings) + count($coin_buyings)}}</span>
                                 <a href="#" class="btn btn-xs btn-outline btn-color">View Details</a>
                             </div>
                         </div>
@@ -27,7 +26,7 @@
                             <div class="pricing-box ucap shadow">
                                 <span class="pricing-title">Gift Card Trades</span>
                                 <span class="pricing-sap mt-10"></span>
-                                <span class="pricing-price">60</span>
+                                <span class="pricing-price">{{count($cards)}}</span>
                                 <a href="#" class="btn btn-xs btn-outline btn-color">View Details</a>
                             </div>
                         </div>
@@ -47,132 +46,111 @@
                                                 <table class="table table-hover">
                                                     <thead>
                                                     <tr>
-                                                        <th scope="col">S/N</th>
-                                                        <th scope="col">Date</th>
                                                         <th scope="col">Type</th>
-                                                        <th scope="col">Asset</th>
-                                                        <th scope="col">You Bought/Sold</th>
+                                                        <th scope="col">Country</th>
+                                                        <th scope="col">Rate</th>
+                                                        <th scope="col">Payable</th>
+                                                        <th scope="col">Option</th>
+                                                        <th scope="col">user Approval</th>
                                                         <th scope="col">Status</th>
                                                         <th scope="col">Action(s)</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Ethereum</td>
-                                                        <td>Sold</td>
-                                                        <td>
-                                                            <div class="badge" style="background-color: orange">Pending
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <a href="#" id="upload-1" data-toggle="tooltip"
-                                                               data-placement="bottom"
-                                                               title="View Your Uploaded Gift Card(s) and Receipt(s)"><i
-                                                                    class="fa fa-picture-o fa-lg"
-                                                                    style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-1" data-toggle="tooltip"
-                                                               data-placement="bottom" title="View Our Payment Proof"><i
-                                                                    class="fa fa-picture-o fa-lg " style="color: mediumblue"
-                                                                    data-toggle="modal"
-                                                                    data-target="#adminPaymentProofCard"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Gift Card</td>
-                                                        <td>Amazon</td>
-                                                        <td>Sold</td>
-                                                        <td>
-                                                            <div class="badge" style="background-color: green">Completed
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <a href="#" id="upload-2" data-toggle="tooltip"
-                                                               data-placement="bottom"
-                                                               title="View Your Uploaded Gift Card(s) and Receipt(s)"><i
-                                                                    class="fa fa-picture-o fa-lg"
-                                                                    style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-2" data-toggle="tooltip"
-                                                               data-placement="bottom" title="View Our Payment Proof"><i
-                                                                    class="fa fa-picture-o fa-lg " style="color: mediumblue"
-                                                                    data-toggle="modal"
-                                                                    data-target="#adminPaymentProofCard"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Bought</td>
-                                                        <td>
-                                                            <div class="badge" style="background-color: orangered">
-                                                                Canceled
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <a href="#" id="upload-3" data-toggle="tooltip"
-                                                               data-placement="bottom"
-                                                               title="View Your Uploaded Gift Card(s) and Receipt(s)"><i
-                                                                    class="fa fa-picture-o fa-lg"
-                                                                    style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-3" data-toggle="tooltip"
-                                                               data-placement="bottom" title="View Our Payment Proof"><i
-                                                                    class="fa fa-picture-o fa-lg " style="color: mediumblue"
-                                                                    data-toggle="modal"
-                                                                    data-target="#adminPaymentProofCard"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td>
-                                                            <div class="badge" style="background-color: green">Completed
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <a href="#" id="upload-4" data-toggle="tooltip"
-                                                               data-placement="bottom"
-                                                               title="View Your Uploaded Gift Card(s) and Receipt(s)"><i
-                                                                    class="fa fa-picture-o fa-lg"
-                                                                    style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-4" data-toggle="tooltip"
-                                                               data-placement="bottom" title="View Our Payment Proof"><i
-                                                                    class="fa fa-picture-o fa-lg " style="color: mediumblue"
-                                                                    data-toggle="modal"
-                                                                    data-target="#adminPaymentProofCard"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">5</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td>
-                                                            <div class="badge" style="background-color: green">Completed
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <a href="#" id="upload-5" data-toggle="tooltip"
-                                                               data-placement="bottom"
-                                                               title="View Your Uploaded Gift Card(s) and Receipt(s)"><i
-                                                                    class="fa fa-picture-o fa-lg"
-                                                                    style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-5" data-toggle="tooltip"
-                                                               data-placement="bottom" title="View Our Payment Proof"><i
-                                                                    class="fa fa-picture-o fa-lg " style="color: mediumblue"
-                                                                    data-toggle="modal"
-                                                                    data-target="#adminPaymentProofCard"></i>*</a>
-                                                        </td>
-                                                    </tr>
+                                                    @foreach($card_selling_transactions as $key =>  $card_selling)
+                                                        <tr>
+                                                            <th>{{$card_selling->card->name}}</th>
+                                                            <td>
+                                                                @if($card_selling->country_id != null)
+                                                                    {{$card_selling->country->name}}
+                                                                @else
+                                                                    {{$card_selling->other_county}}
+                                                                @endif
+                                                            </td>
+                                                            <td>
+                                                                @if($card_selling->rate != null)
+                                                                    {{$card_selling->rate}}
+                                                                @else
+                                                                    pending
+                                                                @endif
+                                                            </td>
+                                                            <td>
+                                                                @if($card_selling->amount_payable != null)
+                                                                    {{$card_selling->amount_payable}}
+                                                                @else
+                                                                    pending
+                                                                @endif
+                                                            </td>
+                                                            <td>
+                                                                @if($card_selling->sell_option_id == 1)
+                                                                    E-code
+                                                                @else
+                                                                    Card Upload
+                                                                @endif
+                                                            </td>
+                                                            <td>
+                                                                @if($card_selling->user_transaction_approval == 1)
+                                                                    Approved
+                                                                @else
+                                                                    Pending
+                                                                @endif
+                                                            </td>
+                                                            <td>
+                                                                @if($card_selling->status == 0)
+                                                                    <div class="badge" style="background-color: orange">Pending
+                                                                    </div>
+                                                                @elseif($card_selling->status == 1)
+                                                                    <div class="badge" style="background-color: green">Completed
+                                                                    </div>
+                                                                @else
+                                                                    <div class="badge" style="background-color: red">Canceled
+                                                                    </div>
+                                                                @endif
+                                                            </td>
+                                                            <td>
+                                                                @if($card_selling->user_transaction_approval == 0)
+                                                                    @if($card_selling->amount_payable != null)
+                                                                        <a href="{{route('user.approve-transaction', ['token' => $card_selling->token])}}" id="upload-1" data-toggle="tooltip"
+                                                                           data-placement="bottom"
+                                                                           title="Accept Transaction"><i
+                                                                                class="fa fa-check fa-lg"
+                                                                                style="color: green"></i>
+                                                                        </a>
+                                                                        <a href="{{route('user.cancel-transaction', ['token' => $card_selling->token])}}" id="upload-1" data-toggle="tooltip"
+                                                                           data-placement="bottom"
+                                                                           title="Accept Transaction"><i
+                                                                                class="fa fa-times fa-lg"
+                                                                                style="color: red"></i>
+                                                                        </a>
+                                                                    @else
+                                                                        No Action
+                                                                    @endif
+                                                                @else
+                                                                    @if($card_selling->sell_option_id == 1)
+                                                                        <a href="#" id="upload-1" data-toggle="modal"
+                                                                           data-placement="bottom"
+                                                                           data-target="#view-ecode-{{$key}}"
+                                                                           title="View Your E-code"><i
+                                                                                class="fa fa-eye fa-lg"
+                                                                                style="color: mediumblue "></i>
+                                                                        </a> <b>/</b>
+                                                                    @else
+                                                                    <a href="#" id="upload-1" data-toggle="tooltip"
+                                                                       data-placement="bottom"
+                                                                       title="View Your Uploaded Gift Card(s) and Receipt(s)"><i
+                                                                            class="fa fa-picture-o fa-lg"
+                                                                            style="color: mediumblue"></i>
+                                                                    </a> <b>/</b>
+                                                                    @endif
+                                                                    <a href="#" id="proof-1" data-toggle="tooltip"
+                                                                       data-placement="bottom" title="View Our Payment Proof"><i
+                                                                            class="fa fa-picture-o fa-lg " style="color: mediumblue"
+                                                                            data-toggle="modal"
+                                                                            data-target="#admin-card-payment-proof-{{$key}}"></i>*</a>
+                                                                @endif
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -198,137 +176,87 @@
                                                 <table class="table table-hover">
                                                     <thead>
                                                     <tr>
-                                                        <th scope="col">S/N</th>
-                                                        <th scope="col">Date</th>
                                                         <th scope="col">Type</th>
-                                                        <th scope="col">Asset</th>
-                                                        <th scope="col">You Bought/Sold</th>
+                                                        <th scope="col">Bought/Sold</th>
+                                                        <th scope="col">Amount($)</th>
+                                                        <th scope="col">Rate</th>
+                                                        <th scope="col">Payable</th>
                                                         <th scope="col">Status</th>
+                                                        <th scope="col">Date</th>
                                                         <th scope="col">Action(s)</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Ethereum</td>
-                                                        <td>Sold</td>
-                                                        <td>
-                                                            <div class="badge" style="background-color: orange">Pending
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <a href="#" id="upload-6" data-toggle="tooltip"
-                                                               data-placement="bottom"
-                                                               title="View Your Uploaded Payment Proof/Transfer Snapshot"><i
-                                                                    class="fa fa-picture-o fa-lg" style="color: mediumblue"
-                                                                    data-toggle="modal"
-                                                                    data-target="#paymentTransferProof"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-6" data-toggle="tooltip"
-                                                               data-placement="bottom" title="View Our Payment Proof"><i
-                                                                    class="fa fa-picture-o fa-lg " style="color: mediumblue"
-                                                                    data-toggle="modal"
-                                                                    data-target="#adminPaymentProofCoin"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Gift Card</td>
-                                                        <td>Amazon</td>
-                                                        <td>Sold</td>
-                                                        <td>
-                                                            <div class="badge" style="background-color: green">Completed
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <a href="#" id="upload-7" data-toggle="tooltip"
-                                                               data-placement="bottom"
-                                                               title="View Your Uploaded Payment Proof/Transfer Snapshot"><i
-                                                                    class="fa fa-picture-o fa-lg" style="color: mediumblue"
-                                                                    data-toggle="modal"
-                                                                    data-target="#paymentTransferProof"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-7" data-toggle="tooltip"
-                                                               data-placement="bottom" title="View Our Payment Proof"><i
-                                                                    class="fa fa-picture-o fa-lg " style="color: mediumblue"
-                                                                    data-toggle="modal"
-                                                                    data-target="#adminPaymentProofCoin"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Bought</td>
-                                                        <td>
-                                                            <div class="badge" style="background-color: orangered">
-                                                                Canceled
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <a href="#" id="upload-8" data-toggle="tooltip"
-                                                               data-placement="bottom"
-                                                               title="View Your Uploaded Payment Proof/Transfer Snapshot"><i
-                                                                    class="fa fa-picture-o fa-lg" style="color: mediumblue"
-                                                                    data-toggle="modal"
-                                                                    data-target="#paymentTransferProof"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-8" data-toggle="tooltip"
-                                                               data-placement="bottom" title="View Our Payment Proof"><i
-                                                                    class="fa fa-picture-o fa-lg " style="color: mediumblue"
-                                                                    data-toggle="modal"
-                                                                    data-target="#adminPaymentProofCoin"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td>
-                                                            <div class="badge" style="background-color: green">Completed
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"
-                                                               data-placement="bottom"
-                                                               title="View Your Uploaded Payment Proof/Transfer Snapshot"><i
-                                                                    class="fa fa-picture-o fa-lg" style="color: mediumblue"
-                                                                    data-toggle="modal"
-                                                                    data-target="#paymentTransferProof"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"
-                                                               data-placement="bottom" title="View Our Payment Proof"><i
-                                                                    class="fa fa-picture-o fa-lg " style="color: mediumblue"
-                                                                    data-toggle="modal"
-                                                                    data-target="#adminPaymentProofCoin"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">5</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Gift Card</td>
-                                                        <td>iTunes</td>
-                                                        <td>Sold</td>
-                                                        <td>
-                                                            <div class="badge" style="background-color: orange">Pending
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <a href="#" id="upload-10" data-toggle="tooltip"
-                                                               data-placement="bottom"
-                                                               title="View Your Uploaded Payment Proof/Transfer Snapshot"><i
-                                                                    class="fa fa-picture-o fa-lg" style="color: mediumblue"
-                                                                    data-toggle="modal"
-                                                                    data-target="#paymentTransferProof"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-10" data-toggle="tooltip"
-                                                               data-placement="bottom" title="View Our Payment Proof"><i
-                                                                    class="fa fa-picture-o fa-lg " style="color: mediumblue"
-                                                                    data-toggle="modal"
-                                                                    data-target="#adminPaymentProofCoin"></i>*</a>
-                                                        </td>
-                                                    </tr>
+                                                        @foreach($coin_selling_transactions as $key => $sellings)
+                                                            <tr>
+                                                                <td>{{$sellings->coin->name}}</td>
+                                                                <td>Sold</td>
+                                                                <td>{{$sellings->coin_amount}}</td>
+                                                                <td>{{$sellings->rate_amount}}</td>
+                                                                <td>{{$sellings->amount_payable}}</td>
+                                                                <td>
+                                                                    @if($sellings->status == 0)
+                                                                        <div class="badge" style="background-color: orange">Pending
+                                                                        </div>
+                                                                    @elseif($sellings->status == 1)
+                                                                        <div class="badge" style="background-color: green">Completed
+                                                                        </div>
+                                                                    @else
+                                                                        <div class="badge" style="background-color: red">Canceled
+                                                                        </div>
+                                                                    @endif
+                                                                </td>
+                                                                <td>{{$sellings->created_at}}</td>
+                                                                <td>
+                                                                    <a href="#" id="upload-6" data-toggle="tooltip"
+                                                                       data-placement="bottom"
+                                                                       title="View Your Uploaded Payment Proof/Transfer Snapshot"><i
+                                                                            class="fa fa-picture-o fa-lg" style="color: mediumblue"
+                                                                            data-toggle="modal"
+                                                                            data-target="#payment-coin-selling-proof-{{$key}}"></i></a> <b>/</b>
+                                                                    <a href="#" id="proof-6" data-toggle="tooltip"
+                                                                       data-placement="bottom" title="View Our Payment Proof"><i
+                                                                            class="fa fa-picture-o fa-lg " style="color: mediumblue"
+                                                                            data-toggle="modal"
+                                                                            data-target="#admin-coin-selling-proof-{{$key}}"></i>*</a>
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                        @foreach($coin_buyings_transactions as $buyings)
+                                                            <tr>
+                                                                <td>{{$buyings->coin->name}}</td>
+                                                                <td>Bought</td>
+                                                                <td>{{$buyings->amount}}</td>
+                                                                <td>{{$buyings->buying_rate}}</td>
+                                                                <td>{{$buyings->coin_value}}</td>
+                                                                <td>
+                                                                    @if($buyings->status == 0)
+                                                                        <div class="badge" style="background-color: orange">Pending
+                                                                        </div>
+                                                                    @elseif($buyings->status == 1)
+                                                                        <div class="badge" style="background-color: green">Completed
+                                                                        </div>
+                                                                    @else
+                                                                        <div class="badge" style="background-color: red">Canceled
+                                                                        </div>
+                                                                    @endif
+                                                                </td>
+                                                                <td>{{$buyings->created_at}}</td>
+                                                                <td>
+                                                                    <a href="#" id="upload-6" data-toggle="tooltip"
+                                                                       data-placement="bottom"
+                                                                       title="View Your Uploaded Payment Proof/Transfer Snapshot"><i
+                                                                            class="fa fa-picture-o fa-lg" style="color: mediumblue"
+                                                                            data-toggle="modal"
+                                                                            data-target="#payment-coin-buying-proof-{{$key}}"></i></a> <b>/</b>
+                                                                    <a href="#" id="proof-6" data-toggle="tooltip"
+                                                                       data-placement="bottom" title="View Our Payment Proof"><i
+                                                                            class="fa fa-picture-o fa-lg " style="color: mediumblue"
+                                                                            data-toggle="modal"
+                                                                            data-target="#admin-coin-buying-proof-{{$key}}"></i>*</a>
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -349,43 +277,19 @@
                                     <table class="table table-hover">
                                         <thead>
                                         <tr>
+                                            <th scope="col">Id</th>
                                             <th scope="col">Type</th>
-                                            <th scope="col">Range</th>
-                                            <th scope="col">Buy</th>
-                                            <th scope="col">Sell</th>
+                                            <th scope="col">Rate</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <th scope="row">BTC</th>
-                                            <td><b>$</b>0 - <b>$</b>100</td>
-                                            <td><b>$</b>1 - &#8358;460</td>
-                                            <td><b>$</b>1 - &#8358;459</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">ETH</th>
-                                            <td><b>$</b>0 - <b>$</b>100</td>
-                                            <td><b>$</b>1 - &#8358;460</td>
-                                            <td><b>$</b>1 - &#8358;459</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">BTC</th>
-                                            <td><b>$</b>0 - <b>$</b>100</td>
-                                            <td><b>$</b>1 - &#8358;460</td>
-                                            <td><b>$</b>1 - &#8358;459</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">ETH</th>
-                                            <td><b>$</b>0 - <b>$</b>100</td>
-                                            <td><b>$</b>1 - &#8358;460</td>
-                                            <td><b>$</b>1 - &#8358;459</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">ETH</th>
-                                            <td><b>$</b>0 - <b>$</b>100</td>
-                                            <td><b>$</b>1 - &#8358;460</td>
-                                            <td><b>$</b>1 - &#8358;459</td>
-                                        </tr>
+                                        @foreach($coin_rates as $rate)
+                                            <tr>
+                                                <th scope="row">{{$rate->id}}</th>
+                                                <th scope="row">{{$rate->coin->name}}</th>
+                                                <td>{{$rate->usd_rate}}</td>
+                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -401,42 +305,18 @@
                                         <thead>
                                         <tr>
                                             <th scope="col">Type</th>
-                                            <th scope="col">Range</th>
-                                            <th scope="col">Buy</th>
-                                            <th scope="col">Sell</th>
+                                            <th scope="col">Country</th>
+                                            <th scope="col">Rate</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <th scope="row">Amazon</th>
-                                            <td><b>$</b>25 - <b>$</b>100</td>
-                                            <td>N/A</td>
-                                            <td><b>$</b>1 - &#8358;459</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">iTunes</th>
-                                            <td><b>$</b>25 - <b>$</b>100</td>
-                                            <td>N/A</td>
-                                            <td><b>$</b>1 - &#8358;459</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">PS</th>
-                                            <td><b>$</b>25 - <b>$</b>100</td>
-                                            <td>N/A</td>
-                                            <td><b>$</b>1 - &#8358;459</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">PS</th>
-                                            <td><b>$</b>25 - <b>$</b>100</td>
-                                            <td>N/A</td>
-                                            <td><b>$</b>1 - &#8358;459</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Saphora</th>
-                                            <td><b>$</b>25 - <b>$</b>100</td>
-                                            <td>N/A</td>
-                                            <td><b>$</b>1 - &#8358;459</td>
-                                        </tr>
+                                        @foreach($some_card_rates as $card_rate)
+                                            <tr>
+                                                <th scope="row">{{$card_rate->card->name}}</th>
+                                                <td>{{$card_rate->country->name}}</td>
+                                                <td>{{$card_rate->rate}}</td>
+                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -449,56 +329,183 @@
             </div>
         </div>
     </div><!--End Features Box -->
-    <div class="modal" tabindex="-1" id="adminPaymentProofCoin" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="modal-title">Our Payment Proof</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+    @foreach($coin_selling_transactions as $key => $sellings)
+        <div class="modal" tabindex="-1" id="payment-coin-selling-proof-{{$key}}" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="modal-title">Your Proof of Payment</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                        <div class="modal-body">
+                            @if($sellings->payment_proof != null)
+                                <div class="form-field form-m-bttm">
+                                    <img src="{{asset('uploads/'.$sellings->payment_proof)}}" alt="">
+                                </div>
+                            @else
+                                <p>You havent uploaded any payment proof</p>
+                            @endif
+                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
                         </button>
                     </div>
                 </div>
-                <div class="modal-body">
-                    <div class="form-field form-m-bttm">
-                        <img src="{{asset('mathayo-profile.png')}}" alt="">
+            </div>
+        </div>
+    @endforeach
+    @foreach($coin_selling_transactions as $key => $sellings)
+        <div class="modal" tabindex="-1" id="admin-coin-selling-proof-{{$key}}" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="modal-title">Admin Proof of Payment</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
-                    </button>
+                        <div class="modal-body">
+                            @if($sellings->platform_payment_proof != null)
+                                <div class="form-field form-m-bttm">
+                                    <img src="{{asset('uploads/'.$sellings->platform_payment_proof)}}" alt="">
+                                </div>
+                            @else
+                                <p>No Payment Proof Has Been Uploaded Yet</p>
+                            @endif
+                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    @endforeach
+    @foreach($coin_buyings_transactions as $key => $buyings)
+        <div class="modal" tabindex="-1" id="payment-coin-buying-proof-{{$key}}" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="modal-title">Your Proof of Payment</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                        <div class="modal-body">
+                            @if($buyings->payment_proof != null)
+                                <div class="form-field form-m-bttm">
+                                    <img src="{{asset('uploads/'.$buyings->payment_proof)}}" alt="">
+                                </div>
+                            @else
+                                <p>You havent uploaded any payment proof</p>
+                            @endif
+                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+    @foreach($coin_buyings_transactions as $key => $buyings)
+        <div class="modal" tabindex="-1" id="admin-coin-buying-proof-{{$key}}" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="modal-title">Admin Proof of Payment</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                        <div class="modal-body">
+                            @if($buyings->platform_payment_proof != null)
+                                <div class="form-field form-m-bttm">
+                                    <img src="{{asset('uploads/'.$buyings->platform_payment_proof)}}" alt="">
+                                </div>
+                            @else
+                                <p>No Payment Proof Has Been Uploaded Yet</p>
+                            @endif
+                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 
 
     {{--User Payment/Transfer Proof For Coin Modal--}}
-    <div class="modal" tabindex="-1" id="paymentTransferProof" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="modal-title">Your Uploaded Payment/Transfer Snapshot</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="modal-body">
-                    <div class="form-field form-m-bttm">
-                        <img src="{{asset('mathayo.jpg')}}" alt="">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+   @foreach($card_selling_transactions as $key => $card_selling)
+       <div class="modal" tabindex="-1" id="view-ecode-{{$key}}" role="dialog">
+           <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                   <div class="modal-header">
+                       <div class="d-flex justify-content-between">
+                           <h5 class="modal-title">Your Uploaded Ecode</h5>
+                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                               <span aria-hidden="true">&times;</span>
+                           </button>
+                       </div>
+                   </div>
+                   <div class="modal-body">
+                       <div class="form-field form-m-bttm">
+                           @if($card_selling->sell_option_id == 1)
+                                 <p>{{$card_selling->ecodeTransactions->code}}</p>
+                           @endif
+                       </div>
+                   </div>
+                   <div class="modal-footer">
+                       <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
+                       </button>
+                   </div>
+               </div>
+           </div>
+       </div>
+   @endforeach
 
+    {{--User Payment/Transfer Proof For Coin Modal--}}
+   @foreach($card_selling_transactions as $key => $card_selling)
+       <div class="modal" tabindex="-1" id="admin-card-payment-proof-{{$key}}" role="dialog">
+           <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                   <div class="modal-header">
+                       <div class="d-flex justify-content-between">
+                           <h5 class="modal-title">Admin Payment Proof</h5>
+                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                               <span aria-hidden="true">&times;</span>
+                           </button>
+                       </div>
+                   </div>
+                   <div class="modal-body">
+                       <div class="form-field form-m-bttm">
+                           @if($card_selling->platform_payment_proof != null)
+                               <img src="{{asset('uploads/'.$card_selling->platform_payment_proof)}}" alt="">
+                           @else
+                               <p>No Payment Proof Uploaded Yet</p>
+                           @endif
+                       </div>
+                   </div>
+                   <div class="modal-footer">
+                       <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
+                       </button>
+                   </div>
+               </div>
+           </div>
+       </div>
+   @endforeach
 @endsection
 @section('script_contents')
     <script type="text/javascript">

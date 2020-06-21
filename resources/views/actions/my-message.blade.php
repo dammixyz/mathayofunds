@@ -27,50 +27,23 @@
                             <a href="#" data-toggle="modal" data-target="#sendMessageModal"><span><i class="fa fa-send"></i> &nbsp;</span><b>Send
                                     Message</b></a>
                         </div>
-                        <div class="box round" style="background: #fff1e0; margin-bottom: 16px;">
-                            <h6>Admin <span><p>1 minute</p></span></h6>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus error...
-                                <span><a href="#" class="" data-toggle="modal" data-target="#readMessageModal">Read Message</a></span>
-                            </p>
-                        </div>
-                        <div class="box round" style="background: #fff1e0; margin-bottom: 16px;">
-                            <h6>Admin <span><p>25 minutes ago</p></span></h6>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus error...
-                                <span><a href="#" class="" data-toggle="modal" data-target="#readMessageModal">Read Message</a></span>
-                            </p>
-                        </div>
-                        <div class="box round shadow-alt  mb-15">
-                            <h6>You (Sent to admin) <span><p>39 minutes ago</p></span></h6>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus error...
-                                <span><a href="#" class="" data-toggle="modal" data-target="#readMessageModal">Read Message</a></span>
-                            </p>
-                        </div>
-                        <div class="box round" style="background: #fff1e0; margin-bottom: 16px;">
-                            <h6>Admin <span><p>2 weeks ago</p></span></h6>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus error...
-                                <span><a href="#" class="" data-toggle="modal" data-target="#readMessageModal">Read Message</a></span>
-                            </p>
-                        </div>
-                        <div class="box round shadow-alt mb-15">
-                            <h6>You (Sent to admin) <span><p>1 month ago</p></span></h6>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus error...
-                                <span><a href="#" class="" data-toggle="modal" data-target="#readMessageModal">Read Message</a></span>
-                            </p>
-                        </div>
+                        @foreach($chats as $key => $chat)
+                            <div class="box round @if($chat->sender == 0) shadow-alt @endif" @if($chat->sender == 1)style="background: #fff1e0; margin-bottom: 16px;" @endif>
+                                <h6>@if($chat->sender == 0)You (Sent to admin) @else Admin @endif
+                                    <span>
+                                        <p>{{\Carbon\Carbon::parse($chat->created_at)->diffForHumans()}}</p>
+                                    </span>
+                                </h6>
+                                <p>
+                                    {{$chat->title}}
+                                    <span><a href="#" class="" data-toggle="modal" data-target="#readMessageModal-{{$key}}">Read Message</a></span>
+                                </p>
+                            </div>
+                        @endforeach
                         <div class="row text-center">
                             <div class="col-md-12">
                                 <ul class="pagination pagination-lg">
-                                    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#"><span class="fa fa-angle-right"></span></a></li>
+                                    {{$chats->links()}}
                                 </ul>
                             </div>
                         </div>
@@ -83,7 +56,8 @@
     <div class="modal" tabindex="-1" id="sendMessageModal" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form action="#">
+                <form action="{{route('user.send-chat')}}" method="post">
+                    @csrf
                     <div class="modal-header">
                         <div class="d-flex justify-content-between">
                             <h5 class="modal-title">Message</h5>
@@ -100,23 +74,23 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-xs btn-alt"><span><i class="fa fa-send"></i> &nbsp;</span><b>Send</b></button>
+                        <button type="submit" class="btn btn-xs btn-alt"><span><i class="fa fa-send"></i> &nbsp;</span><b>Send</b></button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
     {{--Read Meassage Modal--}}
-    <div class="modal fade" id="readMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    @foreach($chats as $key => $chat)
+        <div class="modal fade" id="readMessageModal-{{$key}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="d-flex justify-content-between">
                         <div class="">
 
-                            <h5 class="modal-title" style="color: #f7921a;">Admin: </h5><span><h6>Welcome to Mathayo Funds.
-                            Your No 1 Cryprocurrency Trading platform</h6></span>
-                            <p>1 minute ago</p>
+                            <h5 class="modal-title" style="color: #f7921a;"></h5><span><h6>{{$chat->title}}</h6></span>
+                            <p>{{\Carbon\Carbon::parse($chat->created_at)->diffForHumans()}}</p>
                         </div>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -124,13 +98,7 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deserunt dolores ea explicabo. Ad, cupiditate deserunt doloribus dolorum ea eveniet hic impedit molestias nam perspiciatis quaerat, quod sapiente velit veritatis.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deserunt dolores ea explicabo. Ad, cupiditate deserunt doloribus dolorum ea eveniet hic impedit molestias nam perspiciatis quaerat, quod sapiente velit veritatis.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deserunt dolores ea explicabo. Ad, cupiditate deserunt doloribus dolorum ea eveniet hic impedit molestias nam perspiciatis quaerat, quod sapiente velit veritatis.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deserunt dolores ea explicabo. Ad, cupiditate deserunt doloribus dolorum ea eveniet hic impedit molestias nam perspiciatis quaerat, quod sapiente velit veritatis.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deserunt dolores ea explicabo. Ad, cupiditate deserunt doloribus dolorum ea eveniet hic impedit molestias nam perspiciatis quaerat, quod sapiente velit veritatis.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deserunt dolores ea explicabo. Ad, cupiditate deserunt doloribus dolorum ea eveniet hic impedit molestias nam perspiciatis quaerat, quod sapiente velit veritatis.
-
+                    {{$chat->body}}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b></button>
@@ -138,7 +106,7 @@
             </div>
         </div>
     </div>
-
+    @endforeach
 @endsection
 @section('script_contents')
 
