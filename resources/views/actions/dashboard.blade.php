@@ -135,7 +135,7 @@
                                                                                 style="color: mediumblue "></i>
                                                                         </a> <b>/</b>
                                                                     @else
-                                                                    <a href="#" id="upload-1" data-toggle="tooltip"
+                                                                    <a href="{{route('view-uploaded-resources', ['token' => $card_selling->token])}}" id="upload-1" data-toggle="tooltip"
                                                                        data-placement="bottom"
                                                                        title="View Your Uploaded Gift Card(s) and Receipt(s)"><i
                                                                             class="fa fa-picture-o fa-lg"

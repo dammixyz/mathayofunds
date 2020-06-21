@@ -33,450 +33,87 @@
                                             <div class="table-responsive" >
                                                 <table class="table table-hover" id="coinTable">
                                                     <thead>
-                                                    <tr>
-                                                        <th scope="col">S/N</th>
-                                                        <th scope="col">Date</th>
-                                                        <th scope="col">Type</th>
-                                                        <th scope="col">Asset</th>
-                                                        <th scope="col">You Bought/Sold</th>
-                                                        <th scope="col">Status</th>
-                                                        <th scope="col">Action(s)</th>
-                                                    </tr>
+                                                        <tr>
+                                                            <th scope="col">Type</th>
+                                                            <th scope="col">Bought/Sold</th>
+                                                            <th scope="col">Amount($)</th>
+                                                            <th scope="col">Rate</th>
+                                                            <th scope="col">Payable</th>
+                                                            <th scope="col">Status</th>
+                                                            <th scope="col">Date</th>
+                                                            <th scope="col">Action(s)</th>
+                                                        </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Ethereum</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: orange">Pending</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-6" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-6" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Gift Card</td>
-                                                        <td>Amazon</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-7" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-7" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Bought</td>
-                                                        <td><div class="badge" style="background-color: orangered">Canceled</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-8" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-8" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Coin</td>
-                                                        <td>Bitcoin</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: green">Completed</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-9" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-9" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>May 21 2020, 15:30</td>
-                                                        <td>Gift Card</td>
-                                                        <td>iTunes</td>
-                                                        <td>Sold</td>
-                                                        <td><div class="badge" style="background-color: orange">Pending</div></td>
-                                                        <td>
-                                                            <a href="#" id="upload-10" data-toggle="tooltip"  data-placement="bottom" title="View Your Uploaded Gift Card(s) and Receipt(s)"><i class="fa fa-picture-o fa-lg" style="color: mediumblue"></i></a> <b>/</b>
-                                                            <a href="#" id="proof-10" data-toggle="tooltip"  data-placement="bottom" title="View Admin Payment Proof"><i class="fa fa-picture-o fa-lg " style="color: mediumblue"></i>*</a>
-                                                        </td>
-                                                    </tr>
+                                                     @foreach($transactions as $key => $transaction)
+                                                         @if($transaction->buying_rate != null)
+                                                             <tr>
+                                                                 <th>{{$transaction->coin->name}}</th>
+                                                                 <td>Bought</td>
+                                                                 <td>{{$transaction->amount}}</td>
+                                                                 <td>{{$transaction->buying_rate}}</td>
+                                                                 <td>{{$transaction->coin_value}}</td>
+                                                                 <td>
+                                                                     @if($transaction->status == 0)
+                                                                         <div class="badge" style="background-color: orange">Pending</div>
+                                                                     @elseif($transaction->status == 1)
+                                                                         <div class="badge" style="background-color: green">Completed</div>
+                                                                     @else
+                                                                         <div class="badge" style="background-color: red">Canceled</div>
+                                                                     @endif
+                                                                 </td>
+                                                                 <td>
+                                                                     {{$transaction->created_at}}
+                                                                 </td>
+                                                                 <td>
+                                                                     <a href="#" id="upload-6" data-toggle="tooltip"
+                                                                        data-placement="bottom"
+                                                                        title="View Your Uploaded Payment Proof/Transfer Snapshot"><i
+                                                                             class="fa fa-picture-o fa-lg" style="color: mediumblue"
+                                                                             data-toggle="modal"
+                                                                             data-target="#payment-coin-selling-proof-{{$key}}"></i></a> <b>/</b>
+                                                                     <a href="#" id="proof-6" data-toggle="tooltip"
+                                                                        data-placement="bottom" title="View Our Payment Proof"><i
+                                                                             class="fa fa-picture-o fa-lg " style="color: mediumblue"
+                                                                             data-toggle="modal"
+                                                                             data-target="#admin-coin-selling-proof-{{$key}}"></i>*</a>
+                                                                 </td>
+                                                             </tr>
+                                                         @else
+                                                             <tr>
+                                                                 <th>{{$transaction->coin->name}}</th>
+                                                                 <th>Sold</th>
+                                                                 <td>{{$transaction->coin_amount}}</td>
+                                                                 <td>{{$transaction->rate_amount}}</td>
+                                                                 <td>{{$transaction->amount_payable}}</td>
+                                                                 <td>
+                                                                     @if($transaction->status == 0)
+                                                                         <div class="badge" style="background-color: orange">Pending</div>
+                                                                     @elseif($transaction->status == 1)
+                                                                         <div class="badge" style="background-color: green">Completed</div>
+                                                                     @else
+                                                                         <div class="badge" style="background-color: red">Canceled</div>
+                                                                     @endif
+                                                                 </td>
+                                                                 <td>
+                                                                     {{$transaction->created_at}}
+                                                                 </td>
+                                                                 <td>
+                                                                     <a href="#" id="upload-6" data-toggle="tooltip"
+                                                                        data-placement="bottom"
+                                                                        title="View Your Uploaded Payment Proof/Transfer Snapshot"><i
+                                                                             class="fa fa-picture-o fa-lg" style="color: mediumblue"
+                                                                             data-toggle="modal"
+                                                                             data-target="#payment-coin-selling-proof-{{$key}}"></i></a> <b>/</b>
+                                                                     <a href="#" id="proof-6" data-toggle="tooltip"
+                                                                        data-placement="bottom" title="View Our Payment Proof"><i
+                                                                             class="fa fa-picture-o fa-lg " style="color: mediumblue"
+                                                                             data-toggle="modal"
+                                                                             data-target="#admin-coin-selling-proof-{{$key}}"></i>*</a>
+                                                                 </td>
+                                                             </tr>
+                                                         @endif
+                                                     @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -491,55 +128,90 @@
             </div>
         </div>
     </div><!--End Features Box -->
-    <div class="modal" tabindex="-1" id="adminPaymentProofCoin" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="modal-title">Our Payment Proof</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+    @foreach($transactions as $key => $transaction)
+        <div class="modal" tabindex="-1" id="payment-coin-selling-proof-{{$key}}" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="modal-title">Our Payment Proof</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-field form-m-bttm">
+                            @if($transaction->payment_proof != null)
+                                <img src="{{asset('uploads/'.$transaction->payment_proof)}}" alt="">
+                            @else
+                                <p>No Payment Proof Uploaded</p>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
                         </button>
                     </div>
                 </div>
-                <div class="modal-body">
-                    <div class="form-field form-m-bttm">
-                        <img src="{{asset('mathayo-profile.png')}}" alt="">
+            </div>
+        </div>
+    @endforeach
+    @foreach($transactions as $key => $transaction)
+        <div class="modal" tabindex="-1" id="admin-coin-selling-proof-{{$key}}" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="modal-title">Our Payment Proof</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
-                    </button>
+                    <div class="modal-body">
+                        <div class="form-field form-m-bttm">
+                            @if($transaction->platform_payment_proof != null)
+                                <img src="{{asset('uploads/'.$transaction->platform_payment_proof)}}" alt="">
+                            @else
+                                <p>No Payment Proof Uploaded Yet</p>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    @endforeach
 
     {{--User Payment/Transfer Proof For Coin Modal--}}
-    <div class="modal" tabindex="-1" id="paymentTransferProof" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="modal-title">Your Uploaded Payment/Transfer Snapshot</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+
+        <div class="modal" tabindex="-1" id="paymentTransferProof" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="modal-title">Your Uploaded Payment/Transfer Snapshot</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-field form-m-bttm">
+                            <img src="{{asset('mathayo.jpg')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
                         </button>
                     </div>
                 </div>
-                <div class="modal-body">
-                    <div class="form-field form-m-bttm">
-                        <img src="{{asset('mathayo.jpg')}}" alt="">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
-                    </button>
-                </div>
             </div>
         </div>
-    </div>
 
 @endsection
 @section('script_contents')
@@ -577,6 +249,7 @@
                 bInfo: true,
                 bAutoWidth: true,
                 pageLength : 15,
+                order:[[6,'desc']]
             });
             /*Remove the default search box*/
             $('#coinTable_filter').remove()

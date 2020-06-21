@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-    Route::get('/cards', function (){
-        return view('pages.trade-card');
+    Route::get('/view-page', function (){
+        return view('pages.card-receipt-upload');
     });
     Route::get('/', [
         'as' => 'homepage',
@@ -128,4 +128,9 @@ use Illuminate\Support\Facades\Route;
     Route::get('/user-cancel-transaction/{token}', [
         'as' => 'user.cancel-transaction',
         'uses' => 'Dashboard\DashboardController@userCancelTransaction'
+    ])->middleware('checkAuth');
+
+    Route::get('/view-uploaded-resources/{token}', [
+        'as' => 'view-uploaded-resources',
+        'uses' => 'Dashboard\DashboardController@viewUploadedResources'
     ])->middleware('checkAuth');

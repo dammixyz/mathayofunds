@@ -10,6 +10,7 @@ use App\CoinBuying;
 use App\CoinRate;
 use App\CoinSelling;
 use App\Http\Controllers\Controller;
+use App\ImageUpload;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -151,8 +152,22 @@ class DashboardController extends Controller
         }
     }
 
+    public function viewUploadedResources($token){
+        $upload = CardSelling::where(['token'=>$token, 'user_id' => Auth::user()->id])->first();
+        if ($upload){
+            $images = ImageUpload::where('card_selling_id', $upload->id)->get();
+            return view('actions.view-upload-cards', compact('images'));
+        }
+        else{
+            return redirect()->back()->with('failure', "Card Transaction Does not exist");
+        }
+    }
+
     public function myCoinTransactions(){
-        return view('actions.coin-transactions');
+        $coin_sellings_transactions = collect(CoinSelling::where('user_id', Auth::user()->id)->get());
+        $coin_buyings_transactions = collect(CoinBuying::where('user_id', Auth::user()->id)->get());
+        $transactions =$coin_buyings_transactions->merge($coin_sellings_transactions)->sortByDesc('created_at');
+        return view('actions.coin-transactions', compact('transactions'));
     }
 
     public function myCardTransactions(){
