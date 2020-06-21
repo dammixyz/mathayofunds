@@ -12,6 +12,9 @@ class Coin extends Model
     public function coinBuyings(){
         return  $this->hasMany(CoinBuying::class);
     }
+    public function coinSellings(){
+        return  $this->hasMany(CoinSelling::class);
+    }
     public function coinRates(){
         return  $this->hasMany(CoinRate::class);
     }

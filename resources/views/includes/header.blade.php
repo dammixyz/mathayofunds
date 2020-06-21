@@ -49,11 +49,11 @@
             <!-- MainNav -->
             <nav class="navbar-collapse collapse" id="mainnav">
                 <ul class="nav navbar-nav">
-                    <li><a href="buy-sell.html">Home</a></li>
+                    <li><a href="{{route('homepage')}}">Home</a></li>
                     <li><a href="{{route('user.trade-coin')}}">Trade Coins</a></li>
                     <li><a href="{{route('user.trade-card')}}">Trade Cards</a></li>
                     @if(Auth::check())
-                        <li><a href="#{{--{{route('login')}}--}}">Dashboard</a></li>
+                        <li><a href="{{route('user.dashboard')}}">Dashboard</a></li>
                     @endif
                     <li><a href="market-data.html">About Us</a></li>
                     <li><a href="market-data.html">FAQs</a></li>
