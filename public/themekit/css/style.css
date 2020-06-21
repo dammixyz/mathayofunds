@@ -4017,6 +4017,7 @@ PAGINATION AND LOAD MORE - CONTAINER
     margin: 0 10px;
 }
 
+
 .pagination.align-center {
     justify-content: center;
 }
@@ -5750,3 +5751,4 @@ Inverted responsive classes
         display: none;
     }
 }
+

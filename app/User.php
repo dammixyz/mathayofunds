@@ -54,7 +54,9 @@ class User extends Authenticatable
      public function coinSellings(){
         return  $this->hasMany(CoinSelling::class);
     }
-
+    public function chats(){
+        return $this->hasMany(User::class);
+    }
     public static function registerUser($request){
         $user = User::create([
             'email' => $request->email,

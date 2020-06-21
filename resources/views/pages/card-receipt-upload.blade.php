@@ -103,7 +103,6 @@
                     </li>
                     <li><a href="market-data.html">About Us</a></li>
                     <li><a href="contact.html">Rates</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle">Welcome, StuNNer <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="index-2.html"><span class="fa fa-user"></span> Account</a></li>
                             <li><a href="index-wallet.html"> <span class="fa fa-clock-o"></span> Transactions</a></li>
@@ -277,7 +276,6 @@
     <div class="container">
         <div class="row">
             <div class="site-copy col-sm-7">
-                <p>Copyright &copy; 2020 <a href="{{route('welcome')}}">Mathayo Funds </a>Cryptocurrency Trading Company
                 </p>
             </div>
             <div class="col-sm-5 text-right mobile-left">
