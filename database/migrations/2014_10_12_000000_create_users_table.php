@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('username')->unique();
             $table->integer('role_id');
-            $table->string('icon')->default('profile.png');
+            $table->string('icon')->default('mathayo-profile.png');
             $table->string('phone_number');
             $table->string('token')->default(Str::random(15));
             $table->timestamp('email_verified_at')->nullable();

@@ -1,7 +1,7 @@
 <div class="col-md-3 col-sm-6 res-m-bttm">
     <div class="pricing-box ucap shadow">
         <div class="box round no-pt">
-            <img src="{{asset('mathayo-profile.png')}}" alt="box-icon" class="box-icon">
+            <img src="{{asset('uploads/'.Auth::user()->icon)}}" alt="box-icon" class="box-icon">
             <h6 class="">Stunner</h6>
             <a href="#" class="btn btn-md btn-alt"><span><i
                         class="fa fa-dashboard"></i>&nbsp; Dashboard</span></a><br>

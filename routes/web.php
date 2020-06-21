@@ -90,6 +90,16 @@ use Illuminate\Support\Facades\Route;
         'uses' => 'Dashboard\DashboardController@Profile'
     ])->middleware('checkAuth');
 
+    Route::post('/user/update-bank-details', [
+        'as' => 'user.update-bank-details',
+        'uses' => 'Dashboard\DashboardController@updateBankDetails'
+    ])->middleware('checkAuth');
+
+    Route::post('/user/update-profile-details', [
+        'as' => 'user.update-profile-details',
+        'uses' => 'Dashboard\DashboardController@updateProfileDetails'
+    ])->middleware('checkAuth');
+
     Route::get('/my-messages', [
         'as' => 'user.message',
         'uses' => 'Dashboard\DashboardController@myMessage'

@@ -23,7 +23,8 @@
                                         <!-- Features Box -->
                                         <div class="features-box section section-pad pt-15">
                                             <div class="box round shadow-alt text-center">
-                                                <form action="#" method="post">
+                                                <form action="{{route('user.update-bank-details')}}" method="post">
+                                                    @csrf
                                                     <div class="row">
                                                         <div class="col-md-8 col-md-offset-2">
                                                             <h5 style="font-family: OpenSans; font-weight: bold">My Bank Details</h5>
@@ -31,21 +32,21 @@
                                                                 <div id="bank_details">
                                                                     <div class="form-field form-m-bttm">
                                                                         <label for="bank" class="text-sm">Bank Name</label>
-                                                                        <input name="bank" value="Guarantee Trust Bank"
+                                                                        <input name="bank" value="{{$account_details != null ? $account_details->bank : ""}}"
                                                                                class="form-control required" aria-required="true"
                                                                                type="text" required>
                                                                     </div>
                                                                     <div class="form-field form-m-bttm">
                                                                         <label for="account_no" class="text-sm">Bank Account
                                                                             Number</label>
-                                                                        <input name="account_no" value="0283929193"
+                                                                        <input name="account_no" value="{{$account_details != null ? $account_details->account_number: ""}}"
                                                                                class="form-control required" aria-required="true"
-                                                                               type="text" required>
+                                                                               type="number" required>
                                                                     </div>
                                                                     <div class="form-field form-m-bttm">
                                                                         <label for="full_name" class="text-sm">Full Name (As per
                                                                             bank)</label>
-                                                                        <input name="full_name" value="Stunner Stunner"
+                                                                        <input name="full_name" value="{{$account_details != null ? $account_details->name : ""}}"
                                                                                class="form-control required" aria-required="true"
                                                                                type="text" required>
                                                                     </div>
@@ -68,7 +69,8 @@
                                         <!-- Features Box -->
                                         <div class="features-box section section-pad pt-15">
                                             <div class="box round shadow-alt text-center">
-                                                <form action="#" method="post">
+                                                <form action="{{route('user.update-profile-details')}}" method="post" enctype="multipart/form-data">
+                                                    @csrf
                                                     <div class="row">
                                                         <div class="col-md-8 col-md-offset-2">
                                                             <h5 style="font-family: OpenSans; font-weight: bold">My Profile</h5>
@@ -101,19 +103,19 @@
                                                                     </div>
                                                                     <div class="form-field form-m-bttm">
                                                                         <label for="username" class="text-sm">Username</label>
-                                                                        <input name="username" value="StuNNer"
+                                                                        <input name="username" value="{{Auth::user()->username}}"
                                                                                class="form-control required" aria-required="true"
                                                                                type="text" disabled required>
                                                                     </div>
                                                                     <div class="form-field form-m-bttm">
                                                                         <label for="email" class="text-sm">E-Mail</label>
-                                                                        <input name="email" value="stunner@gmail.com"
+                                                                        <input name="email" value="{{Auth::user()->email}}"
                                                                                class="form-control required" aria-required="true"
                                                                                type="text" disabled required>
                                                                     </div>
                                                                     <div class="form-field form-m-bttm">
                                                                         <label for="phone_number" class="text-sm">Phone Number</label>
-                                                                        <input name="phone_number" value="0813929958"
+                                                                        <input name="phone_number" value="{{Auth::user()->phone_number}}"
                                                                                class="form-control required" aria-required="true"
                                                                                type="text" required>
                                                                     </div>
