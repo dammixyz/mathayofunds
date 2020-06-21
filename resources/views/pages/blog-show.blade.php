@@ -120,77 +120,54 @@
 <!-- End Header -->
 
 
-<!-- View Cards AND Receipts -->
-<div class="features-box section section-pad no-pt no-pb" style="margin-top: 12px;">
+<!--Section -->
+<div class="section section-pad no-mt pt-20 pb-20">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-sm-6 res-m-bttm">
-                <div class="pricing-box ucap shadow">
-                    <div class="box round no-pt">
-                        <img src="{{asset('mathayo-profile.png')}}" alt="box-icon" class="box-icon">
-                        <h6 class="">Stunner</h6>
-                        <p style="color: #f7921a"><b>Wallet: &#8358;30,000</b></p>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-dashboard"></i>&nbsp; Dashboard</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-credit-card"></i>&nbsp; Card Trades</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fas fa-coins"></i>&nbsp; Coin Trades</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-user"></i>&nbsp; Profile</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-envelope"></i>&nbsp; Messages</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-money"></i>&nbsp; Withdrawal</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-power-off"></i>&nbsp; Logout</span></a><br>
+            <div class="col-md-12">
+                <h2>Blog<span> Post</span></h2>
+                <div class="post post-single">
+                    <h3>Working Hard to Keep Pace with very height Demand</h3>
+                    <div class="post-meta">
+                        <span class="pub-date"><em class="fa fa-user" aria-hidden="true"></em> Posted by Admin </span><br>
+                        <span class="pub-date"><em class="fa fa-calendar" aria-hidden="true"></em> 26, Nov 2016 </span>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-9 col-sm-6 res-m-bttm">
-                <div class="row text-center">
-                    <h4>Gift Cards</h4>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard3.png')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCard">View Card </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard1.png')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCard">View Card </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard5.jpg')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCard">View Card </a>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="row text-center mb-15">
-                    <h4>Receipts</h4>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard1.png')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCardReceipt">View Receipt </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard2.png')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCardReceipt">View Receipt </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard3.png')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCardReceipt">View Receipt </a>
+                    <div class="row d-flex justify-content-center mb-15">
+                        <div class="col-md-8">
+                            <div class="box-image">
+                                <img alt="" src="images/post-large-a.jpg">
+                            </div>
                         </div>
                     </div>
 
+                    <div class="post-entry">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Eius aeque complectitur
+                            no eum, propriae liberavisse usu ad. Partem denique repudiandae id has, in probo scripta pri,
+                            eam an justo corpora. Vidisse epicuri eu eos, equidem intellegam usu ea. Ei sea vidit percipit,
+                            quo ne quodsi percipit, eum te mediocrem appellantur.</p>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Eius aeque complectitur
+                            no eum, propriae liberavisse usu ad. Partem denique repudiandae id has, in probo scripta pri,
+                            eam an justo corpora. Vidisse epicuri eu eos, equidem intellegam usu ea. Ei sea vidit percipit,
+                            quo ne quodsi percipit, eum te mediocrem appellantur.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Eius aeque complectitur
+                            no eum, propriae liberavisse usu ad. Partem denique repudiandae id has, in probo scripta pri,
+                            eam an justo corpora. Vidisse epicuri eu eos, equidem intellegam usu ea. Ei sea vidit percipit,
+                            quo ne quodsi percipit, eum te mediocrem appellantur.</p>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
-</div><!--End Features Box -->
-
+</div>
+<!--End Section -->
 
 <!-- Section Footer -->
 <div class="footer-section section section-pad-md light bg-footer">
@@ -298,13 +275,42 @@
     <div id="status">&nbsp;</div>
 </div>
 
-{{--View Gift Card--}}
-<div class="modal" tabindex="-1" id="viewGiftCard" role="dialog">
+{{--Leave A Review Modal--}}
+<div class="modal" tabindex="-1" id="leaveReview" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="#">
+                <div class="modal-header">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="modal-title">Your Review</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <b class="text-info"><span class="fa fa-info"></span> &nbsp; Notice:: Your review may be used for promotional purposes</b>
+                </div>
+                <div class="modal-body">
+                    <div class="form-field form-m-bttm">
+                    <textarea name="message" cols="10" rows="8" style="resize: none" placeholder="Share your experience with us so far."
+                              class="form-control required" aria-required="true"
+                              type="text" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-xs btn-alt"><span><i class="fa fa-send"></i> &nbsp;</span><b>Send</b></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{--Admin Payment Proof For Card Modal--}}
+<div class="modal" tabindex="-1" id="adminPaymentProofCard" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="d-flex justify-content-between">
-                    <h5 class="modal-title">Your Uploaded Gift Card</h5>
+                    <h5 class="modal-title">Our Payment Proof</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -312,7 +318,7 @@
             </div>
             <div class="modal-body">
                 <div class="form-field form-m-bttm">
-                    <img src="{{asset('giftcard1.png')}}" alt="">
+                    <img src="{{asset('qrcode.png')}}" alt="">
                 </div>
             </div>
             <div class="modal-footer">
@@ -324,13 +330,13 @@
 </div>
 
 
-{{--View Gift Card Receipt--}}
-<div class="modal" tabindex="-1" id="viewGiftCardReceipt" role="dialog">
+{{--Admin Payment Proof For Coin Modal--}}
+<div class="modal" tabindex="-1" id="adminPaymentProofCoin" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="d-flex justify-content-between">
-                    <h5 class="modal-title">Your Uploaded Gift Card's Receipt</h5>
+                    <h5 class="modal-title">Our Payment Proof</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -338,7 +344,7 @@
             </div>
             <div class="modal-body">
                 <div class="form-field form-m-bttm">
-                    <img src="{{asset('giftcard3.png')}}" alt="">
+                    <img src="{{asset('mathayo-profile.png')}}" alt="">
                 </div>
             </div>
             <div class="modal-footer">

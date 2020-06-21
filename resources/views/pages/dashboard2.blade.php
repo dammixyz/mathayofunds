@@ -129,14 +129,14 @@
                     <div class="box round no-pt">
                         <img src="{{asset('mathayo-profile.png')}}" alt="box-icon" class="box-icon">
                         <h6 class="">Stunner</h6>
-                        <a href="#" class="btn btn-md btn-alt"><span><i
-                                    class="fa fa-dashboard"></i>&nbsp; Dashboard</span></a><br>
+                        <p style="color: #f7921a"><b>Wallet: &#8358;30,000</b></p>
+                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-dashboard"></i>&nbsp; Dashboard</span></a><br>
                         <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-credit-card"></i>&nbsp; Card Trades</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i
-                                    class="fas fa-coins"></i>&nbsp; Coin Trades</span></a><br>
+                        <a href="#" class="btn btn-md btn-alt"><span><i class="fas fa-coins"></i>&nbsp; Coin Trades</span></a><br>
                         <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-user"></i>&nbsp; Profile</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i
-                                    class="fa fa-envelope"></i>&nbsp; Messages</span></a><br>
+                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-envelope"></i>&nbsp; Messages</span></a><br>
+                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-money"></i>&nbsp; Withdrawal</span></a><br>
+                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-power-off"></i>&nbsp; Logout</span></a><br>
                     </div>
                 </div>
             </div>
@@ -174,7 +174,10 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="box round shadow-alt mb-15">
-                                        <h6 class="ucap">Latest Card Trades</h6>
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="ucap">Latest Card Trades</h6>
+                                            <a href="#" data-toggle="modal" data-target="#leaveReview"><span><i class="fa fa-commenting"></i> &nbsp;</span><b>Leave a Review</b></a>
+                                        </div>
                                         <p class="small">Here are the list of your five(5) latest card transactions with
                                             us.
                                             Check Card Trade to view all your card trades</p>
@@ -325,7 +328,10 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="box round shadow-alt mb-15">
-                                        <h6 class="ucap">Latest Coin Trades</h6>
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="ucap">Latest Coin Trades</h6>
+                                            <a href="#" data-toggle="modal" data-target="#leaveReview"><span><i class="fa fa-commenting"></i> &nbsp;</span><b>Leave a Review</b></a>
+                                        </div>
                                         <p class="small">Here are the list of your five(5) latest coin transactions with
                                             us.
                                             Check coin trade to view all your coin trades</p>
@@ -690,6 +696,35 @@
 <!-- Preloader !remove please if you do not want -->
 <div id="preloader">
     <div id="status">&nbsp;</div>
+</div>
+
+{{--Leave A Review Modal--}}
+<div class="modal" tabindex="-1" id="leaveReview" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="#">
+                <div class="modal-header">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="modal-title">Your Review</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <b class="text-info"><span class="fa fa-info"></span> &nbsp; Notice:: Your review may be used for promotional purposes</b>
+                </div>
+                <div class="modal-body">
+                    <div class="form-field form-m-bttm">
+                    <textarea name="message" cols="10" rows="8" style="resize: none" placeholder="Share your experience with us so far."
+                              class="form-control required" aria-required="true"
+                              type="text" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-xs btn-alt"><span><i class="fa fa-send"></i> &nbsp;</span><b>Send</b></button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 {{--Admin Payment Proof For Card Modal--}}

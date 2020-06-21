@@ -123,15 +123,18 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-6 res-m-bttm">
-                <div class="pricing-box ucap shadow">
+                <div class="pricing-box shadow">
                     <div class="box round no-pt">
                         <img src="{{asset('mathayo-profile.png')}}" alt="box-icon" class="box-icon">
                         <h6 class="">Stunner</h6>
+                        <p style="color: #f7921a"><b>Wallet: &#8358;30,000</b></p>
                         <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-dashboard"></i>&nbsp; Dashboard</span></a><br>
                         <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-credit-card"></i>&nbsp; Card Trades</span></a><br>
                         <a href="#" class="btn btn-md btn-alt"><span><i class="fas fa-coins"></i>&nbsp; Coin Trades</span></a><br>
                         <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-user"></i>&nbsp; Profile</span></a><br>
                         <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-envelope"></i>&nbsp; Messages</span></a><br>
+                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-money"></i>&nbsp; Withdrawal</span></a><br>
+                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-power-off"></i>&nbsp; Logout</span></a><br>
                     </div>
                 </div>
             </div>
@@ -140,91 +143,48 @@
                     <form action="#" method="post">
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2">
-                                <h5 style="font-family: OpenSans; font-weight: bold">My Profile</h5>
+                                <h5 style="font-family: OpenSans; font-weight: bold">Withdrawal</h5>
                                 <div class="clearfix">
-                                    <div id="user_details">
-                                        <div class="custom-file-container" data-upload-id="profilePicture">
-                                            <label for="profile_pic" class="text-sm"
-                                                   style="font-family: OpenSans, sans-serif; color: #373e45; margin-top: 20px"
-                                            >
-                                                Upload Your Image(Optional)
-                                                <a
-                                                    href="javascript:void(0)"
-                                                    class="custom-file-container__image-clear"
-                                                    id="close_image_preview-profile-pic"
-                                                    title="Clear Image"
-                                                    style="color: red"
-                                                >
-                                                    x
-                                                </a>
-                                            </label>
-                                            <label
-                                                class="custom-file-container__custom-file"
-                                                style="margin-bottom: 15px;"
-                                            >
-                                                <input type="file" name="profile_pic" class="custom-file-container__custom-file__custom-file-input" id="payment_proof-profile-pic" accept="image/*">
-                                                <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
-                                                <span class="custom-file-container__custom-file__custom-file-control" style="font-family: Quicksand, sans-serif;"></span>
-                                            </label>
-                                            <div class="custom-file-container__image-preview" id="profile-pic"></div>
-                                        </div>
+                                    <div id="withdrawal">
                                         <div class="form-field form-m-bttm">
-                                            <label for="username" class="text-sm">Username</label>
-                                            <input name="username" value="StuNNer"
+                                            <label for="withdrawal_amount" class="text-sm">How much would you like to withdraw?</label>
+                                            <input name="withdrawal_amount" id="withdrawal_amount"
                                                    class="form-control required" aria-required="true"
-                                                   type="text" disabled required>
-                                        </div>
-                                        <div class="form-field form-m-bttm">
-                                            <label for="email" class="text-sm">E-Mail</label>
-                                            <input name="email" value="stunner@gmail.com"
-                                                   class="form-control required" aria-required="true"
-                                                   type="text" disabled required>
-                                        </div>
-                                        <div class="form-field form-m-bttm">
-                                            <label for="phone_number" class="text-sm">Phone Number</label>
-                                            <input name="phone_number" value="0813929958"
-                                                   class="form-control required" aria-required="true"
-                                                   type="text" disabled required>
+                                                   placeholder="Enter Amount in naira"
+                                                   type="number" required>
                                         </div>
                                     </div>
                                 </div>
                                 <hr>
-                                <h5 style="font-family: OpenSans; font-weight: bold">My Wallet</h5>
-                                <div class="clearfix">
-                                    <div id="wallet_balance" class="alert alert-success">
-                                        Wallet Balance: &#8358;30,000
-                                    </div>
-                                </div>
-                                <hr>
-                                <h5 style="font-family: OpenSans; font-weight: bold">My Bank Details</h5>
+                                <h5 style="font-family: OpenSans; font-weight: bold">Your Current Bank Details</h5>
                                 <div class="clearfix">
                                     <div id="bank_details">
                                         <div class="form-field form-m-bttm">
                                             <label for="bank" class="text-sm">Bank Name</label>
                                             <input name="bank" value="Guarantee Trust Bank"
                                                    class="form-control required" aria-required="true"
-                                                   type="text" required>
+                                                   type="text" disabled required>
                                         </div>
                                         <div class="form-field form-m-bttm">
                                             <label for="account_no" class="text-sm">Bank Account
                                                 Number</label>
                                             <input name="account_no" value="0283929193"
                                                    class="form-control required" aria-required="true"
-                                                   type="text" required>
+                                                   type="text" disabled required>
                                         </div>
                                         <div class="form-field form-m-bttm">
                                             <label for="full_name" class="text-sm">Full Name (As per
                                                 bank)</label>
                                             <input name="full_name" value="Stunner Stunner"
                                                    class="form-control required" aria-required="true"
-                                                   type="text" required>
+                                                   type="text" disabled required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-field form-button form-m-bttm">
-                                    <button type="submit" class="btn btn-xs btn-color"
+                                    <button type="submit" class="btn btn-xs btn-alt btn-color"
                                             style="margin-top: 20px; padding-top: 10px; padding-bottom: 10px">
-                                        Save
+                                        Withdraw
                                     </button>
                                 </div>
                             </div>
