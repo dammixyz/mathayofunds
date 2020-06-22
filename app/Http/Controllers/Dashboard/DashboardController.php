@@ -171,6 +171,7 @@ class DashboardController extends Controller
     }
 
     public function myCardTransactions(){
-        return view('actions.card-transactions');
+        $card_selling_transactions = CardSelling::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->get();
+        return view('actions.card-transactions', compact('card_selling_transactions'));
     }
 }
