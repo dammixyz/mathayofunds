@@ -63,7 +63,6 @@
                             <li><a href="{{route('view-coin-rates')}}"> <span class="fas fa-coins"></span> Coin Rates</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
             <!-- #end MainNav -->

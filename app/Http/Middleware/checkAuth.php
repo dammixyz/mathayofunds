@@ -21,8 +21,7 @@ class checkAuth
         }
         else{
             if(\Illuminate\Support\Facades\Route::getCurrentRoute()->action['as'] == "user.trade-coin"
-               /* || \Illuminate\Support\Facades\Route::getCurrentRoute()->action['as'] == "user.book-room"
-                || \Illuminate\Support\Facades\Route::getCurrentRoute()->action['as'] == "user.upgrade-membership"*/){
+            ){
                 $intended_url = \Illuminate\Support\Facades\Route::getCurrentRoute()->action['as'];
                 session()->put('intended_url', $intended_url);
                 return redirect(route('login'))->with('failure', "You must be Signed in to Perform this Action");

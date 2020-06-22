@@ -11,7 +11,10 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h5 style="font-family: OpenSans; font-weight: bold">Withdrawal</h5>
+                                    <div class="d-flex justify-content-between">
+                                        <h5 style="font-family: OpenSans; font-weight: bold">Withdrawal</h5>
+                                        <a href="{{route('user.withdrawal-histories', ['token' => Auth::user()->token])}}" ><span><i class="fa fa-clock-o"></i> &nbsp;</span><b>History</b></a>
+                                    </div>
                                     <div class="clearfix">
                                         <div id="withdrawal">
                                             <div class="form-field form-m-bttm">

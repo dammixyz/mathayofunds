@@ -9,9 +9,10 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-6 res-m-bttm">
                             <div class="pricing-box highlited light ucap shadow">
-                                <span class="pricing-title">My Wallet</span>
+                                <span class="pricing-title">Total Messages</span>
                                 <span class="pricing-sap mt-10"></span>
-                                <span class="pricing-price">N {{number_format(Auth::user()->account_balance)}}</span>
+                                <span class="pricing-price"> {{count($chats)}}</span>
+                                <a href="{{route('user.message')}}" class="btn btn-xs btn-outline btn-alt">View Details</a>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 res-m-bttm">
@@ -19,7 +20,7 @@
                                 <span class="pricing-title">Coin Trades</span>
                                 <span class="pricing-sap mt-10"></span>
                                 <span class="pricing-price">{{count($coin_sellings) + count($coin_buyings)}}</span>
-                                <a href="#" class="btn btn-xs btn-outline btn-color">View Details</a>
+                                <a href="{{route('user.coin-transactions')}}" class="btn btn-xs btn-outline btn-color">View Details</a>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 res-m-bttm">
@@ -27,7 +28,7 @@
                                 <span class="pricing-title">Gift Card Trades</span>
                                 <span class="pricing-sap mt-10"></span>
                                 <span class="pricing-price">{{count($cards)}}</span>
-                                <a href="#" class="btn btn-xs btn-outline btn-color">View Details</a>
+                                <a href="{{route('user.card-transactions')}}" class="btn btn-xs btn-outline btn-color">View Details</a>
                             </div>
                         </div>
                     </div>

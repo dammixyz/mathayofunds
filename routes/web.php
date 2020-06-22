@@ -169,3 +169,8 @@ use Illuminate\Support\Facades\Route;
         'as' => 'leave-review',
         'uses' => 'Dashboard\DashboardController@leaveReview'
     ])->middleware('checkAuth');
+
+    Route::get('/view-withdrawal-history/{token}', [
+        'as' => 'user.withdrawal-histories',
+        'uses' => 'Dashboard\DashboardController@withdrawalHistories'
+    ])->middleware('checkAuth');

@@ -11,6 +11,7 @@ use App\CoinRate;
 use App\CoinSelling;
 use App\Http\Controllers\Controller;
 use App\ImageUpload;
+use App\Message;
 use App\Review;
 use App\User;
 use App\Withdrawal;
@@ -29,9 +30,10 @@ class DashboardController extends Controller
         $cards = CardSelling::where('user_id', Auth::user()->id)->get();
         $coin_rates = CoinRate::get();
         $some_card_rates = CardRate::inRandomOrder()->take(4)->get();
+        $chats = Chat::where('user_id', Auth::user()->id)->get();
         return view('actions.dashboard', compact('coin_buyings', 'coin_sellings',
             'cards', 'coin_rates', 'some_card_rates',
-            'coin_buyings_transactions', 'coin_selling_transactions', 'card_selling_transactions'));
+            'coin_buyings_transactions', 'coin_selling_transactions', 'card_selling_transactions', 'chats'));
     }
 
     public function Profile(){
@@ -230,6 +232,17 @@ class DashboardController extends Controller
         }
         catch(\Exception $exception){
             return redirect()->back()->with('failure', "Review Could not Be Submitted");
+        }
+    }
+
+    public function withdrawalHistories($token){
+        $user = User::where('token', $token)->first();
+        if ($user){
+            $histories = Withdrawal::where('user_id', $user->id)->get();
+            return view('actions.withdrawals-history', compact('histories'));
+        }
+        else{
+            return redirect()->back()->with('failure', "Unauthorized Access");
         }
     }
 }
