@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Homepage;
 
+use App\Blog;
 use App\CardRate;
 use App\Coin;
 use App\CoinRate;
@@ -18,7 +19,8 @@ class HomepageController extends Controller
         $eth_price = 250;
         $coins = Coin::getCoins();
         $reviews = Review::get();
-        return view('welcome', compact('eth_rate', 'btc_rate', 'coins', "btc_price", 'eth_price','reviews'));
+        $blogs = Blog::take(3)->orderBy('id', 'desc')->get();
+        return view('welcome', compact('eth_rate', 'btc_rate', 'coins', "btc_price", 'eth_price','reviews', 'blogs'));
     }
 
     public function Faqs(){

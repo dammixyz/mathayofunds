@@ -267,40 +267,26 @@
             </div>
             <div class="gaps size-3x"></div>
             <div class="row text-center">
-                <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm-lg">
-                    <div class="blog-post shadow round">
-                        <div class="post-thumb"><a href="blog-single.html"><img src="{{asset('mathayo.jpg')}}" alt="post"></a></div>
-                        <div class="post-entry">
-                            <div class="post-meta"><span>Posted 03 May, 2020</span></div>
-                            <h5><a href="blog-single.html">Mathayo Funds Announced Yemi Elesho as Brand Ambassador</a></h5>
-                            <p>According to the ace comedian Yemi Elesho, who announced on his official Instagram account @officialyemielesho. he uploaded a Video which he captioned.</p>
-                            <a href="blog-single.html" class="btn-icon"><span class="pe pe-7s-angle-right"></span></a>
+                @foreach($blogs as $blog)
+                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm-lg">
+                        <div class="blog-post shadow round">
+                            <div class="post-thumb"><a href="{{route('blogs.show', $blog->id)}}"><img src="{{asset($blog->image)}}" alt="post"></a></div>
+                            <div class="post-entry">
+                                <div class="post-meta"><span>Posted {{$blog->created_at->format('j F, Y')}}</span></div>
+                                <h5><a href="{{route('blogs.show', $blog->id)}}">{{$blog->title}}</a></h5>
+                                <a href="{{route('blogs.show', $blog->id)}}" class="btn-icon"><span class="pe pe-7s-angle-right"></span></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm-lg">
-                    <div class="blog-post shadow round">
-                        <div class="post-thumb"><a href="blog-single.html"><img src="{{asset('mathayo.jpg')}}" alt="post"></a></div>
-                        <div class="post-entry">
-                            <div class="post-meta"><span>Posted 03 May, 2020</span></div>
-                            <h5><a href="blog-single.html">Mathayo Funds Announced Yemi Elesho as Brand Ambassador</a></h5>
-                            <p>According to the ace comedian Yemi Elesho, who announced on his official Instagram account @officialyemielesho. he uploaded a Video which he captioned.</p>
-                            <a href="blog-single.html" class="btn-icon"><span class="pe pe-7s-angle-right"></span></a>
-                        </div>
+                @endforeach
+            </div>
+            <div class="gaps size-2x"></div>
+            <div class="section-head">
+                <div class="row text-center">
+                    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                        <a href="{{route('blogs.index')}}" class="btn btn-alt mt-25">Goto Blog</a>
                     </div>
                 </div>
-                <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm-lg">
-                    <div class="blog-post shadow round">
-                        <div class="post-thumb"><a href="blog-single.html"><img src="{{asset('mathayo.jpg')}}" alt="post"></a></div>
-                        <div class="post-entry">
-                            <div class="post-meta"><span>Posted 03 May, 2020</span></div>
-                            <h5><a href="blog-single.html">Mathayo Funds Announced Yemi Elesho as Brand Ambassador</a></h5>
-                            <p>According to the ace comedian Yemi Elesho, who announced on his official Instagram account @officialyemielesho. he uploaded a Video which he captioned.</p>
-                            <a href="blog-single.html" class="btn-icon"><span class="pe pe-7s-angle-right"></span></a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>

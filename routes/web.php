@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
     Route::get('/view-page', function (){
-        return view('pages.card-rates');
-    });
+        return view('pages.blog-show');
+    })->name('welcome');
     Route::get('/', [
         'as' => 'homepage',
         'uses' => 'Homepage\HomepageController@Homepage'
@@ -174,3 +174,5 @@ use Illuminate\Support\Facades\Route;
         'as' => 'user.withdrawal-histories',
         'uses' => 'Dashboard\DashboardController@withdrawalHistories'
     ])->middleware('checkAuth');
+
+    Route::resource('blogs', 'BlogController')->middleware('checkAuth');
