@@ -26,6 +26,8 @@
     <link href="assets/css/scrollspyNav.css" rel="stylesheet" type="text/css"/>
     <link href="file-upload/file-upload-with-preview.min.css" rel="stylesheet" type="text/css"/>
 
+    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css"/>
+
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -103,6 +105,7 @@
                     </li>
                     <li><a href="market-data.html">About Us</a></li>
                     <li><a href="contact.html">Rates</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle">Welcome, StuNNer <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="index-2.html"><span class="fa fa-user"></span> Account</a></li>
                             <li><a href="index-wallet.html"> <span class="fa fa-clock-o"></span> Transactions</a></li>
@@ -119,70 +122,120 @@
 <!-- End Header -->
 
 
-<!-- View Cards AND Receipts -->
+<!-- Transactions Count -->
 <div class="features-box section section-pad no-pt no-pb" style="margin-top: 12px;">
     <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-6 res-m-bttm">
-                <div class="pricing-box ucap shadow">
-                    <div class="box round no-pt">
-                        <img src="{{asset('mathayo-profile.png')}}" alt="box-icon" class="box-icon">
-                        <h6 class="">Stunner</h6>
-                        <p style="color: #f7921a"><b>Wallet: &#8358;30,000</b></p>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-dashboard"></i>&nbsp; Dashboard</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-credit-card"></i>&nbsp; Card Trades</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fas fa-coins"></i>&nbsp; Coin Trades</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-user"></i>&nbsp; Profile</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-envelope"></i>&nbsp; Messages</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-money"></i>&nbsp; Withdrawal</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-power-off"></i>&nbsp; Logout</span></a><br>
-                    </div>
-                </div>
-            </div>
+        <div class="row mb-15 d-flex justify-content-center">
             <div class="col-md-9 col-sm-6 res-m-bttm">
-                <div class="row text-center">
-                    <h4>Gift Cards</h4>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard3.png')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCard">View Card </a>
+                <div class="box round shadow-alt">
+                    <h6 class="ucap">Coin Rates</h6>
+                    <p class="small">Here are list of all our coin rates</p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="sidebar-right wgs-box">
+                                <div class="wgs-search">
+                                    <div class="wgs-content">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"
+                                                   id="search-coin-rate"
+                                                   placeholder="Search Coin Rate...">
+                                            <button class="search-btn"><i class="fa fa-search"
+                                                                          aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="gaps size-1x"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard1.png')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCard">View Card </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard5.jpg')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCard">View Card </a>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="row text-center mb-15">
-                    <h4>Receipts</h4>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard1.png')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCardReceipt">View Receipt </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard2.png')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCardReceipt">View Receipt </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard3.png')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCardReceipt">View Receipt </a>
-                        </div>
-                    </div>
+                    <div class="table-responsive" id="coins-rates-table">
+                        <table class="table table-hover" id="coinRateTable">
+                            <thead>
+                            <tr>
+                                <th scope="col">Type</th>
+                                <th scope="col">Range</th>
+                                <th scope="col">Buy</th>
+                                <th scope="col">Sell</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">BTC</th>
+                                <td><b>$</b>0 - <b>$</b>100</td>
+                                <td><b>$</b>1 - &#8358;460</td>
+                                <td><b>$</b>1 - &#8358;459</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">ETH</th>
+                                <td><b>$</b>0 - <b>$</b>100</td>
+                                <td><b>$</b>1 - &#8358;460</td>
+                                <td><b>$</b>1 - &#8358;459</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">BTC</th>
+                                <td><b>$</b>0 - <b>$</b>100</td>
+                                <td><b>$</b>1 - &#8358;460</td>
+                                <td><b>$</b>1 - &#8358;459</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">ETH</th>
+                                <td><b>$</b>0 - <b>$</b>100</td>
+                                <td><b>$</b>1 - &#8358;460</td>
+                                <td><b>$</b>1 - &#8358;459</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">ETH</th>
+                                <td><b>$</b>0 - <b>$</b>100</td>
+                                <td><b>$</b>1 - &#8358;460</td>
+                                <td><b>$</b>1 - &#8358;459</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">ETH</th>
+                                <td><b>$</b>0 - <b>$</b>100</td>
+                                <td><b>$</b>1 - &#8358;460</td>
+                                <td><b>$</b>1 - &#8358;459</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">ETH</th>
+                                <td><b>$</b>0 - <b>$</b>100</td>
+                                <td><b>$</b>1 - &#8358;460</td>
+                                <td><b>$</b>1 - &#8358;459</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">ETH</th>
+                                <td><b>$</b>0 - <b>$</b>100</td>
+                                <td><b>$</b>1 - &#8358;460</td>
+                                <td><b>$</b>1 - &#8358;459</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">ETH</th>
+                                <td><b>$</b>0 - <b>$</b>100</td>
+                                <td><b>$</b>1 - &#8358;460</td>
+                                <td><b>$</b>1 - &#8358;459</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">ETH</th>
+                                <td><b>$</b>0 - <b>$</b>100</td>
+                                <td><b>$</b>1 - &#8358;460</td>
+                                <td><b>$</b>1 - &#8358;459</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">ETH</th>
+                                <td><b>$</b>0 - <b>$</b>100</td>
+                                <td><b>$</b>1 - &#8358;460</td>
+                                <td><b>$</b>1 - &#8358;459</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">ETH</th>
+                                <td><b>$</b>0 - <b>$</b>100</td>
+                                <td><b>$</b>1 - &#8358;460</td>
+                                <td><b>$</b>1 - &#8358;459</td>
+                            </tr>
 
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -276,6 +329,7 @@
     <div class="container">
         <div class="row">
             <div class="site-copy col-sm-7">
+                <p>Copyright &copy; 2020 <a href="{{route('welcome')}}">Mathayo Funds </a>Cryptocurrency Trading Company
                 </p>
             </div>
             <div class="col-sm-5 text-right mobile-left">
@@ -296,13 +350,42 @@
     <div id="status">&nbsp;</div>
 </div>
 
-{{--View Gift Card--}}
-<div class="modal" tabindex="-1" id="viewGiftCard" role="dialog">
+{{--Leave A Review Modal--}}
+<div class="modal" tabindex="-1" id="leaveReview" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="#">
+                <div class="modal-header">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="modal-title">Your Review</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <b class="text-info"><span class="fa fa-info"></span> &nbsp; Notice:: Your review may be used for promotional purposes</b>
+                </div>
+                <div class="modal-body">
+                    <div class="form-field form-m-bttm">
+                    <textarea name="message" cols="10" rows="8" style="resize: none" placeholder="Share your experience with us so far."
+                              class="form-control required" aria-required="true"
+                              type="text" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-xs btn-alt"><span><i class="fa fa-send"></i> &nbsp;</span><b>Send</b></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{--Admin Payment Proof For Card Modal--}}
+<div class="modal" tabindex="-1" id="adminPaymentProofCard" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="d-flex justify-content-between">
-                    <h5 class="modal-title">Your Uploaded Gift Card</h5>
+                    <h5 class="modal-title">Our Payment Proof</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -310,7 +393,7 @@
             </div>
             <div class="modal-body">
                 <div class="form-field form-m-bttm">
-                    <img src="{{asset('giftcard1.png')}}" alt="">
+                    <img src="{{asset('qrcode.png')}}" alt="">
                 </div>
             </div>
             <div class="modal-footer">
@@ -322,13 +405,13 @@
 </div>
 
 
-{{--View Gift Card Receipt--}}
-<div class="modal" tabindex="-1" id="viewGiftCardReceipt" role="dialog">
+{{--Admin Payment Proof For Coin Modal--}}
+<div class="modal" tabindex="-1" id="adminPaymentProofCoin" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="d-flex justify-content-between">
-                    <h5 class="modal-title">Your Uploaded Gift Card's Receipt</h5>
+                    <h5 class="modal-title">Our Payment Proof</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -336,7 +419,7 @@
             </div>
             <div class="modal-body">
                 <div class="form-field form-m-bttm">
-                    <img src="{{asset('giftcard3.png')}}" alt="">
+                    <img src="{{asset('mathayo-profile.png')}}" alt="">
                 </div>
             </div>
             <div class="modal-footer">
@@ -381,6 +464,10 @@
 <script src="assets/js/scrollspyNav.js"></script>
 <script src="file-upload/file-upload-with-preview.min.js"></script>
 
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+
+
 <script>
     $(window).on('load', function () {
         $('div#themes_panel').hide();
@@ -406,6 +493,23 @@
         $('#proof-9').tooltip()
         $('#upload-10').tooltip()
         $('#proof-10').tooltip()
+
+        /*Data Table*/
+        const cardTable = $('#coinRateTable').DataTable({
+            responsive: true,
+            bPaginate: true,
+            bLengthChange: false,
+            bFilter: true,
+            bInfo: true,
+            bAutoWidth: true,
+            pageLength: 15,
+        });
+        /*Remove the default search box*/
+        $('#coinRateTable_filter').remove()
+        /*Add datatable search functionality to custom search box*/
+        $('#search-coin-rate').keyup(function () {
+            cardTable.search($(this).val()).draw();
+        })
     })
 </script>
 

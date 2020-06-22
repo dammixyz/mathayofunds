@@ -128,11 +128,14 @@
                     <div class="box round no-pt">
                         <img src="{{asset('mathayo-profile.png')}}" alt="box-icon" class="box-icon">
                         <h6 class="">Stunner</h6>
+                        <p style="color: #f7921a"><b>Wallet: &#8358;30,000</b></p>
                         <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-dashboard"></i>&nbsp; Dashboard</span></a><br>
                         <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-credit-card"></i>&nbsp; Card Trades</span></a><br>
                         <a href="#" class="btn btn-md btn-alt"><span><i class="fas fa-coins"></i>&nbsp; Coin Trades</span></a><br>
                         <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-user"></i>&nbsp; Profile</span></a><br>
                         <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-envelope"></i>&nbsp; Messages</span></a><br>
+                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-money"></i>&nbsp; Withdrawal</span></a><br>
+                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-power-off"></i>&nbsp; Logout</span></a><br>
                     </div>
                 </div>
             </div>

@@ -11,7 +11,9 @@ use App\CoinRate;
 use App\CoinSelling;
 use App\Http\Controllers\Controller;
 use App\ImageUpload;
+use App\Review;
 use App\User;
+use App\Withdrawal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -171,6 +173,63 @@ class DashboardController extends Controller
     }
 
     public function myCardTransactions(){
-        return view('actions.card-transactions');
+        $card_selling_transactions = CardSelling::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->get();
+        return view('actions.card-transactions', compact('card_selling_transactions'));
+    }
+
+    public function withdrawalRequest(){
+        $account_details = AccountDetail::where('user_id', Auth::user()->id)->first();
+        if ($account_details){
+            return view('actions.request-withdrawal', compact('account_details'));
+        }
+        else{
+            return redirect(route('user.profile'))->with('failure', 'You need to update your account details first');
+        }
+
+    }
+
+    public function finalizeWithdrawal(Request $request){
+        $this->validate($request, [
+           'amount' => 'bail|required'
+        ]);
+        try {
+            if ($request->amount > Auth::user()->account_balance){
+                return redirect()->back()->with('failure', 'Insufficient Balance');
+            }
+            else{
+                $user = User::where('id', Auth::user()->id)->first();
+                $user->account_balance = $user->account_balance - $request->amount;
+                $user->save();
+
+                $withdrawal_request = new Withdrawal();
+                $withdrawal_request->user_id = Auth::user()->id;
+                $withdrawal_request->amount = $request->amount;
+                $withdrawal_request->status = 0;
+                $withdrawal_request->save();
+
+                return redirect()->back()->with('success', 'Withdrawal Requested Successfully Submitted');
+            }
+        }
+        catch(\Exception $exception){
+            return redirect()->back()->with('failure', "Error Occur in Processing your Withdrawal Request");
+        }
+
+    }
+
+    public function leaveReview(Request $request){
+        $this->validate($request,[
+           'message' => 'bail|required'
+        ]);
+        try {
+             $new_review = new Review();
+             $new_review->user_id = Auth::user()->id;
+             $new_review->message = $request->message;
+             $new_review->token = Str::random(15);
+             $new_review->save();
+             return redirect()->back()->with('success', 'Review Successfully Submitted');
+        }
+        catch(\Exception $exception){
+            return redirect()->back()->with('failure', "Review Could not Be Submitted");
+        }
     }
 }
