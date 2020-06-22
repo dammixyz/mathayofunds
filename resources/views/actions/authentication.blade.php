@@ -41,7 +41,7 @@
                                     <div class="form-results"></div>
                                     <div class="form-group">
                                         <div class="form-field form-m-bttm">
-                                            <input name="email" type="email" placeholder="Email *" class="form-control required email" aria-required="true" required>
+                                            <input name="email" type="email" placeholder="Email *" value="{{old('email')}}" class="form-control required email" aria-required="true" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -65,17 +65,17 @@
                                     <div class="form-results"></div>
                                     <div class="form-group">
                                         <div class="form-field form-m-bttm">
-                                            <input name="username" type="text" placeholder="Username *" class="form-control required" aria-required="true" required>
+                                            <input name="username" type="text" placeholder="Username *" value="{{old('username')}}" class="form-control required" aria-required="true" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="form-field form-m-bttm">
-                                            <input name="email" type="email" placeholder="Email *" class="form-control required email" aria-required="true" required>
+                                            <input name="email" type="email" placeholder="Email *" value="{{old('email')}}"  class="form-control required email" aria-required="true" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="form-field form-m-bttm">
-                                            <input name="phone_number" type="number" placeholder="Phone Number *" class="form-control required" aria-required="true" required>
+                                            <input name="phone_number" type="number" placeholder="Phone Number *" value="{{old('phone_number')}}" class="form-control required" aria-required="true" required>
                                         </div>
                                     </div>
                                     <div class="form-group">

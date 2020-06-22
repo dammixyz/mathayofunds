@@ -53,7 +53,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="form-field form-button form-m-bttm">
-                                                                <button type="submit" class="btn btn-xs btn-color"
+                                                                <button type="submit" class="btn btn-xs btn-alt"
                                                                         style="margin-top: 20px; padding-top: 10px; padding-bottom: 10px">
                                                                     Save
                                                                 </button>
@@ -122,7 +122,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="form-field form-button form-m-bttm">
-                                                                <button type="submit" class="btn btn-xs btn-color"
+                                                                <button type="submit" class="btn btn-xs btn-alt"
                                                                         style="margin-top: 20px; padding-top: 10px; padding-bottom: 10px">
                                                                     Save
                                                                 </button>

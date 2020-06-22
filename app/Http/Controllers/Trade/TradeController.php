@@ -41,7 +41,7 @@ class TradeController extends Controller
                 'bitcoin_platforms', 'ethereum_platforms', 'coins', 'account_details'));
         }
         else{
-            dd("you need to upload set up ur account");
+            return redirect(route('user.profile'))->with('failure', 'Your account details must be updated to perform this action');
         }
 
     }
@@ -65,7 +65,7 @@ class TradeController extends Controller
             return view('actions.trade-card', compact('cards', 'countries', 'denominations'));
         }
         else{
-            dd("you need to upload set up ur account");
+            return redirect(route('user.profile'))->with('failure', 'Your account details must be updated to perform this action');
         }
 
     }

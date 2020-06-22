@@ -12,12 +12,11 @@
                         </ul>
                     </div>
                 </div>
-                <div class="gaps size-2x"></div>
                 <!-- Tab panes -->
-                <div class="tab-content no-pd">
-                    <div class="tab-pane fade in active" id="sell-coin-tab">
+                <div class="tab-content  no-pt no-mt">
+                    <div class="tab-pane fade in active no-pt no-mt" id="sell-coin-tab">
                         <!-- Features Box -->
-                        <div class="features-box section section-pad no-pb">
+                        <div class="features-box section section-pad no-pb pt-15">
                             <div class="container">
                                 <div class="row text-center">
                                     <div class="col-md-3 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
@@ -33,10 +32,9 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div class="gaps size-2x"></div>
                                             <!-- Tab panes -->
                                             <div class="tab-content no-pd">
-                                                <div class="tab-pane fade in active" id="bitcoin-wallet-tab">
+                                                <div class="tab-pane fade in active no-pb pt-15" id="bitcoin-wallet-tab">
                                                     <div class="row">
                                                         <div class="box round shadow-alt pricing-box highlited light ucap shadow">
                                                             <h4 class="ucap">Bitcoin wallet details</h4>
@@ -58,7 +56,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="ethereum-wallet-tab">
+                                                <div class="tab-pane fade no-pb pt-15" id="ethereum-wallet-tab">
                                                     <div class="row">
                                                         <div
                                                             class="box round shadow-alt pricing-box highlited light ucap shadow">
@@ -137,7 +135,7 @@
                                                             <div id="walletPayment">
                                                                 <div class="form-field form-m-bttm">
                                                                     <label for="wallet_balance" class="text-sm">Wallet Balance</label>
-                                                                    <input name="wallet_balance" value="&#8358;30,000"
+                                                                    <input name="wallet_balance" value="&#8358; {{number_format(Auth::user()->account_balance)}}"
                                                                            class="form-control required" aria-required="true"
                                                                            type="text" disabled required>
                                                                 </div>
@@ -197,7 +195,7 @@
                                                                     class="custom-file-container__image-preview" id="image-preview-placeholder-bitcoin-sell"></div>
                                                             </div>
                                                             <div class="form-field form-button form-m-bttm">
-                                                                <button type="submit" class="btn btn-xs btn-color"
+                                                                <button type="submit" class="btn btn-xs btn-alt"
                                                                         style="margin-top: 20px; padding-top: 10px; padding-bottom: 10px">
                                                                     Proceed
                                                                 </button>
@@ -233,7 +231,7 @@
                     </div>
                     <div class="tab-pane fade" id="buy-coin-tab">
                         <!-- Features Box -->
-                        <div class="features-box section section-pad no-pb">
+                        <div class="features-box section section-pad no-pb pt-15">
                             <div class="container">
                                 <div class="row text-center">
                                     <div class="col-md-3 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
@@ -339,7 +337,7 @@
                                                                     class="custom-file-container__image-preview" id="image-preview-placeholder-bitcoin-buy"></div>
                                                             </div>
                                                             <div class="form-field form-button form-m-bttm">
-                                                                <button type="submit" class="btn btn-xs btn-color"
+                                                                <button type="submit" class="btn btn-xs btn-alt"
                                                                         style="margin-top: 20px; padding-top: 10px; padding-bottom: 10px">
                                                                     Proceed
                                                                 </button>
