@@ -20,7 +20,7 @@
                         <blockquote>"Sell your Giftcards and Bitcoin to Mathayo Funds, We are 100% genuine, we pay instantly, our rates are amazing and we have some discounts and bonuses for our affiliate marketers."
                             <br>
                             Yemi Elesho (officialyemielesho) - Comedian, Mathayo Funds Ambassador</blockquote>
-                        <a href="#" class="btn btn-alt">Read More</a>
+                        <a href="{{route('about-us')}}" class="btn btn-alt">Read More</a>
                     </div>
                 </div>
             </div>
@@ -245,7 +245,7 @@
                     <div class="col-md-12">
                         <div class="cta-sameline">
                             <h3>Open account for free and start trading Bitcoins and Gift Cards now!</h3>
-                            <a class="btn btn-outline btn-alt btn-md" href="#">get started</a>
+                            <a class="btn btn-outline btn-alt btn-md" href="{{route('login')}}">get started</a>
                         </div>
                     </div>
                 </div>

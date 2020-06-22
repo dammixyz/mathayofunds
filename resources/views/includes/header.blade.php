@@ -50,10 +50,22 @@
             <nav class="navbar-collapse collapse" id="mainnav">
                 <ul class="nav navbar-nav">
                     <li><a href="{{route('homepage')}}">Home</a></li>
-                    <li><a href="{{route('user.trade-coin')}}">Trade Coins</a></li>
-                    <li><a href="{{route('user.trade-card')}}">Trade Cards</a></li>
+                    {{--<li><a href="{{route('user.trade-coin')}}">Trade Coins</a></li>
+                    <li><a href="{{route('user.trade-card')}}">Trade Cards</a></li>--}}
+                    <li class="dropdown"><a href="#" class="dropdown-toggle">Trade<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{route('user.trade-coin')}}">Trade Coins</a></li>
+                            <li><a href="{{route('user.trade-card')}}">Trade Cards</a></li>
+                        </ul>
+                    </li>
                     @if(Auth::check())
                         <li><a href="{{route('user.dashboard')}}">Dashboard</a></li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle">My Transactions<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{route('user.coin-transactions')}}"> <span class="fas fa-coins"></span> Coins Transactions</a></li>
+                                <li><a href="{{route('user.card-transactions')}}"><span class="fa fa-credit-card"></span> Cards Transactions</a></li>
+                            </ul>
+                        </li>
                     @endif
                     <li><a href="{{route('about-us')}}">About Us</a></li>
                     <li><a href="{{route('faqs')}}">FAQs</a></li>
@@ -78,7 +90,7 @@
                                     <h1 class="animate-bottom delayms5">Bitcoin Trader <br /><span class="ucap">YOU CAN TRUST</span></h1>
                                     <p class="lead animate-bottom delayms7">Mathayo Funds, we are No. 1 Trader of Bitcoin in Nigeria</p>
                                     <ul class="btns animate-bottom delayms9">
-                                        <li><a href="#" class="btn">Get Started</a></li>
+                                        <li><a href="{{route('user.trade-coin')}}" class="btn">Get Started</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -94,7 +106,7 @@
                                     <p class="lead animate-bottom delayms7">We buy all kinds of Giftcards, ranging from Amazon, iTunes, Steam,Sephora,Nordstrom,Googleplay etc.</p>
 
                                     <ul class="btns animate-bottom delayms9">
-                                        <li><a href="#" class="btn">Get Started</a></li>
+                                        <li><a href="{{route('user.trade-card')}}" class="btn">Get Started</a></li>
                                     </ul>
                                 </div>
                             </div>

@@ -92,21 +92,22 @@
                                         <div
                                             class="box round shadow-alt pricing-box highlited light ucap shadow">
                                             <h4 class="ucap">Our Rates</h4>
-                                            <hr>
-                                            <h5 class="ucap">Amazon</h5>
-                                            <h5>$1 = &#8358;460 <div style="color: darkgreen">($25 - $100)</div> </h5>
-                                            <h5>$1 = &#8358;450 <div style="color: darkgreen">($150 - $250)</div></h5>
-                                            <h5>$1 = &#8358;420 <div style="color: darkgreen">($500)</div></h5>
-                                            <hr>
-                                            <h5 class="ucap">PlayStore</h5>
-                                            <h5>$1 = &#8358;460</h5>
-                                            <hr>
-                                            <h5 class="ucap">iTunes</h5>
-                                            <h5>$1 = &#8358;460 <div style="color: darkgreen">($25-$200)</div></h5>
-                                            <h5>$1 = &#8358;455 <div style="color: darkgreen">($250 - $500)</div></h5>
-                                            <hr>
-                                            <h5 class="ucap">PlayStation</h5>
-                                            <h5>$1 = &#8358;460</h5>
+                                            @foreach($card_rates as $card)
+                                                <hr>
+                                                <h5 class="ucap">{{$card->name}}</h5>
+                                                @if(count($card->cardRate) > 0)
+                                                    @foreach($card->cardRate as $rate)
+                                                        <h5>{{$rate->country->name }}  = &#8358; {{$rate->rate}}  </h5>
+                                                        {{-- <h5>$1 = &#8358;450 <div style="color: darkgreen">($150 - $250)</div></h5>
+                                                         <h5>$1 = &#8358;420 <div style="color: darkgreen">($500)</div></h5>--}}
+                                                    @endforeach
+                                                @else
+                                                    <h5> No Rate Yet</h5>
+                                                @endif
+
+                                                <hr>
+                                            @endforeach
+
                                         </div>
                                     </div>
                                 </div>
@@ -359,7 +360,49 @@
 
             });
 
+            $("#giftcard-denomination").on('change', function () {
+                var card_id = $('#giftcard-type').val();
+                var denomination = $("#giftcard-denomination").val();
+                var country_id = $("#giftcard-country").val();
+                if (country_id === "others"){
+                    toastr.error('Admin will get back to you on the card rate through your direct message');
+                }
+                else{
+                    $.ajaxSetup({
+                        headers: {
+                            'X-XSRF-Token': $('meta[name="_token"]').attr('content')
+                        }
+                    });
+                    var data =  {
+                        country_id: country_id,
+                        card_id: card_id,
+                        denomination: denomination,
+                        _token: '{!! csrf_token() !!}',
+                    }
+                    $.ajax({
+                        url: "{{route('view-rate') }}",
+                        method: 'POST',
+                        contentType:"application/json",
+                        dataType: "json",
+                        data: JSON.stringify(data),
+                        cache: false,
+                        success: function(Value){
+                            if(Value.status){
+                                let result = denomination * Value.rate
+                                $('#giftcard-trade-sell').html('We will pay &#8358 ' + result + ' for each card you upload for the denomination selected');
+                                toastr.success(Value.msg);
+                            }
+                            else{
+                                toastr.error(Value.msg);
+                            }
+                        },
+                        failure: function (Value) {
+                            console.log(Value);
+                        }
+                    });
+                }
 
+            })
         })
     </script>
 @endsection
