@@ -57,6 +57,10 @@ class User extends Authenticatable
     public function chats(){
         return $this->hasMany(User::class);
     }
+
+    public function withdrawals(){
+        return $this->hasMany(Withdrawal::class);
+    }
     public static function registerUser($request){
         $user = User::create([
             'email' => $request->email,

@@ -38,7 +38,10 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="box round shadow-alt mb-15">
-                                            <h6 class="ucap">Latest Card Trades</h6>
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="ucap">Latest Card Trades</h6>
+                                                <a href="#" data-toggle="modal" data-target="#leaveReview"><span><i class="fa fa-commenting"></i> &nbsp;</span><b>Leave a Review</b></a>
+                                            </div>
                                             <p class="small">Here are the list of your five(5) latest card transactions with
                                                 us.
                                                 Check Card Trade to view all your card trades</p>
@@ -168,7 +171,10 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="box round shadow-alt mb-15">
-                                            <h6 class="ucap">Latest Coin Trades</h6>
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="ucap">Latest Coin Trades</h6>
+                                                <a href="#" data-toggle="modal" data-target="#leaveReview"><span><i class="fa fa-commenting"></i> &nbsp;</span><b>Leave a Review</b></a>
+                                            </div>
                                             <p class="small">Here are the list of your five(5) latest coin transactions with
                                                 us.
                                                 Check coin trade to view all your coin trades</p>

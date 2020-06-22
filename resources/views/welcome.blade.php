@@ -187,7 +187,38 @@
             <div class="row text-center">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="testimonial-carousel has-carousel" data-items="1" data-loop="true" data-dots="true" data-auto="true">
-                        <div class="testimonial-item">
+                        @foreach($reviews as $review)
+                            <div class="testimonial-item">
+                                <div class="client-photo circle">
+                                    <img src="{{asset('uploads/'.$review->user->icon)}}" alt="client">
+                                    <em class="fa fa-quote-right"></em>
+                                </div>
+                                <blockquote>
+                                    {{$review->message}}
+                                </blockquote>
+                                <div class="client-info">
+                                    <h6>{{$review->user->username}}</h6>
+                                    <span>Customer</span>
+                                </div>
+                            </div>
+                        @endforeach
+                        @foreach($reviews as $review)
+                            <div class="testimonial-item">
+                                <div class="client-photo circle">
+                                    <img src="{{asset('uploads/'.$review->user->icon)}}" alt="client">
+                                    <em class="fa fa-quote-right"></em>
+                                </div>
+                                <blockquote>
+                                    {{$review->message}}
+                                </blockquote>
+                                <div class="client-info">
+                                    <h6>{{$review->user->username}}</h6>
+                                    <span>Customer</span>
+                                </div>
+                            </div>
+                        @endforeach
+
+                        {{--<div class="testimonial-item">
                             <div class="client-photo circle">
                                 <img src="{{asset('mathayo-profile.png')}}" alt="client">
                                 <em class="fa fa-quote-right"></em>
@@ -197,18 +228,7 @@
                                 <h6>Yemi Elesho (officialyemielesho)</h6>
                                 <span>Comedian</span>
                             </div>
-                        </div>
-                        <div class="testimonial-item">
-                            <div class="client-photo circle">
-                                <img src="{{asset('mathayo-profile.png')}}" alt="client">
-                                <em class="fa fa-quote-right"></em>
-                            </div>
-                            <blockquote>Sell your Giftcards and Bitcoin to Mathayo Funds, We are 100% genuine, we pay instantly, our rates are amazing and we have some discounts and bonuses for our affiliate marketers.</blockquote>
-                            <div class="client-info">
-                                <h6>Yemi Elesho (officialyemielesho)</h6>
-                                <span>Comedian</span>
-                            </div>
-                        </div>
+                        </div>--}}
 
                     </div>
                 </div>

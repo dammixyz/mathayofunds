@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Homepage;
 
+use App\CardRate;
 use App\Coin;
 use App\CoinRate;
 use App\Http\Controllers\Controller;
+use App\Review;
 use Illuminate\Http\Request;
 
 class HomepageController extends Controller
@@ -15,6 +17,25 @@ class HomepageController extends Controller
         $btc_price = 9744.17;
         $eth_price = 250;
         $coins = Coin::getCoins();
-        return view('welcome', compact('eth_rate', 'btc_rate', 'coins', "btc_price", 'eth_price'));
+        $reviews = Review::get();
+        return view('welcome', compact('eth_rate', 'btc_rate', 'coins', "btc_price", 'eth_price','reviews'));
+    }
+
+    public function Faqs(){
+        return view('actions.faqs');
+    }
+
+    public function aboutUs(){
+        return view('actions.about-us');
+    }
+
+    public function viewCardRate(){
+        $cards = CardRate::get();
+        return view('actions.card-rate', compact('cards'));
+    }
+
+    public function viewCoinRate(){
+        $coins = CoinRate::get();
+        return view('actions.coin-rate', compact('coins'));
     }
 }
