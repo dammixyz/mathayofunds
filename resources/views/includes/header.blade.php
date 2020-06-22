@@ -55,8 +55,14 @@
                     @if(Auth::check())
                         <li><a href="{{route('user.dashboard')}}">Dashboard</a></li>
                     @endif
-                    <li><a href="market-data.html">About Us</a></li>
-                    <li><a href="market-data.html">FAQs</a></li>
+                    <li><a href="{{route('about-us')}}">About Us</a></li>
+                    <li><a href="{{route('faqs')}}">FAQs</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle">Rates<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{route('view-card-rates')}}"><span class="fa fa-credit-card"></span> Card Rates</a></li>
+                            <li><a href="{{route('view-coin-rates')}}"> <span class="fas fa-coins"></span> Coin Rates</a></li>
+                        </ul>
+                    </li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>

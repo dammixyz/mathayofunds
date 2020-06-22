@@ -13,7 +13,10 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="box round shadow-alt mb-15">
-                                            <h6 class="ucap">All Coin Trades</h6>
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="ucap">Latest Coin Trades</h6>
+                                                <a href="#" data-toggle="modal" data-target="#leaveReview"><span><i class="fa fa-commenting"></i> &nbsp;</span><b>Leave a Review</b></a>
+                                            </div>
                                             <p class="small">History of all the coin trades you made with us</p>
                                             <div class="row">
                                                 <div class="col-md-12">

@@ -39,6 +39,34 @@
         @include('includes.btc-slider')
         @yield('contents')
         @include('includes.footer')
+        <div class="modal" tabindex="-1" id="leaveReview" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form action="{{route('leave-review')}}" method="post">
+                        @csrf
+                        <div class="modal-header">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="modal-title">Your Review</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <b class="text-info"><span class="fa fa-info"></span> &nbsp; Notice:: Your review may be used for promotional purposes</b>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-field form-m-bttm">
+                    <textarea name="message" cols="10" rows="8" style="resize: none" placeholder="Share your experience with us so far."
+                              class="form-control required" aria-required="true"
+                              type="text" required></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-xs btn-alt"><span><i class="fa fa-send"></i> &nbsp;</span><b>Send</b></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         <script src="{{asset('assets/js/jquery.bundle.js')}}"></script>
         <script src="{{asset('assets/js/script.js')}}"></script>
         <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>

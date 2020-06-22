@@ -13,11 +13,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
     Route::get('/view-page', function (){
-        return view('pages.card-receipt-upload');
+        return view('pages.card-rates');
     });
     Route::get('/', [
         'as' => 'homepage',
         'uses' => 'Homepage\HomepageController@Homepage'
+    ]);
+
+    Route::get('/faqs', [
+        'as' => 'faqs',
+        'uses' => 'Homepage\HomepageController@Faqs'
+    ]);
+
+    Route::get('/view-card-rates', [
+        'as' => 'view-card-rates',
+        'uses' => 'Homepage\HomepageController@viewCardRate'
+    ]);
+
+    Route::get('/view-coin-rates', [
+        'as' => 'view-coin-rates',
+        'uses' => 'Homepage\HomepageController@viewCoinRate'
+    ]);
+
+    Route::get('/about-us', [
+        'as' => 'about-us',
+        'uses' => 'Homepage\HomepageController@aboutUs'
     ]);
 
     Route::get('/logout', [
@@ -133,4 +153,19 @@ use Illuminate\Support\Facades\Route;
     Route::get('/view-uploaded-resources/{token}', [
         'as' => 'view-uploaded-resources',
         'uses' => 'Dashboard\DashboardController@viewUploadedResources'
+    ])->middleware('checkAuth');
+
+    Route::get('/withdrawal-request', [
+        'as' => 'user.withdrawal-request',
+        'uses' => 'Dashboard\DashboardController@withdrawalRequest'
+    ])->middleware('checkAuth');
+
+    Route::post('/finalize-withdrawal', [
+        'as' => 'user.finalize-withdrawal',
+        'uses' => 'Dashboard\DashboardController@finalizeWithdrawal'
+    ])->middleware('checkAuth');
+
+    Route::post('/leave-review', [
+        'as' => 'leave-review',
+        'uses' => 'Dashboard\DashboardController@leaveReview'
     ])->middleware('checkAuth');
