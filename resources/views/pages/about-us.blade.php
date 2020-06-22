@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zxx" class="js">
 
@@ -11,20 +10,22 @@
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap-extend.css')}}">
     {{--Font-AWESOME--}}
     <script src="{{asset('assets/js/fa.js')}}"></script>
-{{--Main Style--}}
+    {{--Main Style--}}
 <!-- Fav Icon  -->
     <link rel="shortcut icon" href="images/favicon.png">
     <!-- Site Title  -->
     <title>Mathayo Funds - Home</title>
     <!-- Vendor Bundle CSS -->
     <link rel="stylesheet" href="assets/css/vendor.bundle.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="assets/css/style5152.css?ver=1.0">
     <link rel="stylesheet" id="layoutstyle" href="assets/css/theme5152.css?ver=1.0">
     {{--File upload--}}
-    <link href="assets/css/scrollspyNav.css" rel="stylesheet" type="text/css" />
-    <link href="file-upload/file-upload-with-preview.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/scrollspyNav.css" rel="stylesheet" type="text/css"/>
+    <link href="file-upload/file-upload-with-preview.min.css" rel="stylesheet" type="text/css"/>
+
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -96,7 +97,8 @@
                     <li class="dropdown"><a href="#" class="dropdown-toggle">Tade With Us<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="index-2.html"><span class="fas fa-coins"></span> Trade Coin</a></li>
-                            <li><a href="index-wallet.html"> <span class="fa fa-credit-card"></span> Trade Gift Card</a></li>
+                            <li><a href="index-wallet.html"> <span class="fa fa-credit-card"></span> Trade Gift Card</a>
+                            </li>
                         </ul>
                     </li>
                     <li><a href="market-data.html">About Us</a></li>
@@ -119,78 +121,28 @@
 
 
 <!-- Transactions Count -->
-<div class="features-box section section-pad no-pt pb-10" style="margin-top: 12px;">
+<div class="features-box section section-pad no-pt no-pb" style="margin-top: 12px;">
     <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-6 res-m-bttm">
-                <div class="pricing-box shadow">
-                    <div class="box round no-pt">
-                        <img src="{{asset('mathayo-profile.png')}}" alt="box-icon" class="box-icon">
-                        <h6 class="">Stunner</h6>
-                        <p style="color: #f7921a"><b>Wallet: &#8358;30,000</b></p>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-dashboard"></i>&nbsp; Dashboard</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-credit-card"></i>&nbsp; Card Trades</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fas fa-coins"></i>&nbsp; Coin Trades</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-user"></i>&nbsp; Profile</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-envelope"></i>&nbsp; Messages</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-money"></i>&nbsp; Withdrawal</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-power-off"></i>&nbsp; Logout</span></a><br>
+        <div class="row pt-15 pb-25">
+            <div class="col-md-5 res-m-bttm">
+                <div class="text-block">
+                    <h4>About Mathayo <span>Funds</span></h4>
+                    <p>We are the Number 1 Giftcard and Cryptocurrency (Bitcoin, Ethereum etc.) Trader in Nigeria
+                        We Buy All kinds of giftcards and Bitcoin ranging from:
+
+                        Amazon Gift card, iTunes Giftcard, Steam wallet, Sephora Giftcard, Vanilla, Nordstrom,
+                        Googleplay Giftcard etc...
+
+                        Sell to us now and benefit from our amazing rates, and you can also earn more through our
+                        affiliate marketing program, as you refer to us, you earn some discounts.</p>
+                    <div class="box round shadow-alt pb-10 pt-10 mb-10">
+                        <p class="small"><span class="fa fa-quote-left"></span> Sell your Giftcards and Bitcoin to Mathayo Funds, We are 100% genuine, we pay instantly, our rates are amazing and we have some discounts and bonuses for our affiliate marketers.
+                            Yemi Elesho (officialyemielesho) - Comedian, Mathayo Funds Ambassador</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-9 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                <div class="box round shadow-alt text-center">
-                    <form action="#" method="post">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
-                                <h5 style="font-family: OpenSans; font-weight: bold">Withdrawal</h5>
-                                <div class="clearfix">
-                                    <div id="withdrawal">
-                                        <div class="form-field form-m-bttm">
-                                            <label for="withdrawal_amount" class="text-sm">How much would you like to withdraw?</label>
-                                            <input name="withdrawal_amount" id="withdrawal_amount"
-                                                   class="form-control required" aria-required="true"
-                                                   placeholder="Enter Amount in naira"
-                                                   type="number" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <h5 style="font-family: OpenSans; font-weight: bold">Your Current Bank Details</h5>
-                                <div class="clearfix">
-                                    <div id="bank_details">
-                                        <div class="form-field form-m-bttm">
-                                            <label for="bank" class="text-sm">Bank Name</label>
-                                            <input name="bank" value="Guarantee Trust Bank"
-                                                   class="form-control required" aria-required="true"
-                                                   type="text" disabled required>
-                                        </div>
-                                        <div class="form-field form-m-bttm">
-                                            <label for="account_no" class="text-sm">Bank Account
-                                                Number</label>
-                                            <input name="account_no" value="0283929193"
-                                                   class="form-control required" aria-required="true"
-                                                   type="text" disabled required>
-                                        </div>
-                                        <div class="form-field form-m-bttm">
-                                            <label for="full_name" class="text-sm">Full Name (As per
-                                                bank)</label>
-                                            <input name="full_name" value="Stunner Stunner"
-                                                   class="form-control required" aria-required="true"
-                                                   type="text" disabled required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-field form-button form-m-bttm">
-                                    <button type="submit" class="btn btn-xs btn-alt btn-color"
-                                            style="margin-top: 20px; padding-top: 10px; padding-bottom: 10px">
-                                        Withdraw
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+            <div class="col-md-6 col-md-offset-1">
+                <img src="mathayo.jpg" alt="photo-md" class="img-shadow">
             </div>
         </div>
     </div>
@@ -303,6 +255,115 @@
     <div id="status">&nbsp;</div>
 </div>
 
+{{--Leave A Review Modal--}}
+<div class="modal" tabindex="-1" id="leaveReview" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="#">
+                <div class="modal-header">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="modal-title">Your Review</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <b class="text-info"><span class="fa fa-info"></span> &nbsp; Notice:: Your review may be used for
+                        promotional purposes</b>
+                </div>
+                <div class="modal-body">
+                    <div class="form-field form-m-bttm">
+                    <textarea name="message" cols="10" rows="8" style="resize: none"
+                              placeholder="Share your experience with us so far."
+                              class="form-control required" aria-required="true"
+                              type="text" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-xs btn-alt"><span><i class="fa fa-send"></i> &nbsp;</span><b>Send</b>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{--Admin Payment Proof For Card Modal--}}
+<div class="modal" tabindex="-1" id="adminPaymentProofCard" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex justify-content-between">
+                    <h5 class="modal-title">Our Payment Proof</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="form-field form-m-bttm">
+                    <img src="{{asset('qrcode.png')}}" alt="">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{--Admin Payment Proof For Coin Modal--}}
+<div class="modal" tabindex="-1" id="adminPaymentProofCoin" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex justify-content-between">
+                    <h5 class="modal-title">Our Payment Proof</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="form-field form-m-bttm">
+                    <img src="{{asset('mathayo-profile.png')}}" alt="">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{--User Payment/Transfer Proof For Coin Modal--}}
+<div class="modal" tabindex="-1" id="paymentTransferProof" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex justify-content-between">
+                    <h5 class="modal-title">Your Uploaded Payment/Transfer Snapshot</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="form-field form-m-bttm">
+                    <img src="{{asset('mathayo.jpg')}}" alt="">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-xs btn-alt" data-dismiss="modal"><span><i class="fa fa-close"></i> &nbsp;</span><b>Close</b>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 {{--Main Scripts--}}
 <script src="{{asset('assets/js/jquery.bundle.js')}}"></script>
 <script src="{{asset('assets/js/script.js')}}"></script>
@@ -310,6 +371,7 @@
 
 <script src="assets/js/scrollspyNav.js"></script>
 <script src="file-upload/file-upload-with-preview.min.js"></script>
+
 <script>
     $(window).on('load', function () {
         $('div#themes_panel').hide();
@@ -335,41 +397,7 @@
         $('#proof-9').tooltip()
         $('#upload-10').tooltip()
         $('#proof-10').tooltip()
-
     })
-</script>
-
-<!-- Slimscroll -->
-<script src="{{asset('assets_dashboard/jquery.slimscroll.min.js')}}"></script>
-
-
-<script src="assets/js/scrollspyNav.js"></script>
-<script src="file-upload/file-upload-with-preview.min.js"></script>
-<script>
-    var firstUpload = new FileUploadWithPreview('profilePicture')
-    $(function(){
-        $('#latest-transaction-table').slimScroll({
-            height: '250px',
-            allowPageScroll: false,
-            size: '1px',
-            color: '#f7921a',
-            opacity: 0.5,
-        });
-        $('#coins-rates-table').slimScroll({
-            height: '250px',
-            allowPageScroll: false,
-            size: '1px',
-            color: '#f7921a',
-            opacity: 0.5
-        });
-        $('#giftcards-rates-table').slimScroll({
-            height: '250px',
-            allowPageScroll: false,
-            size: '1px',
-            color: '#f7921a',
-            opacity: 0.5
-        });
-    });
 </script>
 
 </body>

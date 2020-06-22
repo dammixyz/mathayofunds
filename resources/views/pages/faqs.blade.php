@@ -103,6 +103,7 @@
                     </li>
                     <li><a href="market-data.html">About Us</a></li>
                     <li><a href="contact.html">Rates</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle">Welcome, StuNNer <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="index-2.html"><span class="fa fa-user"></span> Account</a></li>
                             <li><a href="index-wallet.html"> <span class="fa fa-clock-o"></span> Transactions</a></li>
@@ -119,73 +120,98 @@
 <!-- End Header -->
 
 
-<!-- View Cards AND Receipts -->
+<!-- Transactions Count -->
 <div class="features-box section section-pad no-pt no-pb" style="margin-top: 12px;">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-sm-6 res-m-bttm">
-                <div class="pricing-box ucap shadow">
-                    <div class="box round no-pt">
-                        <img src="{{asset('mathayo-profile.png')}}" alt="box-icon" class="box-icon">
-                        <h6 class="">Stunner</h6>
-                        <p style="color: #f7921a"><b>Wallet: &#8358;30,000</b></p>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-dashboard"></i>&nbsp; Dashboard</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-credit-card"></i>&nbsp; Card Trades</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fas fa-coins"></i>&nbsp; Coin Trades</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-user"></i>&nbsp; Profile</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-envelope"></i>&nbsp; Messages</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-money"></i>&nbsp; Withdrawal</span></a><br>
-                        <a href="#" class="btn btn-md btn-alt"><span><i class="fa fa-power-off"></i>&nbsp; Logout</span></a><br>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-9 col-sm-6 res-m-bttm">
-                <div class="row text-center">
-                    <h4>Gift Cards</h4>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard3.png')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCard">View Card </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard1.png')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCard">View Card </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard5.jpg')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCard">View Card </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-12 pt-20 res-m-bttm">
+                <h4>Our Frequently Asked <span>Questions</span></h4>
+                <p>Here are answers to the questions asked frequently by our customers</p>
                 <hr>
-                <div class="row text-center mb-15">
-                    <h4>Receipts</h4>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard1.png')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCardReceipt">View Receipt </a>
+                <!-- Accordion -->
+                <div class="panel-group accordion pb-20" id="another" role="tablist" aria-multiselectable="true">
+                    <!-- each panel for accordion -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="accordion-i1">
+                            <h6 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#another" href="#accordion-pane-i1" aria-expanded="false">
+                                    Is this app free to use for business or commercial use ?
+                                    <span class="plus-minus"><span></span></span>
+                                </a>
+                            </h6>
+                        </div>
+                        <div id="accordion-pane-i1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="accordion-i1">
+                            <div class="panel-body">
+                                <p>Internal audit is an independent, objective assurance and consulting activity designed to add value and improve an organization an independent, objective assurance and consulting activity.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard2.png')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCardReceipt">View Receipt </a>
+                    <!-- each panel for accordion -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="accordion-i2">
+                            <h6 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#another" href="#accordion-pane-i2" aria-expanded="false">
+                                    How do i make a support request with this app?
+                                    <span class="plus-minus"><span></span></span>
+                                </a>
+                            </h6>
+                        </div>
+                        <div id="accordion-pane-i2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-i2">
+                            <div class="panel-body">
+                                <p>Internal audit is an independent, objective assurance and consulting activity designed to add value and improve an organization an independent, objective assurance and consulting activity.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                        <div class="box round shadow-alt" >
-                            <a href="#" data-toggle="modal" data-target="#viewGiftCard"><img src="{{asset('giftcard3.png')}}" alt="box-image" class="box-image"></a><br>
-                            <a href="#" class="btn btn-md btn-alt" data-toggle="modal" data-target="#viewGiftCardReceipt">View Receipt </a>
+                    <!-- each panel for accordion -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="accordion-i3">
+                            <h6 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#another" href="#accordion-pane-i3" aria-expanded="false">
+                                    How and where can we download latest update ?
+                                    <span class="plus-minus"><span></span></span>
+                                </a>
+                            </h6>
+                        </div>
+                        <div id="accordion-pane-i3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-i3">
+                            <div class="panel-body">
+                                <p>Internal audit is an independent, objective assurance and consulting activity designed to add value and improve an organization an independent, objective assurance and consulting activity.</p>
+                            </div>
                         </div>
                     </div>
-
-                </div>
+                    <!-- each panel for accordion -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="accordion-i4">
+                            <h6 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#another" href="#accordion-pane-i4" aria-expanded="false">
+                                    Is there any premium version with extended features ?
+                                    <span class="plus-minus"><span></span></span>
+                                </a>
+                            </h6>
+                        </div>
+                        <div id="accordion-pane-i4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-i4">
+                            <div class="panel-body">
+                                <p>Internal audit is an independent, objective assurance and consulting activity designed to add value and improve an organization an independent, objective assurance and consulting activity.</p>
+                            </div>
+                        </div>
+                    </div><!-- end each panel -->
+                    <!-- each panel for accordion -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="accordion-i5">
+                            <h6 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#another" href="#accordion-pane-i5" aria-expanded="false">
+                                    Where do i find any details documentation ?
+                                    <span class="plus-minus"><span></span></span>
+                                </a>
+                            </h6>
+                        </div>
+                        <div id="accordion-pane-i5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-i5">
+                            <div class="panel-body">
+                                <p>Internal audit is an independent, objective assurance and consulting activity designed to add value and improve an organization an independent, objective assurance and consulting activity.</p>
+                            </div>
+                        </div>
+                    </div><!-- end each panel -->
+                </div><!-- Accordion #end -->
             </div>
-
         </div>
     </div>
 </div><!--End Features Box -->
@@ -276,6 +302,7 @@
     <div class="container">
         <div class="row">
             <div class="site-copy col-sm-7">
+                <p>Copyright &copy; 2020 <a href="{{route('welcome')}}">Mathayo Funds </a>Cryptocurrency Trading Company
                 </p>
             </div>
             <div class="col-sm-5 text-right mobile-left">
@@ -296,13 +323,42 @@
     <div id="status">&nbsp;</div>
 </div>
 
-{{--View Gift Card--}}
-<div class="modal" tabindex="-1" id="viewGiftCard" role="dialog">
+{{--Leave A Review Modal--}}
+<div class="modal" tabindex="-1" id="leaveReview" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="#">
+                <div class="modal-header">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="modal-title">Your Review</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <b class="text-info"><span class="fa fa-info"></span> &nbsp; Notice:: Your review may be used for promotional purposes</b>
+                </div>
+                <div class="modal-body">
+                    <div class="form-field form-m-bttm">
+                    <textarea name="message" cols="10" rows="8" style="resize: none" placeholder="Share your experience with us so far."
+                              class="form-control required" aria-required="true"
+                              type="text" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-xs btn-alt"><span><i class="fa fa-send"></i> &nbsp;</span><b>Send</b></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{--Admin Payment Proof For Card Modal--}}
+<div class="modal" tabindex="-1" id="adminPaymentProofCard" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="d-flex justify-content-between">
-                    <h5 class="modal-title">Your Uploaded Gift Card</h5>
+                    <h5 class="modal-title">Our Payment Proof</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -310,7 +366,7 @@
             </div>
             <div class="modal-body">
                 <div class="form-field form-m-bttm">
-                    <img src="{{asset('giftcard1.png')}}" alt="">
+                    <img src="{{asset('qrcode.png')}}" alt="">
                 </div>
             </div>
             <div class="modal-footer">
@@ -322,13 +378,13 @@
 </div>
 
 
-{{--View Gift Card Receipt--}}
-<div class="modal" tabindex="-1" id="viewGiftCardReceipt" role="dialog">
+{{--Admin Payment Proof For Coin Modal--}}
+<div class="modal" tabindex="-1" id="adminPaymentProofCoin" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="d-flex justify-content-between">
-                    <h5 class="modal-title">Your Uploaded Gift Card's Receipt</h5>
+                    <h5 class="modal-title">Our Payment Proof</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -336,7 +392,7 @@
             </div>
             <div class="modal-body">
                 <div class="form-field form-m-bttm">
-                    <img src="{{asset('giftcard3.png')}}" alt="">
+                    <img src="{{asset('mathayo-profile.png')}}" alt="">
                 </div>
             </div>
             <div class="modal-footer">
