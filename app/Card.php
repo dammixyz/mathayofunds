@@ -11,7 +11,7 @@ class Card extends Model
     ];
 
     public function cardRate(){
-        return  $this->hasOne(CardRate::class);
+        return  $this->hasMany(CardRate::class, 'card_id');
     }
     public function cardSellings(){
         return  $this->hasMany(CardSelling::class);

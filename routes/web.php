@@ -95,6 +95,11 @@ use Illuminate\Support\Facades\Route;
         'uses' => 'Trade\TradeController@submitTradeCardForm'
     ])->middleware('checkAuth');
 
+    Route::post('/view-rate', [
+        'as' => 'view-rate',
+        'uses' => 'Trade\TradeController@viewRate'
+    ])->middleware('checkAuth');
+
     /*Route::get('/dashboard', function (){
        return view('Pages.dashboard2');
     });*/
