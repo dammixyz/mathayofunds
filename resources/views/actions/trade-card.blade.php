@@ -11,12 +11,11 @@
                         </ul>
                     </div>
                 </div>
-                <div class="gaps size-2x"></div>
                 <!-- Tab panes -->
-                <div class="tab-content no-pd">
-                    <div class="tab-pane fade in active" id="sell-giftcard-tab">
+                <div class="tab-content no-pt no-mt">
+                    <div class="tab-pane fade in active no-pt no-mt" id="sell-giftcard-tab">
                         <!-- Features Box -->
-                        <div class="features-box section section-pad no-pb">
+                        <div class="features-box section section-pad no-pb pt-15">
                             <div class="container">
                                 <div class="row text-center">
                                     <div class="col-md-9 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
@@ -47,7 +46,7 @@
                                                                 </select>
                                                             </div>
 
-                                                            <div class="form-field form-m-bttm">
+                                                            <div class="form-field form-m-bttm" id="gc-denomination">
                                                                 <select name="denomination" class="form-control" id="giftcard-denomination"
                                                                         aria-invalid="false" required>
                                                                     <option value="" selected disabled>Select Card's Denomination</option>
@@ -55,6 +54,17 @@
                                                                         <option value="{{$denomination->id}}" id="d-25">{{$denomination->value}}</option>
                                                                     @endforeach
                                                                 </select>
+                                                            </div>
+                                                            <div class="form-field form-m-bttm" id="bank-wallet-option">
+                                                                <select name="quote-request-hear" class="form-control" id="walletBank"
+                                                                        aria-invalid="false">
+                                                                    <option selected disabled>Select Payment Option</option>
+                                                                    <option value="wallet" id="wallet">Wallet</option>
+                                                                    <option value="bank" id="bank">Bank</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="alert alert-info" id="giftcard-trade-sell">
+                                                                We will pay &#8358;0 for $0
                                                             </div>
                                                             <div class="form-field form-m-bttm">
                                                                 <select name="sell_option" class="form-control" id="giftcard-sell-option"
@@ -66,7 +76,7 @@
                                                             </div>
 
                                                             <div class="form-field form-button form-m-bttm">
-                                                                <button type="submit" class="btn btn-xs btn-color"
+                                                                <button type="submit" class="btn btn-xs btn-alt"
                                                                         style="margin-top: 20px; padding-top: 10px; padding-bottom: 10px">
                                                                     Proceed
                                                                 </button>
@@ -82,21 +92,22 @@
                                         <div
                                             class="box round shadow-alt pricing-box highlited light ucap shadow">
                                             <h4 class="ucap">Our Rates</h4>
-                                            <hr>
-                                            <h5 class="ucap">Amazon</h5>
-                                            <h5>$1 = &#8358;460 <div style="color: darkgreen">($25 - $100)</div> </h5>
-                                            <h5>$1 = &#8358;450 <div style="color: darkgreen">($150 - $250)</div></h5>
-                                            <h5>$1 = &#8358;420 <div style="color: darkgreen">($500)</div></h5>
-                                            <hr>
-                                            <h5 class="ucap">PlayStore</h5>
-                                            <h5>$1 = &#8358;460</h5>
-                                            <hr>
-                                            <h5 class="ucap">iTunes</h5>
-                                            <h5>$1 = &#8358;460 <div style="color: darkgreen">($25-$200)</div></h5>
-                                            <h5>$1 = &#8358;455 <div style="color: darkgreen">($250 - $500)</div></h5>
-                                            <hr>
-                                            <h5 class="ucap">PlayStation</h5>
-                                            <h5>$1 = &#8358;460</h5>
+                                            @foreach($card_rates as $card)
+                                                <hr>
+                                                <h5 class="ucap">{{$card->name}}</h5>
+                                                @if(count($card->cardRate) > 0)
+                                                    @foreach($card->cardRate as $rate)
+                                                        <h5>{{$rate->country->name }}  = &#8358; {{$rate->rate}}  </h5>
+                                                        {{-- <h5>$1 = &#8358;450 <div style="color: darkgreen">($150 - $250)</div></h5>
+                                                         <h5>$1 = &#8358;420 <div style="color: darkgreen">($500)</div></h5>--}}
+                                                    @endforeach
+                                                @else
+                                                    <h5> No Rate Yet</h5>
+                                                @endif
+
+                                                <hr>
+                                            @endforeach
+
                                         </div>
                                     </div>
                                 </div>
@@ -104,9 +115,9 @@
                         </div>
                         <!--End Features Box -->
                     </div>
-                    <div class="tab-pane fade" id="buy-giftcard-tab">
+                    <div class="tab-pane fade no-pt no-mt" id="buy-giftcard-tab">
                         <!-- Features Box -->
-                        <div class="features-box section section-pad no-pb">
+                        <div class="features-box section section-pad no-pb pt-15">
                             <div class="container">
                                 <div class="row " style="display: flex !important; justify-content: center !important;">
                                     <div
@@ -129,10 +140,19 @@
     <script>
         $(document).on('ready', function () {
             $('div#themes_panel').hide();
+            $('#gc-denomination').hide();
+
+
             var app = @json($cards);
             var id;
             $("#giftcard-type").change(function() {
                 id = $(this).find('option:selected').attr('id');
+                if (id){
+                    const gc_country = $('#giftcard-country').find(":selected").val();
+                    if (gc_country !== ""){
+                        $('#gc-denomination').show();
+                    }
+                }
                 let selected_card = app[id].image;
                 let selected_name = app[id].name;
                 $('#card-image-display').remove();
@@ -210,6 +230,12 @@
             });
             $("#giftcard-country").change(function() {
                 var id = $(this).find('option:selected').attr('id')
+                if (id){
+                    const gc_type = $('#giftcard-type').find(":selected").val();
+                    if (gc_type !== ""){
+                        $('#gc-denomination').show();
+                    }
+                }
                 if (id === 'others'){
                     var html= '<div id="specify-country-others-wrapper"><div class="form-field form-m-bttm" id="specify-country-others"><label for="country_others" class="text-sm">Other Country</label>'
                     html += '<input name="country_other" placeholder="Please specify card\'s country" class="form-control required" aria-required="true" type="text" required></div>'
@@ -312,7 +338,71 @@
                 }
             });
 
+            $("#walletBank").change(function() {
+                id = $(this).find('option:selected').attr('id');
+                if(id === 'wallet'){
+                    $('#bankPayment').remove();
+                    var html = '<div id="walletPayment"><div class="form-field form-m-bttm">'
+                    html += '<label for="wallet_balance" class="text-sm">Wallet Balance</label>'
+                    html += '<input name="wallet_balance" value="&#8358;{{Auth::user()->account_balance}}" class="form-control required" aria-required="true" type="text" disabled required></div></div>'
+                    $( html ).insertAfter('#bank-wallet-option');
+                }
+                else if(id === 'bank'){
+                    $('#walletPayment').remove();
+                    var html = '<div id="bankPayment"><div class="form-field form-m-bttm"><label for="bank" class="text-sm">Bank Name'
+                    html += '</label><input name="bank" value="{{Auth::user()->accountDetail->bank}}" class="form-control required" aria-required="true" type="text" disabled required>'
+                    html += '</div><div class="form-field form-m-bttm"><label for="account_no" class="text-sm">Bank Account Number</label>'
+                    html += '<input name="account_no" value="{{Auth::user()->accountDetail->account_number}}" class="form-control required" aria-required="true" type="text" disabled required>'
+                    html += '</div><div class="form-field form-m-bttm"><label for="full_name" class="text-sm">Full Name (As per bank)</label>'
+                    html += '<input name="full_name" value="{{Auth::user()->accountDetail->name}}" class="form-control required" aria-required="true" type="text" disabled required></div></div>'
+                    $( html ).insertAfter('#bank-wallet-option');
+                }
 
+            });
+
+            $("#giftcard-denomination").on('change', function () {
+                var card_id = $('#giftcard-type').val();
+                var denomination = $("#giftcard-denomination").val();
+                var country_id = $("#giftcard-country").val();
+                if (country_id === "others"){
+                    toastr.error('Admin will get back to you on the card rate through your direct message');
+                }
+                else{
+                    $.ajaxSetup({
+                        headers: {
+                            'X-XSRF-Token': $('meta[name="_token"]').attr('content')
+                        }
+                    });
+                    var data =  {
+                        country_id: country_id,
+                        card_id: card_id,
+                        denomination: denomination,
+                        _token: '{!! csrf_token() !!}',
+                    }
+                    $.ajax({
+                        url: "{{route('view-rate') }}",
+                        method: 'POST',
+                        contentType:"application/json",
+                        dataType: "json",
+                        data: JSON.stringify(data),
+                        cache: false,
+                        success: function(Value){
+                            if(Value.status){
+                                let result = denomination * Value.rate
+                                $('#giftcard-trade-sell').html('We will pay &#8358 ' + result + ' for each card you upload for the denomination selected');
+                                toastr.success(Value.msg);
+                            }
+                            else{
+                                toastr.error(Value.msg);
+                            }
+                        },
+                        failure: function (Value) {
+                            console.log(Value);
+                        }
+                    });
+                }
+
+            })
         })
     </script>
 @endsection

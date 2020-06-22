@@ -41,7 +41,7 @@ class TradeController extends Controller
                 'bitcoin_platforms', 'ethereum_platforms', 'coins', 'account_details'));
         }
         else{
-            dd("you need to upload set up ur account");
+            return redirect(route('user.profile'))->with('failure', 'Your account details must be updated to perform this action');
         }
 
     }
@@ -55,6 +55,7 @@ class TradeController extends Controller
             $cards = Card::get();
             $countries = Country::get();
             $denominations = Denomination::get();
+            $card_rates = Card::inRandomOrder()->take(2)->get();
             /*$coins = Coin::getCoins();
             $bitcoin = Coin::getBitCoin();
             $ethereum = Coin::getEthereum();
@@ -62,10 +63,10 @@ class TradeController extends Controller
             $ethereum_platforms = Platform::getCoinPlatforms($ethereum->id);
             $bitcoin_rate = CoinRate::getRate($bitcoin->id);
             $ethereum_rate = CoinRate::getRate($ethereum->id);*/
-            return view('actions.trade-card', compact('cards', 'countries', 'denominations'));
+            return view('actions.trade-card', compact('cards', 'countries', 'denominations', 'card_rates'));
         }
         else{
-            dd("you need to upload set up ur account");
+            return redirect(route('user.profile'))->with('failure', 'Your account details must be updated to perform this action');
         }
 
     }
@@ -217,6 +218,24 @@ class TradeController extends Controller
         }
         catch (\Exception $exception){
             return redirect()->back()->with('failure', "Transaction Failed to be Processed, Kindly try again");
+        }
+    }
+    public function viewRate(Request $request){
+        $rate = CardRate::where(['card_id' => $request->card_id, 'country_id' => $request->country_id])->first() ;
+        if ($rate){
+            $response = array(
+                "rate" => $rate->rate,
+                "status" => true,
+                "msg" => "Rate Successfully Updated"
+            );
+            return response()->json($response);
+        }
+        else{
+            $response = array(
+                "status" => false,
+                "msg" => "No Rate Found For the Selected Card, Kindly Message Admin For Clarification"
+            );
+            return response()->json($response);
         }
     }
 

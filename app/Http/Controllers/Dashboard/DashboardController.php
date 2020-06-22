@@ -41,6 +41,7 @@ class DashboardController extends Controller
         return view('actions.profile', compact('account_details'));
     }
 
+
     public function updateBankDetails(Request $request){
         $this->validate($request, [
             'bank'=> 'bail|required',
