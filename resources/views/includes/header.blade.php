@@ -13,8 +13,8 @@
                 </div>
                 <div class="col-sm-6 al-right">
                     <ul class="top-nav">
-                        <li><a href="faqs.html">Help</a></li>
-                        <li><a href="faqs.html">Support</a></li>
+                        <li><a href="{{route('faqs')}}">Help</a></li>
+                        <li><a href="{{route('faqs')}}">Support</a></li>
                         @if(!Auth::check())
                             <li><a href="{{route('login')}}">Login</a></li>
                             <li><a href="{{route('register')}}">Register</a></li>
@@ -32,7 +32,7 @@
     <div class="navbar navbar-primary">
         <div class="container relative">
             <!-- Logo -->
-            <a class="navbar-brand" href="index-2.html">
+            <a class="navbar-brand" href="{{route('homepage')}}">
                 <img class="logo logo-dark" alt="logo" src="{{asset('mat_logo.png')}}">
                 <img class="logo logo-light" alt="logo" src="{{asset('mat_logo.png')}}">
             </a>

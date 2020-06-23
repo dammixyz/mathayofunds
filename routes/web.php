@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-    Route::get('/view-page', function (){
+    /*Route::get('/view-page', function (){
         return view('pages.blog-show');
-    })->name('welcome');
+    })->name('welcome');*/
     Route::get('/', [
         'as' => 'homepage',
         'uses' => 'Homepage\HomepageController@Homepage'
