@@ -147,7 +147,7 @@
                                                         <img src="{{asset('qrcode.png')}}" alt="box-image"
                                                              class="box-image">
                                                         <h5 class="small-wallet wallet-address-text" id="bitcoinBlockchain">
-                                                            sueiuweauiuiueiweuwiu76734738393o49r92r93jrj932r3iewuewuiewewew8
+                                                            ghkjkhjkhkhkj
                                                         </h5>
                                                         <span>
                                                             <button onclick='copyBitcoinBlockchain("bitcoinBlockchain")' class="copy-button">
@@ -333,17 +333,16 @@
                                             <hr>
                                             <h5 class="ucap">Bank Name</h5>
                                             <h6 class="small-wallet wallet-address-text" id="bitcoinBlockchain">
-                                                First Bank
+                                                FCMB
                                             </h6>
                                             <h5 class="ucap">Account Number</h5>
                                             <h6 class="small-wallet wallet-address-text" id="bitcoinBlockchain">
-                                                0283929445
+                                                6857840014
                                             </h6>
                                             <h5 class="ucap">Company Name</h5>
                                             <h6 class="small-wallet wallet-address-text" id="bitcoinBlockchain">
-                                                Mathayo Funds
+                                                Mathayo business Enterprise
                                             </h6>
-
                                         </div>
                                     </div>
                                 </div>

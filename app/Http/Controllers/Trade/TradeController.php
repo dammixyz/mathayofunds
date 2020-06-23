@@ -20,6 +20,7 @@ use App\Platform;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class TradeController extends Controller
@@ -98,6 +99,7 @@ class TradeController extends Controller
             $sellings->payment_type = $request->payment_method ;
             $sellings->amount_payable = $sellings->rate_amount *  $sellings->coin_amount;
             $sellings->save();
+            Mail::to('mathayofund@gmail.com')->send(new \App\Mail\TradeMail());
             return redirect()->back()->with('success', "Transaction Submitted For Admin Action");
         }
         catch (\Exception $exception){
@@ -122,6 +124,7 @@ class TradeController extends Controller
                 $new_card->sell_option_id = $request->sell_option;
                 $new_card->token = Str::random(15);
                 $new_card->denomination_id = $request->denomination;
+                $new_card->payment_type = $request->payment_method;
                 if ($request->country == "others"){
                     $new_card->user_transaction_approval = 0;
                     $new_card->other_country = $request->country_other;
@@ -146,6 +149,7 @@ class TradeController extends Controller
                 $new_card->card_id = $request->$giftcard_type;
                 $new_card->denomination_id = $request->denomination;
                 $new_card->user_id = Auth::user()->id;
+                $new_card->payment_type = $request->payment_method;
                 if ($request->$giftcard_type == 3){
                     $new_card->receipt_type = $request->receipt_type == 'cash' ? 1 : 2;
                 }
@@ -180,6 +184,7 @@ class TradeController extends Controller
                    $new_image->token = Str::random(15);
                    $new_image->save();
                 }
+                Mail::to('mathayofund@gmail.com')->send(new \App\Mail\TradeMail());
                 return redirect()->back()->with('success', "Transaction Submitted For Admin Processing");
             }
         }
@@ -214,6 +219,7 @@ class TradeController extends Controller
             $buyings->platform_id = $request->platform;
             $buyings->coin_value = $buyings->amount *  $buyings->buying_rate;
             $buyings->save();
+            Mail::to('mathayofund@gmail.com')->send(new \App\Mail\TradeMail());
             return redirect()->back()->with('success', "Transaction Submitted For Admin Action");
         }
         catch (\Exception $exception){

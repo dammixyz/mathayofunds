@@ -44,7 +44,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <div class="quote-btn"><a class="btn" href="contact.html"><span>get started</span></a></div>
             </div>
             <!-- MainNav -->
             <nav class="navbar-collapse collapse" id="mainnav">
@@ -90,7 +89,7 @@
                                     <h1 class="animate-bottom delayms5">Bitcoin Trader <br /><span class="ucap">YOU CAN TRUST</span></h1>
                                     <p class="lead animate-bottom delayms7">Mathayo Funds, we are No. 1 Trader of Bitcoin in Nigeria</p>
                                     <ul class="btns animate-bottom delayms9">
-                                        <li><a href="{{route('user.trade-coin')}}" class="btn">Get Started</a></li>
+                                        <li><a href="{{route('user.trade-coin')}}" class="btn">Trade Coin With Us</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -106,7 +105,7 @@
                                     <p class="lead animate-bottom delayms7">We buy all kinds of Giftcards, ranging from Amazon, iTunes, Steam,Sephora,Nordstrom,Googleplay etc.</p>
 
                                     <ul class="btns animate-bottom delayms9">
-                                        <li><a href="{{route('user.trade-card')}}" class="btn">Get Started</a></li>
+                                        <li><a href="{{route('user.trade-card')}}" class="btn">Trade Card With Us</a></li>
                                     </ul>
                                 </div>
                             </div>

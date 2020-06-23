@@ -12,9 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
     /*Route::get('/view-page', function (){
         return view('pages.blog-show');
     })->name('welcome');*/
+
+    Route::get('/view-page', function (){
+        return view('email.registration');
+    })->name('welcome');
+
     Route::get('/', [
         'as' => 'homepage',
         'uses' => 'Homepage\HomepageController@Homepage'
@@ -180,4 +186,4 @@ use Illuminate\Support\Facades\Route;
         'uses' => 'Dashboard\DashboardController@withdrawalHistories'
     ])->middleware('checkAuth');
 
-    Route::resource('blogs', 'BlogController')->middleware('checkAuth');
+    Route::resource('blogs', 'BlogController');
