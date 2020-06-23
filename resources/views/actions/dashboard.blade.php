@@ -5,40 +5,39 @@
         <div class="container">
             <div class="row">
                @include('includes.sidebar')
-                <div class="col-md-9 col-sm-6 res-m-bttm">
+                <div class="col col-lg-9 col-md-12 col-sm-12 res-m-bttm">
+
                     <div class="row">
-                        <div class="col-md-4 col-sm-6 res-m-bttm">
-                            <div class="pricing-box highlited light ucap shadow">
+                        <div class="col col-lg-4 col-md-12 col-sm-12">
+                            <div class="pricing-box highlited light ucap shadow mb-15">
                                 <span class="pricing-title">Total Messages</span>
                                 <span class="pricing-sap mt-10"></span>
                                 <span class="pricing-price"> {{count($chats)}}</span>
                                 <a href="{{route('user.message')}}" class="btn btn-xs btn-outline btn-alt">View Details</a>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6 res-m-bttm">
-                            <div class="pricing-box ucap shadow">
+                        <div class="col col-lg-4 col-md-12 col-sm-12">
+                            <div class="pricing-box ucap shadow mb-15">
                                 <span class="pricing-title">Coin Trades</span>
                                 <span class="pricing-sap mt-10"></span>
                                 <span class="pricing-price">{{count($coin_sellings) + count($coin_buyings)}}</span>
                                 <a href="{{route('user.coin-transactions')}}" class="btn btn-xs btn-outline btn-color">View Details</a>
                             </div>
+
                         </div>
-                        <div class="col-md-4 col-sm-6 res-m-bttm">
-                            <div class="pricing-box ucap shadow">
+                        <div class="col col-lg-4 col-md-12 col-sm-12">
+                            <div class="pricing-box ucap shadow mb-15">
                                 <span class="pricing-title">Gift Card Trades</span>
                                 <span class="pricing-sap mt-10"></span>
                                 <span class="pricing-price">{{count($cards)}}</span>
                                 <a href="{{route('user.card-transactions')}}" class="btn btn-xs btn-outline btn-color">View Details</a>
                             </div>
+
                         </div>
+
                     </div>
-                    <div class="row mt-15">
-                        <div class="col-md-12 col-sm-6 res-m-bttm">
-                            <!-- Transactions -->
-                            <div class="features-box section section-pad no-pb no-pt">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="box round shadow-alt mb-15">
+
+                    <div class="box round shadow-alt mb-15">
                                             <div class="d-flex justify-content-between">
                                                 <h6 class="ucap">Latest Card Trades</h6>
                                                 <a href="#" data-toggle="modal" data-target="#leaveReview"><span><i class="fa fa-commenting"></i> &nbsp;</span><b>Leave a Review</b></a>
@@ -159,19 +158,8 @@
                                                 </table>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Features Box -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 col-sm-6 res-m-bttm">
-                            <!-- Transactions -->
-                            <div class="features-box section section-pad no-pb no-pt">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="box round shadow-alt mb-15">
+
+                    <div class="box round shadow-alt mb-15">
                                             <div class="d-flex justify-content-between">
                                                 <h6 class="ucap">Latest Coin Trades</h6>
                                                 <a href="#" data-toggle="modal" data-target="#leaveReview"><span><i class="fa fa-commenting"></i> &nbsp;</span><b>Leave a Review</b></a>
@@ -268,15 +256,8 @@
                                                 </table>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Features Box -->
-                        </div>
-                    </div>
-                    <div class="row mb-15">
-                        <div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                            <div class="box round shadow-alt">
+
+                    <div class="box round shadow-alt mb-15">
                                 <h6 class="ucap">Our Coin Rates</h6>
                                 <p class="small">This table shows our top five(5) coin rates. Check the rates page to view
                                     all coin rates</p>
@@ -301,9 +282,8 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm">
-                            <div class="box round shadow-alt">
+
+                    <div class="box round shadow-alt mb-15">
                                 <h6 class="ucap">Our Gift Card Rates</h6>
                                 <p class="small">This table shows our top five(5) gift card rates. Check the rates page to
                                     view all gift card rates</p>
@@ -328,11 +308,8 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
 
-                    </div>
                 </div>
-
             </div>
         </div>
     </div><!--End Features Box -->

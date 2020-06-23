@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
     Route::get('/view-page', function (){
-        return view('pages.blog-show');
+        return view('email.registration');
     })->name('welcome');
     Route::get('/', [
         'as' => 'homepage',
