@@ -35,87 +35,192 @@
         @include('Admin.layout.sidebar')
         <div class="main-content">
             @yield('contents')
-            <div class="modal fade exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            {{--Modals--}}
+            <div class="modal fade coinProofUpload" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Order Details</h5>
+                            <h4 class="modal-title" id="exampleModalLabel">Upload Payment Proof</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p class="mb-2">Product id: <span class="text-primary">#SK2540</span></p>
-                            <p class="mb-4">Billing Name: <span class="text-primary">Neal Matthews</span></p>
+                            <h5 class="text-center">Payment Proof</h5>
+                            <p class="text-muted mb-2 text-center">
+                                This will appear on the customer's <b>Coin Transactions</b> table
+                            </p>
+                            <div class="mt-3">
+                                <label>Payment Proof</label>
+                                <input type="file" class="form-control" placeholder="Upload your payment proof" name="payment_proof" id="defaultconfig" />
+                            </div>
 
-                            <div class="table-responsive">
-                                <table class="table table-centered table-nowrap">
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">Product</th>
-                                        <th scope="col">Product Name</th>
-                                        <th scope="col">Price</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row">
-                                            <div>
-                                                <img src="assets/images/product/img-7.png" alt="" class="avatar-sm">
-                                            </div>
-                                        </th>
-                                        <td>
-                                            <div>
-                                                <h5 class="text-truncate font-size-14">Wireless Headphone (Black)</h5>
-                                                <p class="text-muted mb-0">$ 225 x 1</p>
-                                            </div>
-                                        </td>
-                                        <td>$ 255</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <div>
-                                                <img src="assets/images/product/img-4.png" alt="" class="avatar-sm">
-                                            </div>
-                                        </th>
-                                        <td>
-                                            <div>
-                                                <h5 class="text-truncate font-size-14">Phone patterned cases</h5>
-                                                <p class="text-muted mb-0">$ 145 x 1</p>
-                                            </div>
-                                        </td>
-                                        <td>$ 145</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">
-                                            <h6 class="m-0 text-right">Sub Total:</h6>
-                                        </td>
-                                        <td>
-                                            $ 400
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">
-                                            <h6 class="m-0 text-right">Shipping:</h6>
-                                        </td>
-                                        <td>
-                                            Free
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">
-                                            <h6 class="m-0 text-right">Total:</h6>
-                                        </td>
-                                        <td>
-                                            $ 400
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                            <br><br>
+
+                            <h5 class="text-center">Message (Optional)</h5>
+                            <p class="text-muted mb-2 text-center">
+                                This will appear on the customer's <b>Messages</b>
+                            </p>
+                            <div class="mt-3">
+                                <label>Title</label>
+                                <input type="text" class="form-control" name="Title" placeholder="Message Title" id="defaultconfig" />
+                            </div>
+                            <div class="mt-3">
+                                <label>Message Body</label>
+                                <textarea id="textarea" class="form-control" rows="3" placeholder="Your Message..."></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade coinUpload" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Customer's Payment Proof</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="">
+                                        <img src="{{asset('mathayo.jpg')}}" class="img-fluid" alt="Responsive image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade cancelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">You Are About to Cancel This Transaction</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h5 class="text-center">Message</h5>
+                            <p class="text-muted mb-2 text-center">
+                                Let your customer know the reason you cancelled this transaction. This will appear on the customer's <b>Messages</b>
+                            </p>
+                            <div class="mt-3">
+                                <label>Title</label>
+                                <input type="text" class="form-control" name="Title" placeholder="Message Title" id="defaultconfig" />
+                            </div>
+                            <div class="mt-3">
+                                <label>Message Body</label>
+                                <textarea id="textarea" class="form-control" rows="3" placeholder="Your Message..."></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade approveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Upload Payment Proof</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h5 class="text-center">Payment Proof</h5>
+                            <p class="text-muted mb-2 text-center">
+                                This will appear on the customer's <b>Card Transactions</b> table
+                            </p>
+                            <div class="mt-3">
+                                <label>Payment Proof</label>
+                                <input type="file" class="form-control" placeholder="Upload your payment proof" name="Rate" id="defaultconfig" />
+                            </div>
+
+                            <br><br>
+
+                            <h5 class="text-center">Message (Optional)</h5>
+                            <p class="text-muted mb-2 text-center">
+                                This will appear on the customer's <b>Messages</b>
+                            </p>
+                            <div class="mt-3">
+                                <label>Title</label>
+                                <input type="text" class="form-control" name="Title" placeholder="Message Title" id="defaultconfig" />
+                            </div>
+                            <div class="mt-3">
+                                <label>Message Body</label>
+                                <textarea id="textarea" class="form-control" rows="3" placeholder="Your Message..."></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade rateMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Negotiate with the Customer</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h5 class="text-center">Rate</h5>
+                            <p class="text-muted mb-2 text-center">
+                                This will appear on the customer's <b>Payable</b> field
+                            </p>
+                            <div class="mt-3">
+                                <label>Your Rate</label>
+                                <input type="number" class="form-control" placeholder="Enter your rate" name="Rate" id="defaultconfig" />
+                            </div>
+
+                            <br><br>
+
+                            <h5 class="text-center">Message</h5>
+                            <p class="text-muted mb-2 text-center">
+                                This will appear on the customer's <b>Messages</b>
+                            </p>
+                            <div class="mt-3">
+                                <label>Title</label>
+                                <input type="text" class="form-control" name="Title" placeholder="Message Title" id="defaultconfig" />
+                            </div>
+                            <div class="mt-3">
+                                <label>Message Body</label>
+                                <textarea id="textarea" class="form-control" rows="3" placeholder="Your Message..."></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade makeAdmin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Are You Sure?</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                         </div>
                     </div>
                 </div>

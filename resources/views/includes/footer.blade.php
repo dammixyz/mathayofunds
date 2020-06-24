@@ -5,7 +5,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-6 wgs-box res-m-bttm-lg">
+            <div class="col-lg-4 col-md-4 col-sm-6 wgs-box res-m-bttm-lg" id="services-section">
                 <!-- Each Widget -->
                 <div class="wgs-footer wgs-menu">
                     <h5 class="wgs-title ucap">Services</h5>
@@ -24,7 +24,7 @@
                 </div>
                 <!-- End Widget -->
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 wgs-box res-m-bttm-lg">
+            <div class="col-lg-4 col-md-4 col-sm-6 wgs-box res-m-bttm-lg" id="company-section">
                 <!-- Each Widget -->
                 <div class="wgs-footer wgs-menu">
                     <h5 class="wgs-title ucap">Our Company</h5>
@@ -45,10 +45,10 @@
                     <h5 class="wgs-title ucap">get in touch</h5>
                     <div class="wgs-content">
                         <ul class="wgs-contact-list">
-                            <li><span class="pe pe-7s-map-marker"></span>4 Salako street. Magodo-Isheri, Isheri Magodo, Kosofe, Lagos</li>
+                            <li id="address"><span class="pe pe-7s-map-marker"></span>4 Salako street. Magodo-Isheri, Isheri Magodo, Kosofe, Lagos</li>
                             <li><span class="pe pe-7s-call"></span>Telephone : +2348038103697</li>
                             <li><span class="pe pe-7s-global"></span>Email : <a href="#">mathayofund@gmail.com</a> <br/>Web : <a href="#">mathayofunds</a></li>
-                            <li><span class="pe pe-7s-clock"></span>Opening : Monday - Friday: 08:00 - 22:00 <br/>Closing : Saturday, Sunday: Closed
+                            <li id="opening-closing"><span class="pe pe-7s-clock"></span>Opening : Monday - Friday: 08:00 - 22:00 <br/>Closing : Saturday, Sunday: Closed
                         </ul>
                     </div>
                 </div>

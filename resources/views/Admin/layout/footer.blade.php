@@ -6,7 +6,7 @@
             </div>
             <div class="col-sm-6">
                 <div class="text-sm-right d-none d-sm-block">
-                    Design & Develop by Drebakare
+                    Nigeria's Leading Crypto and Gift Card Trading Platform
                 </div>
             </div>
         </div>

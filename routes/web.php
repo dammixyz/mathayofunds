@@ -193,4 +193,15 @@ Route::resource('blogs', 'BlogController');
 Route::get('/admin/dashboard', [
     'as' => 'admin.dashboard',
     'uses' => 'Admin\AdminController@adminDashboard'
-])->middleware('checkAdmin');
+]);
+
+Route::get('/admin/card-receipt-upload', [
+    'as' => 'admin.card-receipt-upload',
+    'uses' => 'Admin\AdminController@adminViewCardReceipt'
+]);
+
+Route::get('/admin/user-details', [
+    'as' => 'admin.user-details',
+    'uses' => 'Admin\AdminController@userDetails'
+]);
+

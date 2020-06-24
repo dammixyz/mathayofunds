@@ -36,14 +36,14 @@
                                         <div class="tab-pane fade in active no-pb pt-15" id="bitcoin-wallet-tab">
                                             <div class="row">
                                                 <div
-                                                    class="box round shadow-alt pricing-box highlited light  shadow">
+                                                    class="box round shadow-alt pricing-box highlited light shadow">
                                                     <h4 class="ucap">Bitcoin wallet details</h4>
                                                     <hr>
                                                     @foreach($bitcoin_platforms as $bitcoin_platform)
                                                         <h6 class="ucap">{{$bitcoin_platform->name}}</h6>
                                                         <img src="{{asset($bitcoin_platform->qr_code)}}" alt="box-image"
                                                              class="box-image">
-                                                        <h5 class="small-wallet wallet-address-text"
+                                                        <h5 class=" wallet-address-text"
                                                             id="bitcoin{{$bitcoin_platform->name}}">
                                                             {{$bitcoin_platform->wallet_address}}
                                                         </h5>
@@ -62,7 +62,7 @@
                                         <div class="tab-pane fade no-pb pt-15" id="ethereum-wallet-tab">
                                             <div class="row">
                                                 <div
-                                                    class="box round shadow-alt pricing-box highlited light  shadow">
+                                                    class="box round shadow-alt pricing-box highlited light shadow">
                                                     <h4 class="ucap">Ethereum wallet details</h4>
                                                     @foreach($ethereum_platforms as $ethereum_platform)
                                                         <hr>
