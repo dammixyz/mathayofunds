@@ -177,12 +177,14 @@
                                                 <td width="400" align="center">
                                                     <div class="contentEditableContainer contentTextEditable">
                                                         <div class="contentEditable" align='left' >
-                                                            <p> <strong>Dear Sonia,</strong>
+                                                            <p> <strong>Dear {{$user}},</strong>
                                                                 <br/>
-                                                                <br/> Your Question: Lorem
+                                                                <br/>Welcome to Mathayo Funds
                                                                 <br/>
-                                                                Answer: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aut consequatur dolor dolore doloribus
-                                                                eaque facilis in laborum nemo, neque nostrum praesentium quo repellat repudiandae saepe sit suscipit tempora voluptas.
+                                                                We Buy All kinds of giftcards and Bitcoin ranging from: Amazon Gift card, iTunes
+                                                                Giftcard, Steam wallet, Sephora Giftcard, Vanilla, Nordstrom, Googleplay Giftcard etc...
+                                                                Sell to us now and benefit from our amazing rates, and you can also earn more through our
+                                                                affiliate marketing program, as you refer to us, you earn some discounts..
                                                             </p>
                                                         </div>
                                                     </div>

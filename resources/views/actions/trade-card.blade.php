@@ -64,9 +64,9 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-field form-m-bttm" id="bank-wallet-option">
-                                                        <select name="quote-request-hear" class="form-control"
+                                                        <select name="payment_method" class="form-control"
                                                                 id="walletBank"
-                                                                aria-invalid="false">
+                                                                aria-invalid="false" required>
                                                             <option selected disabled>Select Payment Option</option>
                                                             <option value="wallet" id="wallet">Wallet</option>
                                                             <option value="bank" id="bank">Bank</option>

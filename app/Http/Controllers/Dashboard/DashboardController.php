@@ -66,7 +66,14 @@ class DashboardController extends Controller
                 $new_account_details->user_id = Auth::user()->id;
                 $new_account_details->token = Str::random(15);
                 $new_account_details->save();
-                return redirect()->back()->with('success','Account Details Successfully Saved');
+                if (session()->get('intended_url')){
+                    $link = session()->get('intended_url');
+                    session()->forget('intended_url');
+                    return redirect(route($link))->with('success','Account Details Successfully Saved');
+                }
+                else{
+                    return redirect()->back()->with('success','Account Details Successfully Saved');
+                }
             }
         }
         catch (\Exception $exception){

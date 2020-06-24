@@ -32,6 +32,21 @@
                 background-color:#f7921a!important;
                 border-color:#f7921a!important;
             }
+            @media only screen and (max-width: 380px) {
+                #services-section{
+                    display: none;
+                }
+                #company-section{
+                    display: none;
+                }
+                #address{
+                    display: none;
+                }
+                #opening-closing{
+                    display: none;
+                }
+
+            }
         </style>
     </head>
     <body>
@@ -88,11 +103,7 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
-        <script>
-            $(window).on('load', function () {
-                $('div#themes_panel').hide();
-            })
-        </script>
+        @include('includes.platform-js')
         <script type="text/javascript">
             @if(session('failure'))
             toastr.error('{{session("failure")}}');
