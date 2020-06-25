@@ -30,7 +30,7 @@
                                     <div class="media">
                                         <div class="media-body">
                                             <p class="text-muted font-weight-medium">Registered Users</p>
-                                            <h4 class="mb-0">5</h4>
+                                            <h4 class="mb-0">{{count($users)}}</h4>
                                         </div>
 
                                         <div
@@ -49,7 +49,7 @@
                                     <div class="media">
                                         <div class="media-body">
                                             <p class="text-muted font-weight-medium">Messages</p>
-                                            <h4 class="mb-0">42</h4>
+                                            <h4 class="mb-0">{{count($messages)}}</h4>
                                         </div>
 
                                         <div
@@ -68,7 +68,7 @@
                                     <div class="media">
                                         <div class="media-body">
                                             <p class="text-muted font-weight-medium">Card Trades</p>
-                                            <h4 class="mb-0">4</h4>
+                                            <h4 class="mb-0">{{count($cards)}}</h4>
                                         </div>
 
                                         <div
@@ -87,7 +87,7 @@
                                     <div class="media">
                                         <div class="media-body">
                                             <p class="text-muted font-weight-medium">Coin Trades</p>
-                                            <h4 class="mb-0">45</h4>
+                                            <h4 class="mb-0">{{count($coin_sellings) + count($coin_buyings)}}</h4>
                                         </div>
 
                                         <div
@@ -125,6 +125,7 @@
                                     <tr>
                                         <th>Email</th>
                                         <th>Username</th>
+                                        <th>Role</th>
                                         <th>Bank</th>
                                         <th>Account No</th>
                                         <th>Account Name</th>
@@ -132,70 +133,37 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>sonia@gmail.com</td>
-                                        <td>sonny</td>
-                                        <td>GTBank</td>
-                                        <td>910204948</td>
-                                        <td>Sonia Ameh</td>
-                                        <td>
-                                            <!-- Button trigger modal -->
-                                            <a href="{{route('admin.user-details')}}">
+                                    @foreach($limit_users as $key => $limit_user)
+                                        <tr>
+                                            <td>{{$limit_user->email}}</td>
+                                            <td>{{$limit_user->username}}</td>
+                                            <td>{{$limit_user->role_id == 1 ? "Customer" : "Admin"}}</td>
+                                            <td>{{$limit_user->accountDetail == null ? "Nill" : $limit_user->accountDetail->bank}}</td>
+                                            <td>{{$limit_user->accountDetail == null ? "Nill" : $limit_user->accountDetail->account_number}}</td>
+                                            <td>{{$limit_user->accountDetail == null ? "Nill" : $limit_user->accountDetail->name}}</td>
+                                            <td>
+                                                <!-- Button trigger modal -->
+                                                <a href="{{route('admin.user-details', ['token' => $limit_user->token])}}">
                                                 <span data-toggle="tooltip" data-placement="top" title data-original-title="View User Details">
                                                     <i class="mdi mdi-eye mdi-24px"></i>
                                                 </span>
-                                            </a>
-                                            &nbsp;
-                                            <a href="#" data-toggle="modal" data-target=".makeAdmin">
-                                                <span data-toggle="tooltip" data-placement="top" title data-original-title="Make Admin">
-                                                    <i class="mdi mdi-account-cog-outline mdi-24px"></i>
-                                                </span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>sonia@gmail.com</td>
-                                        <td>sonny</td>
-                                        <td>GTBank</td>
-                                        <td>910204948</td>
-                                        <td>Sonia Ameh</td>
-                                        <td>
-                                            <!-- Button trigger modal -->
-                                            <a href="{{route('admin.user-details')}}" >
-                                                <span data-toggle="tooltip" data-placement="top" title data-original-title="View User Details">
-                                                    <i class="mdi mdi-eye mdi-24px"></i>
-                                                </span>
-                                            </a>
-                                            &nbsp;
-                                            <a href="#" data-toggle="modal" data-target=".makeAdmin">
-                                                <span data-toggle="tooltip" data-placement="top" title data-original-title="Make Admin">
-                                                    <i class="mdi mdi-account-cog-outline mdi-24px"></i>
-                                                </span>
-                                            </a>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>stunner@gmail.com</td>
-                                        <td>sonny</td>
-                                        <td>UBA</td>
-                                        <td>910204948</td>
-                                        <td>Sonia Ameh</td>
-                                        <td>
-                                            <!-- Button trigger modal -->
-                                            <a href="{{route('admin.user-details')}}" >
-                                                <span data-toggle="tooltip" data-placement="top" title data-original-title="View User Details">
-                                                    <i class="mdi mdi-eye mdi-24px"></i>
-                                                </span>
-                                            </a>
-                                            &nbsp;
-                                            <a href="#" data-toggle="modal" data-target=".makeAdmin">
-                                                <span data-toggle="tooltip" data-placement="top" title data-original-title="Make Admin">
-                                                    <i class="mdi mdi-account-cog-outline mdi-24px"></i>
-                                                </span>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                                </a>
+                                                &nbsp;@if($limit_user->role_id == 1)
+                                                    <a href="#" data-toggle="modal" data-target=".makeAdmin-{{$key}}">
+                                                    <span data-toggle="tooltip" data-placement="top" title data-original-title="Make Admin">
+                                                        <i class="mdi mdi-account-cog-outline mdi-24px"></i>
+                                                    </span>
+                                                    </a>
+                                                @else
+                                                    <a href="{{route('admin.remove-admin', ['token' => $limit_user->token])}}">
+                                                        <span data-toggle="tooltip" data-placement="top" title data-original-title="Make Admin">
+                                                            <i class="mdi mdi-account-convert mdi-24px"></i>
+                                                        </span>
+                                                    </a>
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -486,10 +454,12 @@
                                     <tr>
                                         <th scope="col">Date</th>
                                         <th scope="col">Username</th>
-                                        <th scope="col">E-mail</th>
                                         <th scope="col">Type</th>
                                         <th scope="col">Platform</th>
                                         <th scope="col">Amount ($)</th>
+                                        <th scope="col">Rate</th>
+                                        <th scope="col">Value</th>
+                                        <th scope="col">Wallet Address</th>
                                         <th scope="col">Buy/Sell</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Action(s)</th>
@@ -499,151 +469,76 @@
                                     </thead>
 
                                     <tbody>
-                                    <tr>
-                                        <td>03 Mar, 2020</td>
-                                        <td>Sonia</td>
-                                        <td>sonia@gmail.com</td>
-                                        <td>BTC</td>
-                                        <td>Paxful</td>
-                                        <td>$ 9067.62</td>
-                                        <td>Buy</td>
-                                        <td>
-                                            <span class="badge badge-warning font-size-11">Pending</span>
-                                        </td>
-                                        <td>
-                                            <button type="button"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light font-size-13"
-                                                    data-toggle="modal" data-target=".coinUpload">
-                                                <span><i class="fa fa-eye"></i></span>
-                                            </button>
-                                            <button type="button"
-                                                    class="btn btn-success btn-sm btn-rounded waves-effect waves-light font-size-13"
-                                                    data-toggle="modal" data-target=".coinProofUpload">
-                                                <span><i class="fa fa-check"></i></span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>03 Mar, 2020</td>
-                                        <td>Sonia</td>
-                                        <td>sonia@gmail.com</td>
-                                        <td>BTC</td>
-                                        <td>Paxful</td>
-                                        <td>$ 9067.62</td>
-                                        <td>Buy</td>
-                                        <td>
-                                            <span class="badge badge-success font-size-11">Completed</span>
-                                        </td>
-                                        <td>
-                                            <button type="button"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light font-size-13"
-                                                    data-toggle="modal" data-target=".coinUpload">
-                                                <span><i class="fa fa-eye"></i></span>
-                                            </button>
-                                            <button type="button"
-                                                    class="btn btn-success btn-sm btn-rounded waves-effect waves-light font-size-13"
-                                                    data-toggle="modal" data-target=".coinProofUpload">
-                                                <span><i class="fa fa-check"></i></span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>03 Mar, 2020</td>
-                                        <td>Sonia</td>
-                                        <td>sonia@gmail.com</td>
-                                        <td>BTC</td>
-                                        <td>Paxful</td>
-                                        <td>$ 9067.62</td>
-                                        <td>Buy</td>
-                                        <td>
-                                            <span class="badge badge-success font-size-11">Completed</span>
-                                        </td>
-                                        <td>
-                                            <button type="button"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light font-size-13"
-                                                    data-toggle="modal" data-target=".coinUpload">
-                                                <span><i class="fa fa-eye"></i></span>
-                                            </button>
-                                            <button type="button"
-                                                    class="btn btn-success btn-sm btn-rounded waves-effect waves-light font-size-13"
-                                                    data-toggle="modal" data-target=".coinProofUpload">
-                                                <span><i class="fa fa-check"></i></span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>03 Mar, 2020</td>
-                                        <td>Sonia</td>
-                                        <td>sonia@gmail.com</td>
-                                        <td>BTC</td>
-                                        <td>Paxful</td>
-                                        <td>$ 9067.62</td>
-                                        <td>Buy</td>
-                                        <td>
-                                            <span class="badge badge-success font-size-11">Completed</span>
-                                        </td>
-                                        <td>
-                                            <button type="button"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light font-size-13"
-                                                    data-toggle="modal" data-target=".coinUpload">
-                                                <span><i class="fa fa-eye"></i></span>
-                                            </button>
-                                            <button type="button"
-                                                    class="btn btn-success btn-sm btn-rounded waves-effect waves-light font-size-13"
-                                                    data-toggle="modal" data-target=".coinProofUpload">
-                                                <span><i class="fa fa-check"></i></span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>03 Mar, 2020</td>
-                                        <td>Damilare</td>
-                                        <td>dremoney@gmail.com</td>
-                                        <td>BTC</td>
-                                        <td>Blokchain</td>
-                                        <td>$ 67.62</td>
-                                        <td>Buy</td>
-                                        <td>
-                                            <span class="badge badge-danger font-size-11">canceled</span>
-                                        </td>
-                                        <td>
-                                            <button type="button"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light font-size-13"
-                                                    data-toggle="modal" data-target=".coinUpload">
-                                                <span><i class="fa fa-eye"></i></span>
-                                            </button>
-                                            <button type="button"
-                                                    class="btn btn-success btn-sm btn-rounded waves-effect waves-light font-size-13"
-                                                    data-toggle="modal" data-target=".coinProofUpload">
-                                                <span><i class="fa fa-check"></i></span>
-                                            </button>
-                                        </td>
-                                    </tr>
+                                        @foreach($coin_buyings_transactions as $buying_transaction)
+                                            <tr>
+                                                <td>{{$buying_transaction->created_at}}</td>
+                                                <td>{{$buying_transaction->user->username}}</td>
+                                                <td>{{$buying_transaction->coin->name}}</td>
+                                                <td>{{$buying_transaction->platform->name}}</td>
+                                                <td>{{$buying_transaction->amount}}</td>
+                                                <td>{{$buying_transaction->buying_rate}}</td>
+                                                <td>{{$buying_transaction->coin_value}}</td>
+                                                <td>{{$buying_transaction->coin_wallet}}</td>
+                                                <td>Buy</td>
+                                                <td>
+                                                    @if($buying_transaction->status == 0)
+                                                        <span class="badge badge-warning font-size-11">Pending</span>
+                                                    @elseif($buying_transaction->status == 1 )
+                                                        <span class="badge badge-success font-size-11">Completed</span>
+                                                    @else
+                                                        <span class="badge badge-danger font-size-11">Cancel</span>
+                                                    @endif
 
-                                    <tr>
-                                        <td>03 Mar, 2020</td>
-                                        <td>Sonia</td>
-                                        <td>stunner@gmail.com</td>
-                                        <td>EHT</td>
-                                        <td>Blockchain</td>
-                                        <td>$ 967.62</td>
-                                        <td>Sell</td>
-                                        <td>
-                                            <span class="badge badge-warning font-size-11">Pending</span>
-                                        </td>
-                                        <td>
-                                            <button type="button"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light font-size-13"
-                                                    data-toggle="modal" data-target=".coinUpload">
-                                                <span><i class="fa fa-eye"></i></span>
-                                            </button>
-                                            <button type="button"
-                                                    class="btn btn-success btn-sm btn-rounded waves-effect waves-light font-size-13"
-                                                    data-toggle="modal" data-target=".coinProofUpload">
-                                                <span><i class="fa fa-check"></i></span>
-                                            </button>
-                                        </td>
-                                    </tr>
+                                                </td>
+                                                <td>
+                                                    <button type="button"
+                                                            class="btn btn-primary btn-sm btn-rounded waves-effect waves-light font-size-13"
+                                                            data-toggle="modal" data-target=".coinUpload-{{$buying_transaction->token}}">
+                                                        <span><i class="fa fa-eye"></i></span>
+                                                    </button>
+                                                    <button type="button"
+                                                            class="btn btn-success btn-sm btn-rounded waves-effect waves-light font-size-13"
+                                                            data-toggle="modal" data-target=".coinProofUpload">
+                                                        <span><i class="fa fa-check"></i></span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        @foreach($coin_selling_transactions as $selling_transaction)
+                                            <tr>
+                                                <td>{{$selling_transaction->created_at}}</td>
+                                                <td>{{$selling_transaction->user->username}}</td>
+                                                <td>{{$selling_transaction->coin->name}}</td>
+                                                <td>{{$selling_transaction->platform->name}}</td>
+                                                <td>{{$selling_transaction->coin_amount}}</td>
+                                                <td>{{$selling_transaction->rate_amount}}</td>
+                                                <td>{{$selling_transaction->amount_payable}}</td>
+                                                <td>Nil</td>
+                                                <td>Sell</td>
+                                                <td>
+                                                    @if($selling_transaction->status == 0)
+                                                        <span class="badge badge-warning font-size-11">Pending</span>
+                                                    @elseif($selling_transaction->status == 1 )
+                                                        <span class="badge badge-success font-size-11">Completed</span>
+                                                    @else
+                                                        <span class="badge badge-danger font-size-11">Cancel</span>
+                                                    @endif
+
+                                                </td>
+                                                <td>
+                                                    <button type="button"
+                                                            class="btn btn-primary btn-sm btn-rounded waves-effect waves-light font-size-13"
+                                                            data-toggle="modal" data-target=".coinUpload-{{$selling_transaction->token}}">
+                                                        <span><i class="fa fa-eye"></i></span>
+                                                    </button>
+                                                    <button type="button"
+                                                            class="btn btn-success btn-sm btn-rounded waves-effect waves-light font-size-13"
+                                                            data-toggle="modal" data-target=".coinProofUpload">
+                                                        <span><i class="fa fa-check"></i></span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        @endforeach
 
                                     </tbody>
                                 </table>
@@ -655,4 +550,225 @@
             </div>
         </div>
     </div>
+    @foreach($coin_buyings_transactions as $buying_transaction)
+        <div class="modal fade coinUpload-{{$buying_transaction->token}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel">Customer's Payment Proof</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="">
+                                    <img src="{{asset('uploads/'.$buying_transaction->payment_proof)}}" class="img-fluid" alt="Responsive image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+    @foreach($coin_selling_transactions as $selling_transaction)
+        <div class="modal fade coinUpload-{{$selling_transaction->token}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel">Customer's Payment Proof</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="">
+                                    <img src="{{asset('uploads/'.$selling_transaction->payment_proof)}}" class="img-fluid" alt="Responsive image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+    <div class="modal fade coinProofUpload" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Upload Payment Proof</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-center">Payment Proof</h5>
+                    <p class="text-muted mb-2 text-center">
+                        This will appear on the customer's <b>Coin Transactions</b> table
+                    </p>
+                    <div class="mt-3">
+                        <label>Payment Proof</label>
+                        <input type="file" class="form-control" placeholder="Upload your payment proof" name="payment_proof" id="defaultconfig" />
+                    </div>
+
+                    <br><br>
+
+                    <h5 class="text-center">Message (Optional)</h5>
+                    <p class="text-muted mb-2 text-center">
+                        This will appear on the customer's <b>Messages</b>
+                    </p>
+                    <div class="mt-3">
+                        <label>Title</label>
+                        <input type="text" class="form-control" name="Title" placeholder="Message Title" id="defaultconfig" />
+                    </div>
+                    <div class="mt-3">
+                        <label>Message Body</label>
+                        <textarea id="textarea" class="form-control" rows="3" placeholder="Your Message..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade cancelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">You Are About to Cancel This Transaction</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-center">Message</h5>
+                    <p class="text-muted mb-2 text-center">
+                        Let your customer know the reason you cancelled this transaction. This will appear on the customer's <b>Messages</b>
+                    </p>
+                    <div class="mt-3">
+                        <label>Title</label>
+                        <input type="text" class="form-control" name="Title" placeholder="Message Title" id="defaultconfig" />
+                    </div>
+                    <div class="mt-3">
+                        <label>Message Body</label>
+                        <textarea id="textarea" class="form-control" rows="3" placeholder="Your Message..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade approveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Upload Payment Proof</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-center">Payment Proof</h5>
+                    <p class="text-muted mb-2 text-center">
+                        This will appear on the customer's <b>Card Transactions</b> table
+                    </p>
+                    <div class="mt-3">
+                        <label>Payment Proof</label>
+                        <input type="file" class="form-control" placeholder="Upload your payment proof" name="Rate" id="defaultconfig" />
+                    </div>
+
+                    <br><br>
+
+                    <h5 class="text-center">Message (Optional)</h5>
+                    <p class="text-muted mb-2 text-center">
+                        This will appear on the customer's <b>Messages</b>
+                    </p>
+                    <div class="mt-3">
+                        <label>Title</label>
+                        <input type="text" class="form-control" name="Title" placeholder="Message Title" id="defaultconfig" />
+                    </div>
+                    <div class="mt-3">
+                        <label>Message Body</label>
+                        <textarea id="textarea" class="form-control" rows="3" placeholder="Your Message..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade rateMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Negotiate with the Customer</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-center">Rate</h5>
+                    <p class="text-muted mb-2 text-center">
+                        This will appear on the customer's <b>Payable</b> field
+                    </p>
+                    <div class="mt-3">
+                        <label>Your Rate</label>
+                        <input type="number" class="form-control" placeholder="Enter your rate" name="Rate" id="defaultconfig" />
+                    </div>
+
+                    <br><br>
+
+                    <h5 class="text-center">Message</h5>
+                    <p class="text-muted mb-2 text-center">
+                        This will appear on the customer's <b>Messages</b>
+                    </p>
+                    <div class="mt-3">
+                        <label>Title</label>
+                        <input type="text" class="form-control" name="Title" placeholder="Message Title" id="defaultconfig" />
+                    </div>
+                    <div class="mt-3">
+                        <label>Message Body</label>
+                        <textarea id="textarea" class="form-control" rows="3" placeholder="Your Message..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @foreach($limit_users as $key => $limit_user)
+        <div class="modal fade makeAdmin-{{$key}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel">Are You Sure?</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="{{route('admin.make-admin', ['token' => $limit_user->token])}}" class="btn btn-primary" >Yes</a>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 @endsection
+
+
