@@ -210,8 +210,23 @@ use Illuminate\Support\Facades\Route;
         'uses' => 'Admin\AdminController@makeAdmin'
     ])->middleware('checkAdmin');
 
-    Route::get('/admin/rove-admin/{token}', [
+    Route::get('/admin/remove-admin/{token}', [
         'as' => 'admin.remove-admin',
         'uses' => 'Admin\AdminController@removeAdmin'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/activate-coin-buying/{token}', [
+        'as' => 'admin.activate_coin_buying_transaction',
+        'uses' => 'Admin\AdminController@confirmCoinBuying'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/activate-coin-selling/{token}', [
+        'as' => 'admin.activate_coin_selling_transaction',
+        'uses' => 'Admin\AdminController@confirmCoinSelling'
+    ])->middleware('checkAdmin');
+
+    Route::get('/admin/activate-coin-wallet/{token}', [
+        'as' => 'admin.activate_coin_wallet_transaction',
+        'uses' => 'Admin\AdminController@confirmCoinSellingWallet'
     ])->middleware('checkAdmin');
 

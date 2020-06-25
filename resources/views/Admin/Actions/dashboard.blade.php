@@ -207,15 +207,22 @@
                                     </thead>
 
                                     <tbody>
-                                    <tr>
-                                        <td>03 Mar, 2020</td>
-                                        <td>Amazon</td>
-                                        <td>USA</td>
-                                        <td>$ 250</td>
-                                        <td>$ 9067.62</td>
-                                        <td>E-code</td>
+                                    @foreach($card_transactions as $card_transaction)
+                                        <tr>
+                                        <td>{{$card_transaction->created_at}}</td>
+                                        <td>{{$card_transaction->card->name}}</td>
+                                        <td>{{$card_transaction->country_id != null ?  $card_transaction->country->name : $card_transaction->other_country}}</td>
+                                        <td>{{$card_transaction->rate}}</td>
+                                        <td>{{$card_transaction->amount_payable}}</td>
+                                        <td>{{$card_transaction->sell_option_id == 1 ? "Ecode" : "Card Upload"}}</td>
                                         <td>
-                                            <span class="badge badge-success font-size-11">Completed</span>
+                                            @if($card_transaction->status == 0)
+                                                 <span class="badge badge-warning font-size-11">Pending</span>
+                                            @elseif($card_transaction->status == 1)
+                                                <span class="badge badge-success font-size-11">Completed</span>
+                                            @else
+                                                <span class="badge badge-danger font-size-11">Cancelled</span>
+                                            @endif
                                         </td>
                                         <td>
                                             <a href="{{route('admin.card-receipt-upload')}}"
@@ -225,204 +232,7 @@
                                             </a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>03 Mar, 2020</td>
-                                        <td>Amazon</td>
-                                        <td>USA</td>
-                                        <td>$ 250</td>
-                                        <td>$ 9067.62</td>
-                                        <td>E-code</td>
-                                        <td>
-                                            <span class="badge badge-success font-size-11">Completed</span>
-                                        </td>
-                                        <td>
-                                            <a href="{{route('admin.card-receipt-upload')}}"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
-                                            >
-                                                View Details
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>03 Jun, 2020</td>
-                                        <td>PlayStore</td>
-                                        <td>UK</td>
-                                        <td>$ 250</td>
-                                        <td>$ 9067.62</td>
-                                        <td>Card/Receipt</td>
-                                        <td>
-                                            <span class="badge badge-warning font-size-11">Pending</span>
-                                        </td>
-                                        <td>
-                                            <a href="{{route('admin.card-receipt-upload')}}"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
-                                            >
-                                                View Details
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>03 Mar, 2020</td>
-                                        <td>Amazon</td>
-                                        <td>USA</td>
-                                        <td>$ 250</td>
-                                        <td>$ 9067.62</td>
-                                        <td>E-code</td>
-                                        <td>
-                                            <span class="badge badge-danger font-size-11">Cancelled</span>
-                                        </td>
-                                        <td>
-                                            <a href="{{route('admin.card-receipt-upload')}}"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
-                                            >
-                                                View Details
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>03 Mar, 2020</td>
-                                        <td>Amazon</td>
-                                        <td>USA</td>
-                                        <td>$ 250</td>
-                                        <td>$ 9067.62</td>
-                                        <td>E-code</td>
-                                        <td>
-                                            <span class="badge badge-success font-size-11">Completed</span>
-                                        </td>
-                                        <td>
-                                            <a href="{{route('admin.card-receipt-upload')}}"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
-                                            >
-                                                View Details
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>03 Mar, 2020</td>
-                                        <td>Amazon</td>
-                                        <td>USA</td>
-                                        <td>$ 250</td>
-                                        <td>$ 9067.62</td>
-                                        <td>E-code</td>
-                                        <td>
-                                            <span class="badge badge-success font-size-11">Completed</span>
-                                        </td>
-                                        <td>
-                                            <a href="{{route('admin.card-receipt-upload')}}"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
-                                            >
-                                                View Details
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>03 Jun, 2020</td>
-                                        <td>PlayStore</td>
-                                        <td>UK</td>
-                                        <td>$ 250</td>
-                                        <td>$ 9067.62</td>
-                                        <td>Card/Receipt</td>
-                                        <td>
-                                            <span class="badge badge-warning font-size-11">Pending</span>
-                                        </td>
-                                        <td>
-                                            <a href="{{route('admin.card-receipt-upload')}}"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
-                                                    >
-                                                View Details
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>03 Mar, 2020</td>
-                                        <td>Amazon</td>
-                                        <td>USA</td>
-                                        <td>$ 250</td>
-                                        <td>$ 9067.62</td>
-                                        <td>E-code</td>
-                                        <td>
-                                            <span class="badge badge-danger font-size-11">Cancelled</span>
-                                        </td>
-                                        <td>
-                                            <a href="{{route('admin.card-receipt-upload')}}"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
-                                            >
-                                                View Details
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>03 Mar, 2020</td>
-                                        <td>Amazon</td>
-                                        <td>USA</td>
-                                        <td>$ 250</td>
-                                        <td>$ 9067.62</td>
-                                        <td>E-code</td>
-                                        <td>
-                                            <span class="badge badge-success font-size-11">Completed</span>
-                                        </td>
-                                        <td>
-                                            <a href="{{route('admin.card-receipt-upload')}}"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
-                                            >
-                                                View Details
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>03 Mar, 2020</td>
-                                        <td>Amazon</td>
-                                        <td>USA</td>
-                                        <td>$ 250</td>
-                                        <td>$ 9067.62</td>
-                                        <td>E-code</td>
-                                        <td>
-                                            <span class="badge badge-success font-size-11">Completed</span>
-                                        </td>
-                                        <td>
-                                            <a href="{{route('admin.card-receipt-upload')}}"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
-                                                    >
-                                                View Details
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>03 Jun, 2020</td>
-                                        <td>PlayStore</td>
-                                        <td>UK</td>
-                                        <td>$ 250</td>
-                                        <td>$ 9067.62</td>
-                                        <td>Card/Receipt</td>
-                                        <td>
-                                            <span class="badge badge-warning font-size-11">Pending</span>
-                                        </td>
-                                        <td>
-                                            <a href="{{route('admin.card-receipt-upload')}}"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
-                                            >
-                                                View Details
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>03 Mar, 2020</td>
-                                        <td>Amazon</td>
-                                        <td>USA</td>
-                                        <td>$ 250</td>
-                                        <td>$ 9067.62</td>
-                                        <td>E-code</td>
-                                        <td>
-                                            <span class="badge badge-danger font-size-11">Cancelled</span>
-                                        </td>
-                                        <td>
-                                            <a href="{{route('admin.card-receipt-upload')}}"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
-                                                    >
-                                                View Details
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -459,7 +269,8 @@
                                         <th scope="col">Amount ($)</th>
                                         <th scope="col">Rate</th>
                                         <th scope="col">Value</th>
-                                        <th scope="col">Wallet Address</th>
+                                        <th scope="col">Payment</th>
+                                        <th scope="col">Address</th>
                                         <th scope="col">Buy/Sell</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Action(s)</th>
@@ -478,6 +289,7 @@
                                                 <td>{{$buying_transaction->amount}}</td>
                                                 <td>{{$buying_transaction->buying_rate}}</td>
                                                 <td>{{$buying_transaction->coin_value}}</td>
+                                                <td>Address</td>
                                                 <td>{{$buying_transaction->coin_wallet}}</td>
                                                 <td>Buy</td>
                                                 <td>
@@ -496,11 +308,14 @@
                                                             data-toggle="modal" data-target=".coinUpload-{{$buying_transaction->token}}">
                                                         <span><i class="fa fa-eye"></i></span>
                                                     </button>
-                                                    <button type="button"
-                                                            class="btn btn-success btn-sm btn-rounded waves-effect waves-light font-size-13"
-                                                            data-toggle="modal" data-target=".coinProofUpload">
-                                                        <span><i class="fa fa-check"></i></span>
-                                                    </button>
+                                                    @if($buying_transaction->status == 0)
+                                                        <button type="button"
+                                                                class="btn btn-success btn-sm btn-rounded waves-effect waves-light font-size-13"
+                                                                data-toggle="modal" data-target=".coinProofUpload-{{$buying_transaction->token}}">
+                                                            <span><i class="fa fa-check"></i></span>
+                                                        </button>
+                                                    @endif
+
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -513,6 +328,7 @@
                                                 <td>{{$selling_transaction->coin_amount}}</td>
                                                 <td>{{$selling_transaction->rate_amount}}</td>
                                                 <td>{{$selling_transaction->amount_payable}}</td>
+                                                <td>{{$selling_transaction->payment_type}}</td>
                                                 <td>Nil</td>
                                                 <td>Sell</td>
                                                 <td>
@@ -531,11 +347,21 @@
                                                             data-toggle="modal" data-target=".coinUpload-{{$selling_transaction->token}}">
                                                         <span><i class="fa fa-eye"></i></span>
                                                     </button>
-                                                    <button type="button"
-                                                            class="btn btn-success btn-sm btn-rounded waves-effect waves-light font-size-13"
-                                                            data-toggle="modal" data-target=".coinProofUpload">
-                                                        <span><i class="fa fa-check"></i></span>
-                                                    </button>
+                                                    @if($selling_transaction->payment_type == 'bank')
+                                                        @if($selling_transaction->status == 0)
+                                                            <button type="button"
+                                                                    class="btn btn-success btn-sm btn-rounded waves-effect waves-light font-size-13"
+                                                                    data-toggle="modal" data-target=".coinProofUpload-{{$selling_transaction->token}}">
+                                                                <span><i class="fa fa-check"></i></span>
+                                                            </button>
+                                                        @endif
+                                                    @else
+                                                        @if($selling_transaction->status == 0)
+                                                            <a href="{{route('admin.activate_coin_wallet_transaction', ['token' => $selling_transaction->token])}}">
+                                                                <span><i class="fa fa-check"></i></span>
+                                                            </a>
+                                                        @endif
+                                                    @endif
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -602,46 +428,92 @@
             </div>
         </div>
     @endforeach
-    <div class="modal fade coinProofUpload" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    @foreach($coin_buyings_transactions as $buying_transaction)
+        <div class="modal fade coinProofUpload-{{$buying_transaction->token}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLabel">Upload Payment Proof</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h5 class="text-center">Payment Proof</h5>
-                    <p class="text-muted mb-2 text-center">
-                        This will appear on the customer's <b>Coin Transactions</b> table
-                    </p>
-                    <div class="mt-3">
-                        <label>Payment Proof</label>
-                        <input type="file" class="form-control" placeholder="Upload your payment proof" name="payment_proof" id="defaultconfig" />
+            <form action="{{route('admin.activate_coin_buying_transaction', ['token' => $buying_transaction->token])}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel">Upload Payment Proof</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-
-                    <br><br>
-
-                    <h5 class="text-center">Message (Optional)</h5>
-                    <p class="text-muted mb-2 text-center">
-                        This will appear on the customer's <b>Messages</b>
-                    </p>
-                    <div class="mt-3">
-                        <label>Title</label>
-                        <input type="text" class="form-control" name="Title" placeholder="Message Title" id="defaultconfig" />
+                    <div class="modal-body">
+                        <h5 class="text-center">Payment Proof</h5>
+                        <p class="text-muted mb-2 text-center">
+                            This will appear on the customer's <b>Coin Transactions</b> table
+                        </p>
+                        <div class="mt-3">
+                            <label>Payment Proof</label>
+                            <input type="file" class="form-control" placeholder="Upload your payment proof" name="coin_payment_proof" id="defaultconfig" required />
+                        </div>
+                        <br><br>
+                        <h5 class="text-center">Message (Optional)</h5>
+                        <p class="text-muted mb-2 text-center">
+                            This will appear on the customer's <b>Messages</b>
+                        </p>
+                        <div class="mt-3">
+                            <label>Title</label>
+                            <input type="text" class="form-control" name="title" placeholder="Message Title" id="defaultconfig" />
+                        </div>
+                        <div class="mt-3">
+                            <label>Message Body</label>
+                            <textarea name="body" id="textarea" class="form-control" rows="3" placeholder="Your Message..."></textarea>
+                        </div>
                     </div>
-                    <div class="mt-3">
-                        <label>Message Body</label>
-                        <textarea id="textarea" class="form-control" rows="3" placeholder="Your Message..."></textarea>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Confirm</button>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
+    @endforeach
+    @foreach($coin_selling_transactions as $coin_selling_transaction)
+        <div class="modal fade coinProofUpload-{{$coin_selling_transaction->token}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <form action="{{route('admin.activate_coin_selling_transaction', ['token' => $coin_selling_transaction->token])}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel">Upload Payment Proof</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="text-center">Payment Proof</h5>
+                        <p class="text-muted mb-2 text-center">
+                            This will appear on the customer's <b>Coin Transactions</b> table
+                        </p>
+                        <div class="mt-3">
+                            <label>Payment Proof</label>
+                            <input type="file" class="form-control" placeholder="Upload your payment proof" name="coin_payment_proof" id="defaultconfig" required />
+                        </div>
+                        <br><br>
+                        <h5 class="text-center">Message (Optional)</h5>
+                        <p class="text-muted mb-2 text-center">
+                            This will appear on the customer's <b>Messages</b>
+                        </p>
+                        <div class="mt-3">
+                            <label>Title</label>
+                            <input type="text" class="form-control" name="title" placeholder="Message Title" id="defaultconfig" />
+                        </div>
+                        <div class="mt-3">
+                            <label>Message Body</label>
+                            <textarea name="body" id="textarea" class="form-control" rows="3" placeholder="Your Message..."></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Confirm</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    @endforeach
     <div class="modal fade cancelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">

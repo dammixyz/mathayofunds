@@ -8,7 +8,7 @@ class CoinBuying extends Model
 {
      protected $fillable = [
         'amount', 'buying_rate', 'coin_rate_id', 'coin_id', 'coin_wallet' , 'token', 'status', 'reason', 'link', 'payment_proof',
-        'platform_payment_proof', 'user_id', 'coin_value', 'platform_id'
+        'platform_payment_proof', 'user_id', 'coin_value', 'platform_id', 'payment_method'
     ];
 
     public function coinRate(){

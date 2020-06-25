@@ -16,7 +16,7 @@ class CardSelling extends Model
         return  $this->belongsTo(Card::class);
     }
     public function country(){
-        return  $this->belongsTo(Country::class);
+        return  $this->belongsTo(Country::class, 'country_id');
     }
     public function denomination(){
         return  $this->belongsTo(Denomination::class);

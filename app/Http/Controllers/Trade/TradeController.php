@@ -217,6 +217,7 @@ class TradeController extends Controller
             $buyings->user_id = Auth::user()->id;
             $buyings->token = Str::random(15);
             $buyings->platform_id = $request->platform;
+            $buyings->payment_method = $request->payment_method ;
             $buyings->coin_value = $buyings->amount *  $buyings->buying_rate;
             $buyings->save();
             Mail::to('mathayofund@gmail.com')->send(new \App\Mail\TradeMail());
