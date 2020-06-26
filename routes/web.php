@@ -225,8 +225,33 @@ use Illuminate\Support\Facades\Route;
         'uses' => 'Admin\AdminController@confirmCoinSelling'
     ])->middleware('checkAdmin');
 
+    Route::post('/admin/activate-card-selling/{token}', [
+        'as' => 'admin.activate_card_selling_transaction',
+        'uses' => 'Admin\AdminController@confirmCardSelling'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/negotiate-card-rate/{token}', [
+        'as' => 'admin.negotiate-card-rate',
+        'uses' => 'Admin\AdminController@negotiateCardRate'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/cancel-card-transaction/{token}', [
+        'as' => 'admin.cancel-card-transaction',
+        'uses' => 'Admin\AdminController@cancelCardTransaction'
+    ])->middleware('checkAdmin');
+
     Route::get('/admin/activate-coin-wallet/{token}', [
         'as' => 'admin.activate_coin_wallet_transaction',
         'uses' => 'Admin\AdminController@confirmCoinSellingWallet'
+    ])->middleware('checkAdmin');
+
+    Route::get('/admin/approve-walletcard-payment/{token}', [
+        'as' => 'admin.approve-walletcard-payment',
+        'uses' => 'Admin\AdminController@confirmCardSellingWallet'
+    ])->middleware('checkAdmin');
+
+    Route::get('/admin/card-images-upload/{token}', [
+        'as' => 'admin.card-images-upload',
+        'uses' => 'Admin\AdminController@viewCardImages'
     ])->middleware('checkAdmin');
 

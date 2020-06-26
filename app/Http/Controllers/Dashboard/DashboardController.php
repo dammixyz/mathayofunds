@@ -134,7 +134,7 @@ class DashboardController extends Controller
         try {
             $card_sellings = CardSelling::where('token', $token)->first();
             if ($card_sellings && $card_sellings->amount_payable != 0){
-                $card_sellings->user_tansaction_approval = 1;
+                $card_sellings->user_transaction_approval = 1;
                 $card_sellings->save();
                 return redirect()->back()->with('success', "Transaction Details Successfully Updated");
             }
@@ -151,7 +151,7 @@ class DashboardController extends Controller
         try {
             $card_sellings = CardSelling::where('token', $token)->first();
             if ($card_sellings && $card_sellings->amount_payable != 0){
-                $card_sellings->user_tansaction_approval = 2;
+                $card_sellings->user_transaction_approval = 2;
                 $card_sellings->save();
                 return redirect()->back()->with('success', "Transaction Details Successfully Updated");
             }

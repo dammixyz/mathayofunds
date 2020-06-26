@@ -228,10 +228,12 @@ class TradeController extends Controller
         }
     }
     public function viewRate(Request $request){
-        $rate = CardRate::where(['card_id' => $request->card_id, 'country_id' => $request->country_id])->first() ;
+        $rate = CardRate::where(['card_id' => $request->card_id, 'country_id' => $request->country_id])->first();
+        $denomination = Denomination::where('id', $request->denomination)->first();
         if ($rate){
             $response = array(
                 "rate" => $rate->rate,
+                "denomination" => $denomination->value,
                 "status" => true,
                 "msg" => "Rate Successfully Updated"
             );
