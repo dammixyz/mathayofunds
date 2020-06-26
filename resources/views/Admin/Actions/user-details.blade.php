@@ -38,17 +38,17 @@
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="wallet">Wallet</label>
-                                            <input id="wallet" type="text" class="form-control" value="&#8358;39,000" disabled>
+                                            <label for="wallet">Wallet (&#8358;)</label>
+                                            <input id="wallet" type="number" class="form-control" value="39000">
                                         </div>
                                         <div class="form-group">
                                             <label for="wallet">Phone Number</label>
-                                            <input id="wallet" type="text" class="form-control" value="&#8358;39,000" disabled>
+                                            <input id="wallet" type="text" class="form-control" value="08238384834" disabled>
                                         </div>
                                     </div>
                                 </div>
                             </form>
-
+                            <a href="#" class="btn btn-primary mr-1 waves-effect waves-light">Update Wallet</a>
                         </div>
                     </div>
                 </div>

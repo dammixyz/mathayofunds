@@ -9,59 +9,65 @@
                 <li class="menu-title">Menu</li>
 
                 <li>
-                    <a href="{{--{{route('admin.dashboard')}}--}}" class="waves-effect">
-                        <span>Dashboards</span>
+                    <a href="{{route('admin.dashboard')}}" class="waves-effect">
+                        <i class="bx bxs-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{route('admin.users-management')}}" class="waves-effect">
+                        <i class="fa fa-users"></i>
+                        <span>Users Management</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-plus"></i>
-                        <span>Store</span>
+                        <i class="bx bx-time"></i>
+                        <span>Trade Transactions</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{--{{route('admin.update-stores')}}--}}">Create/Edit Store</a></li>
-                        {{--<li><a href="layouts-light-sidebar.html">Light Sidebar</a></li>
-                        <li><a href="layouts-compact-sidebar.html">Compact Sidebar</a></li>
-                        <li><a href="layouts-icon-sidebar.html">Icon Sidebar</a></li>
-                        <li><a href="layouts-boxed.html">Boxed Width</a></li>
-                        <li><a href="layouts-preloader.html">Preloader</a></li>
-                        <li><a href="layouts-colored-sidebar.html">Colored Sidebar</a></li>--}}
+                        <li><a href="{{route('admin.card-trade-transactions')}}">Card Trades</a></li>
+                        <li><a href="{{route('admin.coin-trade-transactions')}}">Coin Trades</a></li>
                     </ul>
                 </li>
+
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-user"></i>
-                        <span>Users</span>
+                        <i class="bx bx-line-chart"></i>
+                        <span>Rates</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{--{{route('admin.view-users')}}--}}">User Management</a></li>
-                        <li><a href="{{--{{route('admin.add-new-user')}}--}}">Add New User</a></li>
+                        <li><a href="{{route('admin.card-rates')}}">Card Rates</a></li>
+                        <li><a href="{{route('admin.coin-rates')}}">Coin Rates</a></li>
                     </ul>
                 </li>
+
                 <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bxl-product-hunt"></i>
-                        <span>Products</span>
+                    <a href="{{route('admin.messages')}}" class="waves-effect">
+                        <i class="bx bx-message"></i>
+                        <span>Messages</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{--{{route('admin.add-product-brand')}}--}}">Add Product Brand</a></li>
-                        <li><a href="{{--{{route('admin.add-product-category')}}--}}">Add Product Categories </a></li>
-                        <li><a href="{{--{{route('admin.add-product-type')}}--}}">Add Product Type </a></li>
-                        <li><a href="{{--{{route('admin.add-new-product')}}--}}">Add Product </a></li>
-                    </ul>
                 </li>
+
                 <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bxs-cart"></i>
-                        <span>Orders</span>
+                    <a href="{{route('admin.gift-card-management')}}" class="waves-effect">
+                        <i class="bx bxs-credit-card"></i>
+                        <span>Card Management</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{--{{route('admin.raise-order')}}--}}">Raise Order</a></li>
-                        <li><a href="{{--{{route('admin.view-orders')}}--}}">My Orders</a></li>
-                        <li><a href="{{--{{route('admin.view-all-orders')}}--}}">All Orders</a></li>
-                    </ul>
                 </li>
+
+                <li>
+                    <a href="{{route('admin.blog')}}" class="waves-effect">
+                        <i class="bx bx-info-circle"></i>
+                        <span>Blog</span>
+                    </a>
+                </li>
+
+
+
+
                 <li class="d-none">
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-layout"></i>

@@ -5,123 +5,117 @@
         <div class="container">
             <div class="row">
                @include('includes.sidebar')
-                <div class="col-md-9 col-sm-6 res-m-bttm">
+                <div class="col col-lg-9 col-md-12 col-sm-12 res-m-bttm">
                     <div class="row">
                         <div class="col-md-12 col-sm-6 res-m-bttm">
                             <!-- Transactions -->
-                            <div class="features-box section section-pad no-pb no-pt">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="box round shadow-alt mb-15">
-                                            <div class="d-flex justify-content-between">
-                                                <h6 class="ucap">Latest Coin Trades</h6>
-                                                <a href="#" data-toggle="modal" data-target="#leaveReview"><span><i class="fa fa-commenting"></i> &nbsp;</span><b>Leave a Review</b></a>
-                                            </div>
-                                            <p class="small">History of all the coin trades you made with us</p>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="sidebar-right wgs-box">
-                                                        <div class="wgs-search">
-                                                            <div class="wgs-content">
-                                                                <div class="form-group">
-                                                                    <input type="text" class="form-control" id="search-coin-trade"  placeholder="Search Coin Trade...">
-                                                                    <button class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
-                                                                </div>
-                                                            </div>
-                                                            <div class="gaps size-1x"></div>
-                                                        </div>
+                            <div class="box round shadow-alt mb-15">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="ucap">Latest Coin Trades</h6>
+                                    <a href="#" data-toggle="modal" data-target="#leaveReview"><span><i class="fa fa-commenting"></i> &nbsp;</span><b>Leave a Review</b></a>
+                                </div>
+                                <p class="small">History of all the coin trades you made with us</p>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="sidebar-right wgs-box">
+                                            <div class="wgs-search">
+                                                <div class="wgs-content">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" id="search-coin-trade"  placeholder="Search Coin Trade...">
+                                                        <button class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="table-responsive" >
-                                                <table class="table table-hover" id="coinTable">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">Type</th>
-                                                            <th scope="col">Bought/Sold</th>
-                                                            <th scope="col">Amount($)</th>
-                                                            <th scope="col">Rate</th>
-                                                            <th scope="col">Payable</th>
-                                                            <th scope="col">Status</th>
-                                                            <th scope="col">Date</th>
-                                                            <th scope="col">Action(s)</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                     @foreach($transactions as $key => $transaction)
-                                                         @if($transaction->buying_rate != null)
-                                                             <tr>
-                                                                 <th>{{$transaction->coin->name}}</th>
-                                                                 <td>Bought</td>
-                                                                 <td>{{$transaction->amount}}</td>
-                                                                 <td>{{$transaction->buying_rate}}</td>
-                                                                 <td>{{$transaction->coin_value}}</td>
-                                                                 <td>
-                                                                     @if($transaction->status == 0)
-                                                                         <div class="badge" style="background-color: orange">Pending</div>
-                                                                     @elseif($transaction->status == 1)
-                                                                         <div class="badge" style="background-color: green">Completed</div>
-                                                                     @else
-                                                                         <div class="badge" style="background-color: red">Canceled</div>
-                                                                     @endif
-                                                                 </td>
-                                                                 <td>
-                                                                     {{$transaction->created_at}}
-                                                                 </td>
-                                                                 <td>
-                                                                     <a href="#" id="upload-6" data-toggle="tooltip"
-                                                                        data-placement="bottom"
-                                                                        title="View Your Uploaded Payment Proof/Transfer Snapshot"><i
-                                                                             class="fa fa-picture-o fa-lg" style="color: mediumblue"
-                                                                             data-toggle="modal"
-                                                                             data-target="#payment-coin-selling-proof-{{$key}}"></i></a> <b>/</b>
-                                                                     <a href="#" id="proof-6" data-toggle="tooltip"
-                                                                        data-placement="bottom" title="View Our Payment Proof"><i
-                                                                             class="fa fa-picture-o fa-lg " style="color: mediumblue"
-                                                                             data-toggle="modal"
-                                                                             data-target="#admin-coin-selling-proof-{{$key}}"></i>*</a>
-                                                                 </td>
-                                                             </tr>
-                                                         @else
-                                                             <tr>
-                                                                 <th>{{$transaction->coin->name}}</th>
-                                                                 <th>Sold</th>
-                                                                 <td>{{$transaction->coin_amount}}</td>
-                                                                 <td>{{$transaction->rate_amount}}</td>
-                                                                 <td>{{$transaction->amount_payable}}</td>
-                                                                 <td>
-                                                                     @if($transaction->status == 0)
-                                                                         <div class="badge" style="background-color: orange">Pending</div>
-                                                                     @elseif($transaction->status == 1)
-                                                                         <div class="badge" style="background-color: green">Completed</div>
-                                                                     @else
-                                                                         <div class="badge" style="background-color: red">Canceled</div>
-                                                                     @endif
-                                                                 </td>
-                                                                 <td>
-                                                                     {{$transaction->created_at}}
-                                                                 </td>
-                                                                 <td>
-                                                                     <a href="#" id="upload-6" data-toggle="tooltip"
-                                                                        data-placement="bottom"
-                                                                        title="View Your Uploaded Payment Proof/Transfer Snapshot"><i
-                                                                             class="fa fa-picture-o fa-lg" style="color: mediumblue"
-                                                                             data-toggle="modal"
-                                                                             data-target="#payment-coin-selling-proof-{{$key}}"></i></a> <b>/</b>
-                                                                     <a href="#" id="proof-6" data-toggle="tooltip"
-                                                                        data-placement="bottom" title="View Our Payment Proof"><i
-                                                                             class="fa fa-picture-o fa-lg " style="color: mediumblue"
-                                                                             data-toggle="modal"
-                                                                             data-target="#admin-coin-selling-proof-{{$key}}"></i>*</a>
-                                                                 </td>
-                                                             </tr>
-                                                         @endif
-                                                     @endforeach
-                                                    </tbody>
-                                                </table>
+                                                <div class="gaps size-1x"></div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="table-responsive" >
+                                    <table class="table table-hover" id="coinTable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Type</th>
+                                            <th scope="col">Bought/Sold</th>
+                                            <th scope="col">Amount($)</th>
+                                            <th scope="col">Rate</th>
+                                            <th scope="col">Payable</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Action(s)</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($transactions as $key => $transaction)
+                                            @if($transaction->buying_rate != null)
+                                                <tr>
+                                                    <th>{{$transaction->coin->name}}</th>
+                                                    <td>Bought</td>
+                                                    <td>{{$transaction->amount}}</td>
+                                                    <td>{{$transaction->buying_rate}}</td>
+                                                    <td>{{$transaction->coin_value}}</td>
+                                                    <td>
+                                                        @if($transaction->status == 0)
+                                                            <div class="badge" style="background-color: orange">Pending</div>
+                                                        @elseif($transaction->status == 1)
+                                                            <div class="badge" style="background-color: green">Completed</div>
+                                                        @else
+                                                            <div class="badge" style="background-color: red">Canceled</div>
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        {{$transaction->created_at}}
+                                                    </td>
+                                                    <td>
+                                                        <a href="#" id="upload-6" data-toggle="tooltip"
+                                                           data-placement="bottom"
+                                                           title="View Your Uploaded Payment Proof/Transfer Snapshot"><i
+                                                                class="fa fa-picture-o fa-lg" style="color: mediumblue"
+                                                                data-toggle="modal"
+                                                                data-target="#payment-coin-selling-proof-{{$key}}"></i></a> <b>/</b>
+                                                        <a href="#" id="proof-6" data-toggle="tooltip"
+                                                           data-placement="bottom" title="View Our Payment Proof"><i
+                                                                class="fa fa-picture-o fa-lg " style="color: mediumblue"
+                                                                data-toggle="modal"
+                                                                data-target="#admin-coin-selling-proof-{{$key}}"></i>*</a>
+                                                    </td>
+                                                </tr>
+                                            @else
+                                                <tr>
+                                                    <th>{{$transaction->coin->name}}</th>
+                                                    <th>Sold</th>
+                                                    <td>{{$transaction->coin_amount}}</td>
+                                                    <td>{{$transaction->rate_amount}}</td>
+                                                    <td>{{$transaction->amount_payable}}</td>
+                                                    <td>
+                                                        @if($transaction->status == 0)
+                                                            <div class="badge" style="background-color: orange">Pending</div>
+                                                        @elseif($transaction->status == 1)
+                                                            <div class="badge" style="background-color: green">Completed</div>
+                                                        @else
+                                                            <div class="badge" style="background-color: red">Canceled</div>
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        {{$transaction->created_at}}
+                                                    </td>
+                                                    <td>
+                                                        <a href="#" id="upload-6" data-toggle="tooltip"
+                                                           data-placement="bottom"
+                                                           title="View Your Uploaded Payment Proof/Transfer Snapshot"><i
+                                                                class="fa fa-picture-o fa-lg" style="color: mediumblue"
+                                                                data-toggle="modal"
+                                                                data-target="#payment-coin-selling-proof-{{$key}}"></i></a> <b>/</b>
+                                                        <a href="#" id="proof-6" data-toggle="tooltip"
+                                                           data-placement="bottom" title="View Our Payment Proof"><i
+                                                                class="fa fa-picture-o fa-lg " style="color: mediumblue"
+                                                                data-toggle="modal"
+                                                                data-target="#admin-coin-selling-proof-{{$key}}"></i>*</a>
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <!--End Features Box -->

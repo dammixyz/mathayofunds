@@ -205,3 +205,43 @@ Route::get('/admin/user-details', [
     'uses' => 'Admin\AdminController@userDetails'
 ]);
 
+Route::get('/admin/card-trade-transactions', [
+    'as' => 'admin.card-trade-transactions',
+    'uses' => 'Admin\AdminController@cardTradeTransactions'
+]);
+
+Route::get('/admin/coin-trade-transactions', [
+    'as' => 'admin.coin-trade-transactions',
+    'uses' => 'Admin\AdminController@coinTradeTransactions'
+]);
+
+Route::get('/admin/card-rates', [
+    'as' => 'admin.card-rates',
+    'uses' => 'Admin\AdminController@cardRates'
+]);
+
+Route::get('/admin/coin-rates', [
+    'as' => 'admin.coin-rates',
+    'uses' => 'Admin\AdminController@coinRates'
+]);
+
+Route::get('/admin/users-management', [
+    'as' => 'admin.users-management',
+    'uses' => 'Admin\AdminController@usersManagement'
+]);
+
+Route::get('/admin/messages', [
+    'as' => 'admin.messages',
+    'uses' => 'Admin\AdminController@messages'
+]);
+
+Route::get('/admin/blog', [
+    'as' => 'admin.blog',
+    'uses' => 'Admin\AdminController@blog'
+]);
+
+Route::get('/admin/gift-card-management', [
+    'as' => 'admin.gift-card-management',
+    'uses' => 'Admin\AdminController@giftCardManagement'
+]);
+
