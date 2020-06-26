@@ -65,9 +65,6 @@
                     </a>
                 </li>
 
-
-
-
                 <li class="d-none">
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-layout"></i>

@@ -40,7 +40,7 @@
                                         <td>
                                             <!-- Button trigger modal -->
                                             <div class="d-flex justify-content-start">
-                                                <a href="{{route('admin.user-details')}}">
+                                                <a href="#">
                                                 <span data-toggle="tooltip" data-placement="top" title data-original-title="View User Details">
                                                     <h4 class="text-primary"><i class="mdi mdi-eye mdi-24px"></i></h4>
                                                 </span>
@@ -83,7 +83,7 @@
                                         <td>
                                             <!-- Button trigger modal -->
                                             <div class="d-flex justify-content-start">
-                                                <a href="{{route('admin.user-details')}}">
+                                                <a href="#">
                                                 <span data-toggle="tooltip" data-placement="top" title data-original-title="View User Details">
                                                     <h4 class="text-primary"><i class="mdi mdi-eye mdi-24px"></i></h4>
                                                 </span>
@@ -125,7 +125,7 @@
                                         <td>
                                             <!-- Button trigger modal -->
                                             <div class="d-flex justify-content-start">
-                                                <a href="{{route('admin.user-details')}}">
+                                                <a href="#">
                                                 <span data-toggle="tooltip" data-placement="top" title data-original-title="View User Details">
                                                     <h4 class="text-primary"><i class="mdi mdi-eye mdi-24px"></i></h4>
                                                 </span>

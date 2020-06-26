@@ -42,6 +42,7 @@
                     <div class="box round shadow-alt mb-15">
                         <div class="d-flex justify-content-between">
                             <h6 class="ucap">Latest Card Trades</h6>
+
                             <a href="#" data-toggle="modal" data-target="#leaveReview"><span><i
                                         class="fa fa-commenting"></i> &nbsp;</span><b>Leave a Review</b></a>
                         </div>
@@ -291,6 +292,32 @@
                     </div>
 
                     <div class="box round shadow-alt mb-15">
+                        <h6 class="ucap">Our Coin Rates</h6>
+                        <p class="small">This table shows our top five(5) coin rates. Check the rates page to view
+                            all coin rates</p>
+                        <div class="table-responsive" id="coins-rates-table">
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Rate</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($coin_rates as $rate)
+                                    <tr>
+                                        <th scope="row">{{$rate->id}}</th>
+                                        <th scope="row">{{$rate->coin->name}}</th>
+                                        <td>{{$rate->usd_rate}}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="box round shadow-alt mb-15">
                         <h6 class="ucap">Our Gift Card Rates</h6>
                         <p class="small">This table shows our top five(5) gift card rates. Check the rates page to
                             view all gift card rates</p>
@@ -315,7 +342,6 @@
                             </table>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
