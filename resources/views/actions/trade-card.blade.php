@@ -388,7 +388,7 @@
                         cache: false,
                         success: function (Value) {
                             if (Value.status) {
-                                let result = denomination * Value.rate
+                                let result = Value.rate * Value.denomination
                                 $('#giftcard-trade-sell').html('We will pay &#8358 ' + result + ' for each card you upload for the denomination selected');
                                 toastr.success(Value.msg);
                             } else {

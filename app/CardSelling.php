@@ -16,7 +16,7 @@ class CardSelling extends Model
         return  $this->belongsTo(Card::class);
     }
     public function country(){
-        return  $this->belongsTo(Country::class);
+        return  $this->belongsTo(Country::class, 'country_id');
     }
     public function denomination(){
         return  $this->belongsTo(Denomination::class);
@@ -24,7 +24,7 @@ class CardSelling extends Model
     public function user(){
         return  $this->belongsTo(User::class);
     }
-    public function ecodeTransactions(){
+    public function ecodeTransaction(){
         return  $this->hasOne(EcodeTransactions::class);
     }
     public function imageuploads(){

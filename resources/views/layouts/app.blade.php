@@ -32,6 +32,21 @@
                 background-color:#f7921a!important;
                 border-color:#f7921a!important;
             }
+            @media only screen and (max-width: 380px) {
+                #services-section{
+                    display: none;
+                }
+                #company-section{
+                    display: none;
+                }
+                #address{
+                    display: none;
+                }
+                #opening-closing{
+                    display: none;
+                }
+
+            }
         </style>
     </head>
     <body>
