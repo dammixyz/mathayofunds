@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::get('/view-page', function (){
-    return view('pages.blog-show');
-})->name('welcome');*/
-
     Route::get('/view-page', function (){
-        return view('email.registration');
+        return view('admin.actions.users-management');
     })->name('welcome');
+
+   /* Route::get('/view-page', function (){
+        return view('email.registration');
+    })->name('welcome');*/
 
     Route::get('/', [
         'as' => 'homepage',
@@ -255,43 +255,77 @@ use Illuminate\Support\Facades\Route;
         'uses' => 'Admin\AdminController@viewCardImages'
     ])->middleware('checkAdmin');
 
-Route::get('/admin/card-trade-transactions', [
-    'as' => 'admin.card-trade-transactions',
-    'uses' => 'Admin\AdminController@cardTradeTransactions'
-]);
+    Route::get('/admin/users-management', [
+        'as' => 'admin.users-management',
+        'uses' => 'Admin\UserController@usersManagement'
+    ])->middleware('checkAdmin');
 
-Route::get('/admin/coin-trade-transactions', [
-    'as' => 'admin.coin-trade-transactions',
-    'uses' => 'Admin\AdminController@coinTradeTransactions'
-]);
+    Route::post('/admin/send-message/{token}', [
+        'as' => 'admin.send-message',
+        'uses' => 'Admin\UserController@sendMessage'
+    ])->middleware('checkAdmin');
 
-Route::get('/admin/card-rates', [
-    'as' => 'admin.card-rates',
-    'uses' => 'Admin\AdminController@cardRates'
-]);
+    Route::post('/admin/edit-wallet/{token}', [
+        'as' => 'admin.edit-wallet',
+        'uses' => 'Admin\UserController@editWallet'
+    ])->middleware('checkAdmin');
 
-Route::get('/admin/coin-rates', [
-    'as' => 'admin.coin-rates',
-    'uses' => 'Admin\AdminController@coinRates'
-]);
+    Route::get('/admin/messages', [
+        'as' => 'admin.messages',
+        'uses' => 'Admin\ChatController@Messages'
+    ])->middleware('checkAdmin');
 
-Route::get('/admin/users-management', [
-    'as' => 'admin.users-management',
-    'uses' => 'Admin\AdminController@usersManagement'
-]);
+    Route::post('/admin/reply-messages', [
+        'as' => 'admin.reply-messages',
+        'uses' => 'Admin\ChatController@replyMessage'
+    ])->middleware('checkAdmin');
 
-Route::get('/admin/messages', [
-    'as' => 'admin.messages',
-    'uses' => 'Admin\AdminController@messages'
-]);
+    Route::get('/admin/card-trade-transactions', [
+        'as' => 'admin.card-trade-transactions',
+        'uses' => 'Admin\TradeController@cardTradeTransactions'
+    ])->middleware('checkAdmin');
 
-Route::get('/admin/blog', [
-    'as' => 'admin.blog',
-    'uses' => 'Admin\AdminController@blog'
-]);
+    Route::get('/admin/coin-trade-transactions', [
+        'as' => 'admin.coin-trade-transactions',
+        'uses' => 'Admin\TradeController@coinTradeTransactions'
+    ])->middleware('checkAdmin');
 
-Route::get('/admin/gift-card-management', [
-    'as' => 'admin.gift-card-management',
-    'uses' => 'Admin\AdminController@giftCardManagement'
-]);
+    Route::get('/admin/blog', [
+        'as' => 'admin.blog',
+        'uses' => 'Admin\BlogController@blog'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/edit-blog/{id}', [
+        'as' => 'admin.edit-blog',
+        'uses' => 'Admin\BlogController@editBlog'
+    ])->middleware('checkAdmin');
+
+    Route::get('/admin/delete-blog/{id}', [
+        'as' => 'admin.delete-blog',
+        'uses' => 'Admin\BlogController@deleteBlog'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/create-blog', [
+        'as' => 'admin.create-blog',
+        'uses' => 'Admin\BlogController@createBlog'
+    ])->middleware('checkAdmin');
+
+
+
+    Route::get('/admin/card-rates', [
+        'as' => 'admin.card-rates',
+        'uses' => 'Admin\AdminController@cardRates'
+    ]);
+
+    Route::get('/admin/coin-rates', [
+        'as' => 'admin.coin-rates',
+        'uses' => 'Admin\AdminController@coinRates'
+    ]);
+
+
+    Route::get('/admin/gift-card-management', [
+        'as' => 'admin.gift-card-management',
+        'uses' => 'Admin\AdminController@giftCardManagement'
+    ]);
+
 

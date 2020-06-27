@@ -137,17 +137,8 @@ class AdminController extends Controller
 
     }
 
-    public function cardTradeTransactions(){
-        return view('Admin.Actions.card-trade-transactions');
-    }
 
-    public function coinTradeTransactions(){
-        return view('Admin.Actions.coin-trade-transactions');
-    }
 
-    public function usersManagement(){
-        return view('Admin.Actions.users-management');
-    }
 
     public function cardRates(){
         return view('Admin.Actions.card-rates');
@@ -155,14 +146,6 @@ class AdminController extends Controller
 
     public function coinRates(){
         return view('Admin.Actions.coin-rates');
-    }
-
-    public function messages(){
-        return view('Admin.Actions.messages');
-    }
-
-    public function blog(){
-        return view('Admin.Actions.blog');
     }
 
     public function giftCardManagement(){

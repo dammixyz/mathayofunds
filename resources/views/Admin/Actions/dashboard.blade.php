@@ -140,7 +140,7 @@
                                                     <i class="mdi mdi-eye mdi-24px"></i>
                                                 </span>
                                                 </a>
-                                                &nbsp;@if($limit_user->role_id == 1)
+                                                @if($limit_user->role_id == 1)
                                                     <a href="#" data-toggle="modal" data-target=".makeAdmin-{{$key}}">
                                                     <span data-toggle="tooltip" data-placement="top" title data-original-title="Make Admin">
                                                         <i class="mdi mdi-account-cog-outline mdi-24px"></i>
@@ -148,7 +148,7 @@
                                                     </a>
                                                 @else
                                                     <a href="{{route('admin.remove-admin', ['token' => $limit_user->token])}}">
-                                                        <span data-toggle="tooltip" data-placement="top" title data-original-title="Make Admin">
+                                                        <span data-toggle="tooltip" data-placement="top" title data-original-title="Remove Admin">
                                                             <i class="mdi mdi-account-convert mdi-24px"></i>
                                                         </span>
                                                     </a>
