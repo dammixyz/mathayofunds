@@ -77,4 +77,10 @@ class User extends Authenticatable
         $is_file_uploaded = Storage::disk('uploads')->putFileAs('/',$image, $image_name);
         return $image_name;
     }
+
+    public static function storeImage($image){
+        $image_name = Str::random(10).'.'.$image->getClientOriginalExtension();
+        $is_file_uploaded = Storage::disk('image')->putFileAs('/',$image, $image_name);
+        return $image_name;
+    }
 }

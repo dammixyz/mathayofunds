@@ -95,4 +95,25 @@ class AuthenticationController extends Controller
             return redirect()->back()->with('failure', "Action Could not be Performed");
         }
     }
+
+
+    public function forgotPassword()
+    {
+        return view('actions.forgot-password');
+    }
+
+    public function forgotPasswordEmail(Request $request)
+    {
+        //Validate input form
+        $this->validate($request, [
+            'email' => 'bail|required',
+        ]);
+
+        $emailExist = User::where('email', $request['email'])->first();
+        if (!$emailExist){
+             return redirect()->back()->with('failure', 'Email Does Not Exist');
+        }
+
+        return redirect()->back()->with('success', 'Email Does Exist');
+    }
 }

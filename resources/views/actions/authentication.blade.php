@@ -52,6 +52,7 @@
                                     <button type="submit" class="btn btn-alt">Log In</button>
                                     <span class="gaps"></span>
                                     <p class="small">Not registered? <a class="switch-tab" data-tabnav="loginreg-form" href="#tab2" data-toggle="tab">Register here</a></p>
+                                    <b class="small"><a href="{{route('forgot-password')}}" style="padding-left: 0px">Forgot Password?</a></b>
                                 </form>
                             </div>
                         </div>
