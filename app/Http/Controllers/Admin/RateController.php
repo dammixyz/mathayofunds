@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Card;
+use App\CardRate;
 use App\Coin;
 use App\CoinRate;
+use App\Country;
+use App\Denomination;
 use App\Http\Controllers\Controller;
 use App\Platform;
 use App\User;
@@ -90,6 +93,84 @@ class RateController extends Controller
         }
     }
 
+    public function addCountry(Request $request){
+        try {
+            $this->validate($request, [
+                'name' => 'bail|required|unique:countries'
+            ]);
+            $add_country = new Country();
+            $add_country->name = $request->name;
+            $add_country->token = Str::random(15);
+            $add_country->save();
+            return redirect()->back()->with('success', 'Country Successfully Added');
+        }
+        catch (\Exception $exception){
+            return redirect()->back()->with('failure', 'Action Could not be performed');
+        }
+    }
+    public function addDenomination(Request $request){
+        try {
+            $this->validate($request, [
+                'value' => 'bail|required|unique:denominations'
+            ]);
+            $add_denomination = new Denomination();
+            $add_denomination->value = $request->value;
+            $add_denomination->token = Str::random(15);
+            $add_denomination->save();
+            return redirect()->back()->with('success', 'Denomination Successfully Added');
+        }
+        catch (\Exception $exception){
+            return redirect()->back()->with('failure', 'Action Could not be performed');
+        }
+    }
+
+    public function addCardRate(Request $request){
+        try {
+            $this->validate($request, [
+                'rate' => 'bail|required',
+                'card' => 'bail|required',
+                'country' => 'bail|required',
+            ]);
+            $check_card = CardRate::where(['card_id' => $request->card, 'country_id' => $request->country])->first();
+            if ($check_card){
+                return redirect()->back()->with('failure', 'Card rate already exist');
+            }
+            else{
+                $add_rate = new CardRate();
+                $add_rate->rate = $request->rate;
+                $add_rate->card_id = $request->card;
+                $add_rate->country_id = $request->country;
+                $add_rate->token = Str::random(15);
+                $add_rate->save();
+                return redirect()->back()->with('success', 'Rate Successfully Added');
+            }
+        }
+        catch (\Exception $exception){
+            return redirect()->back()->with('failure', 'Action Could not be performed');
+        }
+    }
+
+    public function editCountry(Request $request, $token){
+        $this->validate($request, [
+            'name' => 'bail|required|unique:countries'
+        ]);
+        try {
+            $country = Country::where('token', $token)->first();
+            if ($country){
+                $country->name = $request->name;
+                $country->token = Str::random(15);
+                $country->save();
+                return redirect()->back()->with('success', 'Country Successfully Added');
+            }
+            else{
+                return redirect()->back()->with('failure', 'Country Details does not exit');
+            }
+        }
+        catch (\Exception $exception){
+            return redirect()->back()->with('failure', 'Action Could not be performed');
+        }
+    }
+
     public function editCoin(Request $request, $token){
         $this->validate($request, [
             'name' => 'bail|required|unique:coins'
@@ -111,10 +192,73 @@ class RateController extends Controller
         }
     }
 
+    public function editDenomination(Request $request, $token){
+        $this->validate($request, [
+            'value' => 'bail|required|unique:denominations'
+        ]);
+        try {
+            $denomination = Denomination::where('token', $token)->first();
+            if ($denomination){
+                $denomination->value = $request->value;
+                $denomination->token = Str::random(15);
+                $denomination->save();
+                return redirect()->back()->with('success', 'Denomination Successfully Updated');
+            }
+            else{
+                return redirect()->back()->with('failure', 'Denomination Details does not exit');
+            }
+        }
+        catch (\Exception $exception){
+            return redirect()->back()->with('failure', 'Action Could not be performed');
+        }
+    }
+
+    public function editCardRate(Request $request, $token){
+        try {
+            $this->validate($request, [
+               'rate' => 'bail|required',
+               'card' => 'bail|required',
+               'country' => 'bail|required',
+            ]);
+            $card_rate = CardRate::where('token', $token)->first();
+            if ($card_rate){
+                $card_rate->rate = $request->rate;
+                $card_rate->token = Str::random(15);
+                $card_rate->card_id = $request->card;
+                $card_rate->country = $request->country;
+                $card_rate->save();
+                return redirect()->back()->with('success', 'Card Rate Successfully Updated');
+            }
+            else{
+                return redirect()->back()->with('failure', 'Card Rate Details does not exit');
+            }
+        }
+        catch (\Exception $exception){
+            return redirect()->back()->with('failure', 'Action Could not be performed');
+        }
+    }
+
     public function viewPlatform(){
         $platforms = Platform::get();
         $coins = Coin::get();
         return view('Admin.Actions.view-platforms', compact('platforms', 'coins'));
+    }
+
+    public function viewCountry(){
+        $countries = Country::get();
+        return view('Admin.Actions.view-countries', compact('countries'));
+    }
+
+    public function viewDenominations(){
+        $denominations = Denomination::get();
+        return view('Admin.Actions.view-denomination', compact('denominations'));
+    }
+
+    public function viewCardRates(){
+        $cards = Card::get();
+        $countries = Country::get();
+        $rates = CardRate::get();
+        return view('Admin.Actions.card-rates', compact('cards', 'countries', 'rates'));
     }
 
     public function addPlatform(Request $request){
@@ -209,6 +353,36 @@ class RateController extends Controller
             }
             else{
                 return redirect()->back()->with('failure', 'Platform details not found');
+            }
+        }
+        catch (\Exception $exception){
+            return redirect()->back()->with('failure', 'Action Could not be performed');
+        }
+    }
+
+    public function editCard(Request $request, $token){
+        $this->validate($request, [
+            'name' => 'bail|required|unique:cards',
+        ]);
+        try {
+            if ($request->hasFile('image')){
+                if ($request->file('image')->getSize() > 5000000) {
+                    return redirect()->back()->with('failure', "Uploaded File Size is Larger than 5mb");
+                }
+            }
+            $check_card = Card::where('token', $token)->first();
+            if ($check_card){
+                if ($request->hasFile('image')){
+                    $image = $request->file('image');
+                    $image_name = User::storeImage($image);
+                    $check_card->image = $image_name;
+                }
+                $check_card->name = $request->name;
+                $check_card->save();
+                return redirect()->back()->with('success', 'Card Details Successfully Edited');
+            }
+            else{
+                return redirect()->back()->with('failure', 'Card Details not found');
             }
         }
         catch (\Exception $exception){
