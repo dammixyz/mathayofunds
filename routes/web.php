@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
     Route::get('/view-page', function (){
-        return view('pages.auth');
+        return view('email.forgot-password');
     })->name('welcome');
 
    /* Route::get('/view-page', function (){
@@ -56,9 +56,19 @@ use Illuminate\Support\Facades\Route;
         'uses' => 'Authentication\AuthenticationController@forgotPassword'
     ]);
 
+    Route::get('/reset-password/{token}', [
+        'as' => 'user.reset-password',
+        'uses' => 'Authentication\AuthenticationController@resetPassword'
+    ]);
+
     Route::post('/forgot-password-email', [
         'as' => 'forgot-password-email',
         'uses' => 'Authentication\AuthenticationController@forgotPasswordEmail'
+    ]);
+
+    Route::post('/final-change-password/{token}', [
+        'as' => 'user.final-change-password',
+        'uses' => 'Authentication\AuthenticationController@finalChangePassword'
     ]);
 
     Route::post('/newsletter-subscription', [
