@@ -334,4 +334,10 @@ class AdminController extends Controller
             return redirect()->back()->with('failure', 'Transaction does not exist');
         }
     }
+
+
+
+    public function userWallets(){
+        return view('Admin.Actions.user-wallets');
+    }
 }

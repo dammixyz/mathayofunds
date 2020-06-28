@@ -709,7 +709,93 @@
                     </div>
                 </div>
             </div>
-
+            <div class="modal fade viewUserDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Accout Details</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mt-3">
+                                <label>Bank Name</label>
+                                <input type="text" class="form-control" name="name" value="GTBank" disabled/>
+                            </div>
+                            <div class="mt-3">
+                                <label>Bank Account Number</label>
+                                <input type="number" class="form-control" name="country" value="072783878" disabled />
+                            </div>
+                            <div class="mt-3">
+                                <label>Full Name (As per bank)</label>
+                                <input type="text" class="form-control" name="rate" value="StuNNer DreMoney" disabled />
+                            </div>
+                            <div class="mt-3">
+                                <label>Amount Requested To Be Paid</label>
+                                <input type="text" class="form-control" name="rate" value="&#8358;25,000" disabled />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade cancelPaymentRequest" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">You Are About to Cancel This Payment Request</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h5 class="text-center">Send a Message</h5>
+                            <p class="text-muted mb-2 text-center">
+                                Let your customer know the reason you cancelled the payment request. This will appear on the customer's <b>Messages</b>
+                            </p>
+                            <div class="mt-3">
+                                <label>Title</label>
+                                <input type="text" class="form-control" name="Title" placeholder="Message Title"/>
+                            </div>
+                            <div class="mt-3">
+                                <label>Message Body</label>
+                                <textarea id="textarea" class="form-control" rows="3" placeholder="Your Message..."></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel Payment Request</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade approvePaymentRequest" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Approve Wallet Payment Request</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mt-3">
+                                <p>
+                                    Ensure that you have paid the customer the requested amount before you approve the payment
+                                    <br><br>
+                                    Are you sure?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             @include('Admin.layout.footer')
         </div>
     </div>
