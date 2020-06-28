@@ -36,6 +36,404 @@
         <div class="main-content">
             @yield('contents')
             {{--Modals--}}
+            <div class="modal fade coinProofUpload" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Upload Payment Proof</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h5 class="text-center">Payment Proof</h5>
+                            <p class="text-muted mb-2 text-center">
+                                This will appear on the customer's <b>Coin Transactions</b> table
+                            </p>
+                            <div class="mt-3">
+                                <label>Payment Proof</label>
+                                <input type="file" class="form-control" placeholder="Upload your payment proof" name="payment_proof" id="defaultconfig" />
+                            </div>
+
+                            <br><br>
+
+                            <h5 class="text-center">Message (Optional)</h5>
+                            <p class="text-muted mb-2 text-center">
+                                This will appear on the customer's <b>Messages</b>
+                            </p>
+                            <div class="mt-3">
+                                <label>Title</label>
+                                <input type="text" class="form-control" name="Title" placeholder="Message Title" id="defaultconfig" />
+                            </div>
+                            <div class="mt-3">
+                                <label>Message Body</label>
+                                <textarea id="textarea" class="form-control" rows="3" placeholder="Your Message..."></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade coinUpload" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Customer's Payment Proof</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="">
+                                        <img src="{{asset('mathayo.jpg')}}" class="img-fluid" alt="Responsive image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade cancelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">You Are About to Cancel This Transaction</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h5 class="text-center">Message</h5>
+                            <p class="text-muted mb-2 text-center">
+                                Let your customer know the reason you cancelled this transaction. This will appear on the customer's <b>Messages</b>
+                            </p>
+                            <div class="mt-3">
+                                <label>Title</label>
+                                <input type="text" class="form-control" name="Title" placeholder="Message Title" id="defaultconfig" />
+                            </div>
+                            <div class="mt-3">
+                                <label>Message Body</label>
+                                <textarea id="textarea" class="form-control" rows="3" placeholder="Your Message..."></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade approveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Upload Payment Proof</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h5 class="text-center">Payment Proof</h5>
+                            <p class="text-muted mb-2 text-center">
+                                This will appear on the customer's <b>Card Transactions</b> table
+                            </p>
+                            <div class="mt-3">
+                                <label>Payment Proof</label>
+                                <input type="file" class="form-control" placeholder="Upload your payment proof" name="Rate" id="defaultconfig" />
+                            </div>
+
+                            <br><br>
+
+                            <h5 class="text-center">Message (Optional)</h5>
+                            <p class="text-muted mb-2 text-center">
+                                This will appear on the customer's <b>Messages</b>
+                            </p>
+                            <div class="mt-3">
+                                <label>Title</label>
+                                <input type="text" class="form-control" name="Title" placeholder="Message Title" id="defaultconfig" />
+                            </div>
+                            <div class="mt-3">
+                                <label>Message Body</label>
+                                <textarea id="textarea" class="form-control" rows="3" placeholder="Your Message..."></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade rateMessageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Negotiate with the Customer</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h5 class="text-center">Rate</h5>
+                            <p class="text-muted mb-2 text-center">
+                                This will appear on the customer's <b>Payable</b> field
+                            </p>
+                            <div class="mt-3">
+                                <label>Your Rate</label>
+                                <input type="number" class="form-control" placeholder="Enter your rate" name="Rate" id="defaultconfig" />
+                            </div>
+
+                            <br><br>
+
+                            <h5 class="text-center">Message</h5>
+                            <p class="text-muted mb-2 text-center">
+                                This will appear on the customer's <b>Messages</b>
+                            </p>
+                            <div class="mt-3">
+                                <label>Title</label>
+                                <input type="text" class="form-control" name="Title" placeholder="Message Title" id="defaultconfig" />
+                            </div>
+                            <div class="mt-3">
+                                <label>Message Body</label>
+                                <textarea id="textarea" class="form-control" rows="3" placeholder="Your Message..."></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade makeAdmin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Make User Admin</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mt-3">
+                                <p>
+                                    Are you sure?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade deleteUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Delete User</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mt-3">
+                                <p>
+                                    Are you sure?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade addGiftCard" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Add Gift Card</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mt-3">
+                                <label>Image</label>
+                                <input type="file" class="form-control" name="image" />
+                            </div>
+                            <div class="mt-3">
+                                <label>Name</label>
+                                <input type="text" class="form-control" name="Title" placeholder="Gift Card Name. example: Amazon" id="defaultconfig" />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Add Gift Card</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade editGiftCard" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Edit Gift Card</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mt-3">
+                                <label>Image</label>
+                                <input type="file" class="form-control" name="image" />
+                            </div>
+                            <div class="mt-3">
+                                <label>Name</label>
+                                <input type="text" class="form-control" name="Title" value="Amazon" id="defaultconfig" />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Update Gift Card</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade deleteGiftCard" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Delete Gift Card</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mt-3">
+                                <p>
+                                    Are you sure?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade addGiftCardRate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Add Gift Card Rate</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mt-3">
+                                <label>Type (i.e Gift Card Name)</label>
+                                <input type="text" class="form-control" name="name" placeholder="Enter Gift Card Name" id="defaultconfig" />
+                            </div>
+                            <div class="mt-3">
+                                <label>Country</label>
+                                <input type="text" class="form-control" name="country" placeholder="Enter Country" id="defaultconfig" />
+                            </div>
+                            <div class="mt-3">
+                                <label>Rate ($)</label>
+                                <input type="number" class="form-control" name="rate" placeholder="Enter The Gift Card's Rate ($)" id="defaultconfig" />
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Add Rate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade editGiftCardRate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Edit Gift Card Rate</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mt-3">
+                                <label>Type (i.e Gift Card Name)</label>
+                                <input type="text" class="form-control" name="name" value="Amazon" id="defaultconfig" />
+                            </div>
+                            <div class="mt-3">
+                                <label>Country</label>
+                                <input type="text" class="form-control" name="country" value="USA" id="defaultconfig" />
+                            </div>
+                            <div class="mt-3">
+                                <label>Rate ($)</label>
+                                <input type="number" class="form-control" name="rate" value="450" id="defaultconfig" />
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Update Rate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade deleteGiftCardRate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Delete Gift Card Rate</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mt-3">
+                                <p>
+                                    Are you sure?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade deleteCoinRate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Delete Coin Rate</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mt-3">
+                                <p>
+                                    Are you sure?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             @include('Admin.layout.footer')
         </div>
     </div>

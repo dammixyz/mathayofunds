@@ -4,7 +4,7 @@
     <div class="features-box section section-pad no-pt no-pb" style="margin-top: 12px;">
         <div class="container">
             <div class="row mb-15 d-flex justify-content-center">
-                <div class="col-md-9 col-sm-6 res-m-bttm">
+                <div class="col col-lg-9 col-md-9 col-sm-12 res-m-bttm">
                     <div class="box round shadow-alt">
                         <h6 class="ucap">Coin Rates</h6>
                         <p class="small">Here are list of all our card rates</p>

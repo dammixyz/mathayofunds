@@ -38,8 +38,8 @@
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="wallet">Wallet</label>
-                                            <input id="wallet" type="text" class="form-control" value="&#8358;{{number_format($user->account_balance)}}" disabled>
+                                            <label for="wallet">Wallet (&#8358;)</label>
+                                            <input id="wallet" type="text" class="form-control" value="{{number_format($user->account_balance)}}">
                                         </div>
                                         <div class="form-group">
                                             <label for="wallet">Phone Number</label>
@@ -48,7 +48,7 @@
                                     </div>
                                 </div>
                             </form>
-
+                            <a href="#" class="btn btn-primary mr-1 waves-effect waves-light">Update Wallet</a>
                         </div>
                     </div>
                 </div>

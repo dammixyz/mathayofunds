@@ -137,6 +137,23 @@ class AdminController extends Controller
 
     }
 
+
+
+
+    public function cardRates(){
+        return view('Admin.Actions.card-rates');
+    }
+
+    public function giftCardManagement(){
+        return view('Admin.Actions.gift-card-management');
+    }
+
+
+
+
+
+
+
     public function confirmCardSelling(Request $request, $token){
         try {
             if ($request->file('card_payment_proof')->getSize() > 5000000) {

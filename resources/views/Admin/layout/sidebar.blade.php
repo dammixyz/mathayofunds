@@ -10,9 +10,74 @@
 
                 <li>
                     <a href="{{route('admin.dashboard')}}" class="waves-effect">
-                        <span>Dashboards</span>
+                        <i class="bx bxs-dashboard"></i>
+                        <span>Dashboard</span>
                     </a>
                 </li>
+
+                <li>
+                    <a href="{{route('admin.users-management')}}" class="waves-effect">
+                        <i class="fa fa-users"></i>
+                        <span>Users Management</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-time"></i>
+                        <span>Trade Transactions</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('admin.card-trade-transactions')}}">Card Trades</a></li>
+                        <li><a href="{{route('admin.coin-trade-transactions')}}">Coin Trades</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-line-chart"></i>
+                        <span>Rates</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect"{{--{{route('admin.card-rates')}}--}}>Coin Settings</a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{{route('admin.view-coins')}}">Add/Edit Coin</a></li>
+                                <li><a href="{{route('admin.view-platforms')}}">Add/Edit Coin Platforms</a></li>
+                                <li><a href="{{route('admin.coin-rates')}}">Add/Edit Coin Rates</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect"{{--{{route('admin.card-rates')}}--}}>Card Settings</a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{{route('admin.view-cards')}}">Add/Edit Card</a></li>
+                                <li><a href="{{route('admin.view-platforms')}}">Add/Edit Coin Platforms</a></li>
+                                <li><a href="{{route('admin.coin-rates')}}">Add/Edit Coin Rates</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="{{route('admin.messages')}}" class="waves-effect">
+                        <i class="bx bx-message"></i>
+                        <span>Messages</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{route('admin.gift-card-management')}}" class="waves-effect">
+                        <i class="bx bxs-credit-card"></i>
+                        <span>Card Management</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{route('admin.blog')}}" class="waves-effect">
+                        <i class="bx bx-info-circle"></i>
+                        <span>Blog</span>
+                    </a>
+                </li>
+
                 <li class="d-none">
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-layout"></i>
