@@ -7,9 +7,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-flex align-items-center justify-content-between">
-                        <h4 class="mb-0 font-size-18">Cards Management</h4>
-                        <span data-toggle="modal" data-target=".addCard">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title data-original-title="Add Card">
+                        <h4 class="mb-0 font-size-18">Ecode Rate Management</h4>
+                        <span data-toggle="modal" data-target=".addEcode">
+                            <a href="#" data-toggle="tooltip" data-placement="top" title data-original-title="Add Ecode Rate">
                                     <h4 class="text-primary"><i class="mdi mdi-plus-circle mdi-36px"></i></h4>
                             </a>
                         </span>
@@ -23,7 +23,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title mb-3">Coin</h4>
+                            <h4 class="card-title mb-3">Ecode</h4>
                             <div class="table-responsive mt-1">
                                 <table class="table table-hover
                                 dt-responsive nowrap" id="datatable-buttons"
@@ -31,29 +31,26 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">ID</th>
-                                        <th scope="col">Card Name</th>
+                                        <th scope="col">Card</th>
+                                        <th scope="col">Rate</th>
                                         <th scope="col">Date</th>
                                         <th scope="col">Action(s)</th>
                                     </tr>
 
                                     </thead>
+
                                     <tbody>
-                                    @foreach($cards as $key => $card)
+                                    @foreach($ecodes as $key => $ecode)
                                          <tr>
-                                            <td>{{$card->id}}</td>
-                                            <td>{{$card->name}}</td>
-                                            <td>{{$card->created_at}}</td>
+                                            <td>{{$ecode->id}}</td>
+                                            <td>{{$ecode->card->name}}</td>
+                                            <td>{{$ecode->rate}}</td>
+                                            <td>{{$ecode->created_at}}</td>
                                             <td>
                                                 <div class="d-flex justify-content-start">
-                                                    <span data-toggle="modal" data-target=".editCard-{{$key}}">
-                                                        <a href="#" data-toggle="tooltip" data-placement="top" title data-original-title="Edit Coin Rate">
+                                                    <span data-toggle="modal" data-target=".editEcode-{{$key}}">
+                                                        <a href="#" data-toggle="tooltip" data-placement="top" title data-original-title="Edit Country">
                                                                 <h4 class="text-primary"><i class="mdi mdi-square-edit-outline mdi-24px"></i></h4>
-                                                        </a>
-                                                    </span>&nbsp;
-
-                                                    <span data-toggle="modal" data-target=".view-image-{{$key}}">
-                                                        <a href="#" data-toggle="tooltip" data-placement="top" title data-original-title="View Image">
-                                                                <h4 class="text-primary"><i class="mdi mdi-eye mdi-24px"></i></h4>
                                                         </a>
                                                     </span>&nbsp;&nbsp;
 
@@ -76,83 +73,69 @@
             </div>
         </div>
     </div>
-    @foreach($cards as $key => $card)
-        <div class="modal fade editCard-{{$key}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    @foreach($ecodes as $key => $ecode)
+        <div class="modal fade editEcode-{{$key}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLabel">Edit Card Info</h4>
+                        <h4 class="modal-title" id="exampleModalLabel">Edit Rate</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="{{route('admin.edit-card', ['token' => $card->token])}}" method="post">
+                    <form action="{{route('admin.edit-ecode', ['token' => $ecode->token])}}" method="post">
                         @csrf
                         <div class="modal-body">
                             <div class="mt-3">
-                                <label>Card Name</label>
-                                <input type="text" class="form-control" name="name" value="{{$card->name}}" id="defaultconfig" required/>
+                                <label>Rate</label>
+                                <input type="text" class="form-control" name="rate" value="{{$ecode->rate}}" id="defaultconfig" required/>
                             </div>
                             <div class="mt-3">
-                                <label>Card Image</label>
-                                <input type="file" class="form-control" name="image" accept="image/*" />
+                                <label>Card</label>
+                                <input type="text" class="form-control" name="card" value="{{$ecode->card->name}}" id="defaultconfig" disabled required/>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary" >Update Card</button>
+                            <button type="submit" class="btn btn-primary" >Update Ecode Rate</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="modal fade view-image-{{$key}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLabel">Image</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="">
-                                    <img src="{{asset($card->image)}}" class="img-fluid" alt="Responsive image">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     @endforeach
-    <div class="modal fade addCard" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade addEcode" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLabel">Add Card </h4>
+                    <h4 class="modal-title" id="exampleModalLabel">Add Ecode </h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{route('admin.add-card')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.add-ecode')}}" method="post">
                     @csrf
                     <div class="modal-body">
                         <div class="mt-3">
-                            <label>Card Name</label>
-                            <input type="text" class="form-control" name="name" placeholder="Enter Card Name" id="defaultconfig" required />
+                            <label>Ecode Rate</label>
+                            <input type="number" class="form-control" name="rate" placeholder="Enter Ecode Rate" id="defaultconfig" required />
                         </div>
                         <div class="mt-3">
-                            <label>Card Image</label>
-                            <input type="file" class="form-control" name="image" accept="image/*"  required/>
+                            <label class="control-label">Cards</label>
+                            <select name="card_id" class="form-control select2" required>
+                                <option value="">Select Card</option>
+                                @foreach($cards as $card)
+                                    <option value="{{$card->id}}">{{$card->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
+                     {{--   <div class="mt-3">
+                            <label>Rate($)</label>
+                            <input type="number" class="form-control" name="rate" placeholder="Enter The Coin's Rate ($)" id="defaultconfig" required />
+                        </div>
+--}}
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Add Card</button>
+                        <button type="submit" class="btn btn-primary">Add Ecode</button>
                     </div>
                 </form>
             </div>

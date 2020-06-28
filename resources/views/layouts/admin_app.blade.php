@@ -280,31 +280,6 @@
                     </div>
                 </div>
             </div>
-            <div class="modal fade editGiftCard" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="exampleModalLabel">Edit Gift Card</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mt-3">
-                                <label>Image</label>
-                                <input type="file" class="form-control" name="image" />
-                            </div>
-                            <div class="mt-3">
-                                <label>Name</label>
-                                <input type="text" class="form-control" name="Title" value="Amazon" id="defaultconfig" />
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Update Gift Card</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="modal fade deleteGiftCard" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -324,36 +299,6 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade addGiftCardRate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="exampleModalLabel">Add Gift Card Rate</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mt-3">
-                                <label>Type (i.e Gift Card Name)</label>
-                                <input type="text" class="form-control" name="name" placeholder="Enter Gift Card Name" id="defaultconfig" />
-                            </div>
-                            <div class="mt-3">
-                                <label>Country</label>
-                                <input type="text" class="form-control" name="country" placeholder="Enter Country" id="defaultconfig" />
-                            </div>
-                            <div class="mt-3">
-                                <label>Rate ($)</label>
-                                <input type="number" class="form-control" name="rate" placeholder="Enter The Gift Card's Rate ($)" id="defaultconfig" />
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Add Rate</button>
                         </div>
                     </div>
                 </div>

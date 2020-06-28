@@ -7,9 +7,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-flex align-items-center justify-content-between">
-                        <h4 class="mb-0 font-size-18">Cards Management</h4>
-                        <span data-toggle="modal" data-target=".addCard">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title data-original-title="Add Card">
+                        <h4 class="mb-0 font-size-18">Country Management</h4>
+                        <span data-toggle="modal" data-target=".addCountry">
+                            <a href="#" data-toggle="tooltip" data-placement="top" title data-original-title="Add Country">
                                     <h4 class="text-primary"><i class="mdi mdi-plus-circle mdi-36px"></i></h4>
                             </a>
                         </span>
@@ -31,29 +31,24 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">ID</th>
-                                        <th scope="col">Card Name</th>
+                                        <th scope="col">Country</th>
                                         <th scope="col">Date</th>
                                         <th scope="col">Action(s)</th>
                                     </tr>
 
                                     </thead>
+
                                     <tbody>
-                                    @foreach($cards as $key => $card)
+                                    @foreach($countries as $key => $country)
                                          <tr>
-                                            <td>{{$card->id}}</td>
-                                            <td>{{$card->name}}</td>
-                                            <td>{{$card->created_at}}</td>
+                                            <td>{{$country->id}}</td>
+                                            <td>{{$country->name}}</td>
+                                            <td>{{$country->created_at}}</td>
                                             <td>
                                                 <div class="d-flex justify-content-start">
-                                                    <span data-toggle="modal" data-target=".editCard-{{$key}}">
-                                                        <a href="#" data-toggle="tooltip" data-placement="top" title data-original-title="Edit Coin Rate">
+                                                    <span data-toggle="modal" data-target=".editCountry-{{$key}}">
+                                                        <a href="#" data-toggle="tooltip" data-placement="top" title data-original-title="Edit Country">
                                                                 <h4 class="text-primary"><i class="mdi mdi-square-edit-outline mdi-24px"></i></h4>
-                                                        </a>
-                                                    </span>&nbsp;
-
-                                                    <span data-toggle="modal" data-target=".view-image-{{$key}}">
-                                                        <a href="#" data-toggle="tooltip" data-placement="top" title data-original-title="View Image">
-                                                                <h4 class="text-primary"><i class="mdi mdi-eye mdi-24px"></i></h4>
                                                         </a>
                                                     </span>&nbsp;&nbsp;
 
@@ -76,83 +71,56 @@
             </div>
         </div>
     </div>
-    @foreach($cards as $key => $card)
-        <div class="modal fade editCard-{{$key}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    @foreach($countries as $key => $country)
+        <div class="modal fade editCountry-{{$key}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLabel">Edit Card Info</h4>
+                        <h4 class="modal-title" id="exampleModalLabel">Edit Country</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="{{route('admin.edit-card', ['token' => $card->token])}}" method="post">
+                    <form action="{{route('admin.edit-country', ['token' => $country->token])}}" method="post">
                         @csrf
                         <div class="modal-body">
                             <div class="mt-3">
-                                <label>Card Name</label>
-                                <input type="text" class="form-control" name="name" value="{{$card->name}}" id="defaultconfig" required/>
-                            </div>
-                            <div class="mt-3">
-                                <label>Card Image</label>
-                                <input type="file" class="form-control" name="image" accept="image/*" />
+                                <label>Country</label>
+                                <input type="text" class="form-control" name="name" value="{{$country->name}}" id="defaultconfig" required/>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary" >Update Card</button>
+                            <button type="submit" class="btn btn-primary" >Update Country</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="modal fade view-image-{{$key}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLabel">Image</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="">
-                                    <img src="{{asset($card->image)}}" class="img-fluid" alt="Responsive image">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     @endforeach
-    <div class="modal fade addCard" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade addCountry" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLabel">Add Card </h4>
+                    <h4 class="modal-title" id="exampleModalLabel">Add Country </h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{route('admin.add-card')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.add-country')}}" method="post">
                     @csrf
                     <div class="modal-body">
                         <div class="mt-3">
-                            <label>Card Name</label>
-                            <input type="text" class="form-control" name="name" placeholder="Enter Card Name" id="defaultconfig" required />
+                            <label>Country</label>
+                            <input type="text" class="form-control" name="name" placeholder="Enter Country" id="defaultconfig" required />
                         </div>
-                        <div class="mt-3">
-                            <label>Card Image</label>
-                            <input type="file" class="form-control" name="image" accept="image/*"  required/>
+                     {{--   <div class="mt-3">
+                            <label>Rate($)</label>
+                            <input type="number" class="form-control" name="rate" placeholder="Enter The Coin's Rate ($)" id="defaultconfig" required />
                         </div>
+--}}
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Add Card</button>
+                        <button type="submit" class="btn btn-primary">Add Country</button>
                     </div>
                 </form>
             </div>
