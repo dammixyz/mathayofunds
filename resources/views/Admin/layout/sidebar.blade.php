@@ -51,8 +51,10 @@
                             <a href="javascript: void(0);" class="has-arrow waves-effect"{{--{{route('admin.card-rates')}}--}}>Card Settings</a>
                             <ul class="sub-menu" aria-expanded="false">
                                 <li><a href="{{route('admin.view-cards')}}">Add/Edit Card</a></li>
-                                <li><a href="{{route('admin.view-platforms')}}">Add/Edit Coin Platforms</a></li>
-                                <li><a href="{{route('admin.coin-rates')}}">Add/Edit Coin Rates</a></li>
+                                <li><a href="{{route('admin.view-countries')}}">Add/Edit Country</a></li>
+                                <li><a href="{{route('admin.view-denominations')}}">Add/Edit Denomination</a></li>
+                                <li><a href="{{route('admin.view-card-rates')}}">Add/Edit Card Rate</a></li>
+                                <li><a href="{{route('admin.view-ecodes')}}">Add/Edit Ecode Rate</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -63,14 +65,12 @@
                         <span>Messages</span>
                     </a>
                 </li>
-
-                <li>
+                {{--<li>
                     <a href="{{route('admin.gift-card-management')}}" class="waves-effect">
                         <i class="bx bxs-credit-card"></i>
                         <span>Card Management</span>
                     </a>
-                </li>
-
+                </li>--}}
                 <li>
                     <a href="{{route('admin.blog')}}" class="waves-effect">
                         <i class="bx bx-info-circle"></i>

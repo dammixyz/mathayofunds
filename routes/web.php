@@ -335,9 +335,19 @@ use Illuminate\Support\Facades\Route;
         'uses' => 'Admin\RateController@viewCards'
     ])->middleware('checkAdmin');
 
+    Route::get('/admin/view-denominations', [
+        'as' => 'admin.view-denominations',
+        'uses' => 'Admin\RateController@viewDenominations'
+    ])->middleware('checkAdmin');
+
     Route::post('/admin/edit-coin-rates/{token}', [
         'as' => 'admin.edit-coin-rate',
         'uses' => 'Admin\RateController@editCoinRate'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/edit-denomination/{token}', [
+        'as' => 'admin.edit-denomination',
+        'uses' => 'Admin\RateController@editDenomination'
     ])->middleware('checkAdmin');
 
     Route::post('/admin/add-coin-rates', [
@@ -345,9 +355,19 @@ use Illuminate\Support\Facades\Route;
         'uses' => 'Admin\RateController@addCoinRate'
     ])->middleware('checkAdmin');
 
+    Route::post('/admin/add-denomination', [
+        'as' => 'admin.add-denomination',
+        'uses' => 'Admin\RateController@addDenomination'
+    ])->middleware('checkAdmin');
+
     Route::post('/admin/add-coin', [
         'as' => 'admin.add-coin',
         'uses' => 'Admin\RateController@addCoin'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/add-country', [
+        'as' => 'admin.add-country',
+        'uses' => 'Admin\RateController@addCountry'
     ])->middleware('checkAdmin');
 
     Route::post('/admin/edit-coin/{token}', [
@@ -355,9 +375,19 @@ use Illuminate\Support\Facades\Route;
         'uses' => 'Admin\RateController@editCoin'
     ])->middleware('checkAdmin');
 
+    Route::post('/admin/edit-country/{token}', [
+        'as' => 'admin.edit-country',
+        'uses' => 'Admin\RateController@editCountry'
+    ])->middleware('checkAdmin');
+
     Route::get('/admin/view-platforms', [
         'as' => 'admin.view-platforms',
         'uses' => 'Admin\RateController@viewPlatform'
+    ])->middleware('checkAdmin');
+
+    Route::get('/admin/view-countries', [
+        'as' => 'admin.view-countries',
+        'uses' => 'Admin\RateController@viewCountry'
     ])->middleware('checkAdmin');
 
     Route::post('/admin/add-platform', [
@@ -370,22 +400,47 @@ use Illuminate\Support\Facades\Route;
         'uses' => 'Admin\RateController@addCard'
     ])->middleware('checkAdmin');
 
+    Route::post('/admin/add-card-rate', [
+        'as' => 'admin.add-card-rate',
+        'uses' => 'Admin\RateController@addCardRate'
+    ])->middleware('checkAdmin');
+
     Route::post('/admin/edit-platform/{token}', [
         'as' => 'admin.edit-platform',
         'uses' => 'Admin\RateController@editPlatform'
     ])->middleware('checkAdmin');
 
+    Route::post('/admin/edit-card/{token}', [
+        'as' => 'admin.edit-card',
+        'uses' => 'Admin\RateController@editCard'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/edit-card-rate/{token}', [
+        'as' => 'admin.edit-card-rate',
+        'uses' => 'Admin\RateController@editCardRate'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/add-ecode', [
+        'as' => 'admin.add-ecode',
+        'uses' => 'Admin\EcodeController@addEcode'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/edit-ecode/{token}', [
+        'as' => 'admin.edit-ecode',
+        'uses' => 'Admin\EcodeController@editEcode'
+    ])->middleware('checkAdmin');
+
+    Route::get('/admin/view-card-rates', [
+        'as' => 'admin.view-card-rates',
+        'uses' => 'Admin\RateController@viewCardRates'
+    ])->middleware('checkAdmin');
+
+    Route::get('/admin/view-ecodes', [
+        'as' => 'admin.view-ecodes',
+        'uses' => 'Admin\EcodeController@viewEcode'
+    ])->middleware('checkAdmin');
 
 
-    Route::get('/admin/card-rates', [
-        'as' => 'admin.card-rates',
-        'uses' => 'Admin\AdminController@cardRates'
-    ]);
-
-    Route::get('/admin/gift-card-management', [
-        'as' => 'admin.gift-card-management',
-        'uses' => 'Admin\AdminController@giftCardManagement'
-    ]);
 
     Route::get('/admin/user-wallets', [
         'as' => 'admin.user-wallets',
