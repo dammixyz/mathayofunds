@@ -310,18 +310,67 @@ use Illuminate\Support\Facades\Route;
         'uses' => 'Admin\BlogController@createBlog'
     ])->middleware('checkAdmin');
 
+    Route::get('/admin/coin-rates', [
+        'as' => 'admin.coin-rates',
+        'uses' => 'Admin\RateController@coinRates'
+    ])->middleware('checkAdmin');
+
+    Route::get('/admin/view-coins', [
+        'as' => 'admin.view-coins',
+        'uses' => 'Admin\RateController@viewCoins'
+    ])->middleware('checkAdmin');
+
+    Route::get('/admin/view-cards', [
+        'as' => 'admin.view-cards',
+        'uses' => 'Admin\RateController@viewCards'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/edit-coin-rates/{token}', [
+        'as' => 'admin.edit-coin-rate',
+        'uses' => 'Admin\RateController@editCoinRate'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/add-coin-rates', [
+        'as' => 'admin.add-coin-rate',
+        'uses' => 'Admin\RateController@addCoinRate'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/add-coin', [
+        'as' => 'admin.add-coin',
+        'uses' => 'Admin\RateController@addCoin'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/edit-coin/{token}', [
+        'as' => 'admin.edit-coin',
+        'uses' => 'Admin\RateController@editCoin'
+    ])->middleware('checkAdmin');
+
+    Route::get('/admin/view-platforms', [
+        'as' => 'admin.view-platforms',
+        'uses' => 'Admin\RateController@viewPlatform'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/add-platform', [
+        'as' => 'admin.add-platform',
+        'uses' => 'Admin\RateController@addPlatform'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/add-card', [
+        'as' => 'admin.add-card',
+        'uses' => 'Admin\RateController@addCard'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/edit-platform/{token}', [
+        'as' => 'admin.edit-platform',
+        'uses' => 'Admin\RateController@editPlatform'
+    ])->middleware('checkAdmin');
+
 
 
     Route::get('/admin/card-rates', [
         'as' => 'admin.card-rates',
         'uses' => 'Admin\AdminController@cardRates'
     ]);
-
-    Route::get('/admin/coin-rates', [
-        'as' => 'admin.coin-rates',
-        'uses' => 'Admin\AdminController@coinRates'
-    ]);
-
 
     Route::get('/admin/gift-card-management', [
         'as' => 'admin.gift-card-management',

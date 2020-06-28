@@ -39,11 +39,24 @@
                         <span>Rates</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{route('admin.card-rates')}}">Card Rates</a></li>
-                        <li><a href="{{route('admin.coin-rates')}}">Coin Rates</a></li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect"{{--{{route('admin.card-rates')}}--}}>Coin Settings</a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{{route('admin.view-coins')}}">Add/Edit Coin</a></li>
+                                <li><a href="{{route('admin.view-platforms')}}">Add/Edit Coin Platforms</a></li>
+                                <li><a href="{{route('admin.coin-rates')}}">Add/Edit Coin Rates</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect"{{--{{route('admin.card-rates')}}--}}>Card Settings</a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{{route('admin.view-cards')}}">Add/Edit Card</a></li>
+                                <li><a href="{{route('admin.view-platforms')}}">Add/Edit Coin Platforms</a></li>
+                                <li><a href="{{route('admin.coin-rates')}}">Add/Edit Coin Rates</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
-
                 <li>
                     <a href="{{route('admin.messages')}}" class="waves-effect">
                         <i class="bx bx-message"></i>

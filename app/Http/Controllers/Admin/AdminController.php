@@ -144,10 +144,6 @@ class AdminController extends Controller
         return view('Admin.Actions.card-rates');
     }
 
-    public function coinRates(){
-        return view('Admin.Actions.coin-rates');
-    }
-
     public function giftCardManagement(){
         return view('Admin.Actions.gift-card-management');
     }

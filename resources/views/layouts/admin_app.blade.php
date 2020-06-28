@@ -411,58 +411,6 @@
                     </div>
                 </div>
             </div>
-            <div class="modal fade addCoinRate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="exampleModalLabel">Add Coin Rate</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mt-3">
-                                <label>Coin (i.e Coin Name)</label>
-                                <input type="text" class="form-control" name="coin" placeholder="Enter Coin Name e.g Bitcoin" id="defaultconfig" />
-                            </div>
-                            <div class="mt-3">
-                                <label>Rate($)</label>
-                                <input type="number" class="form-control" name="rate" placeholder="Enter The Coin's Rate ($)" id="defaultconfig" />
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Add Rate</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade editCoinRate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="exampleModalLabel">Edit Coin Rate</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mt-3">
-                                <label>Coin (i.e Coin Name)</label>
-                                <input type="text" class="form-control" name="coin" value="Ethereum" id="defaultconfig" />
-                            </div>
-                            <div class="mt-3">
-                                <label>Rate($)</label>
-                                <input type="number" class="form-control" name="rate" value="200" id="defaultconfig" />
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Update Rate</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="modal fade deleteCoinRate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
