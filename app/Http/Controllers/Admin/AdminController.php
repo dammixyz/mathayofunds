@@ -150,10 +150,6 @@ class AdminController extends Controller
 
 
 
-
-
-
-
     public function confirmCardSelling(Request $request, $token){
         try {
             if ($request->file('card_payment_proof')->getSize() > 5000000) {
@@ -294,6 +290,60 @@ class AdminController extends Controller
                 else{
                     return redirect()->back()->with('failure', 'User does not exist');
                 }
+            }
+            else{
+                return redirect()->back()->with('failure', 'Transaction does not exist');
+            }
+        }
+        catch (\Exception $exception){
+            return redirect()->back()->with('failure', 'Transaction Could not be completed');
+        }
+    }
+    public function cancelCardSelling($token){
+        try {
+            $card_selling = CardSelling::where('token', $token)->first();
+            if ($card_selling){
+                $card_selling->status = 2;
+                $card_selling->token = Str::random(15);
+                $card_selling->save();
+
+                return redirect(route('admin.dashboard'))->with('success', 'Transaction Successfully Cancelled');
+            }
+            else{
+                return redirect()->back()->with('failure', 'Transaction does not exist');
+            }
+        }
+        catch (\Exception $exception){
+            return redirect()->back()->with('failure', 'Transaction Could not be completed');
+        }
+    }
+
+    public function cancelCoinBuyings($token){
+        try {
+            $coin_buying = CoinBuying::where('token', $token)->first();
+            if ($coin_buying){
+                $coin_buying->status = 2;
+                $coin_buying->token = Str::random(15);
+                $coin_buying->save();
+                return redirect()->back()->with('success', 'Transaction Successfully Cancelled');
+            }
+            else{
+                return redirect()->back()->with('failure', 'Transaction does not exist');
+            }
+        }
+        catch (\Exception $exception){
+            return redirect()->back()->with('failure', 'Transaction Could not be completed');
+        }
+    }
+
+    public function cancelCoinSellings($token){
+        try {
+            $coin_selling = CoinSelling::where('token', $token)->first();
+            if ($coin_selling){
+                $coin_selling->status = 2;
+                $coin_selling->token = Str::random(15);
+                $coin_selling->save();
+                return redirect()->back()->with('success', 'Transaction Successfully Cancelled');
             }
             else{
                 return redirect()->back()->with('failure', 'Transaction does not exist');

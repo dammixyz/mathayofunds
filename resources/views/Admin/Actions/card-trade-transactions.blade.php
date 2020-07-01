@@ -70,12 +70,20 @@
                                                         <a href="{{route('admin.approve-walletcard-payment', ['token' => $card_transaction->token])}}" class="btn btn-success btn-sm btn-rounded waves-effect waves-light font-size-13">
                                                             <span><i class="fa fa-check"></i></span>
                                                         </a>
+                                                        <a href="{{route('admin.cancel-card-payment', ['token' => $card_transaction->token])}}" class="btn btn-danger btn-sm btn-rounded waves-effect waves-light font-size-13">
+                                                            <span><i class="fa fa-times"></i></span>
+                                                        </a>
                                                     @endif
                                                 @else
                                                     <a href="{{route('admin.card-images-upload', ['token' => $card_transaction->token])}}"
                                                        class="btn btn-primary btn-sm btn-rounded waves-effect waves-light">
                                                         View Details
                                                     </a>
+                                                    @if($card_transaction->status==0)
+                                                        <a href="{{route('admin.cancel-card-payment', ['token' => $card_transaction->token])}}" class="btn btn-danger btn-sm btn-rounded waves-effect waves-light font-size-13">
+                                                            <span><i class="fa fa-times"></i></span>
+                                                        </a>
+                                                    @endif
                                                 @endif
                                             </td>
                                         </tr>

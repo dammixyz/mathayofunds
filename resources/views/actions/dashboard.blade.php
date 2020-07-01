@@ -265,7 +265,7 @@
                         </div>
                     </div>
 
-                    <div class="box round shadow-alt mb-15">
+                    {{--<div class="box round shadow-alt mb-15">
                         <h6 class="ucap">Our Coin Rates</h6>
                         <p class="small">This table shows our top five(5) coin rates. Check the rates page to view
                             all coin rates</p>
@@ -289,11 +289,11 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div>
+                    </div>--}}
 
                     <div class="box round shadow-alt mb-15">
                         <h6 class="ucap">Our Coin Rates</h6>
-                        <p class="small">This table shows our top five(5) coin rates. Check the rates page to view
+                        <p class="small">This table shows our top coin rates. Check the rates page to view
                             all coin rates</p>
                         <div class="table-responsive" id="coins-rates-table">
                             <table class="table table-hover">
@@ -319,7 +319,7 @@
 
                     <div class="box round shadow-alt mb-15">
                         <h6 class="ucap">Our Gift Card Rates</h6>
-                        <p class="small">This table shows our top five(5) gift card rates. Check the rates page to
+                        <p class="small">This table shows our top gift card rates. Check the rates page to
                             view all gift card rates</p>
                         <div class="table-responsive" id="giftcards-rates-table">
                             <table class="table table-hover">

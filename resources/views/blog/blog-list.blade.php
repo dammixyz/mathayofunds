@@ -28,12 +28,7 @@
                     <div class="row text-center">
                         <div class="col-md-12">
                             <ul class="pagination pagination-lg">
-                                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#"><span class="fa fa-angle-right"></span></a></li>
+                                {{$blogs->links()}}
                             </ul>
                         </div>
                     </div>

@@ -230,7 +230,7 @@
                                                         <div class="contentEditable" align='left' >
                                                             <span style="font-size:13px;color:#181818;font-family:Helvetica, Arial, sans-serif;line-height:200%;">Sent to You by Mathayo Funds</span>
                                                             <br/>
-                                                            <span style="font-size:11px;color:#555;font-family:Helvetica, Arial, sans-serif;line-height:200%;">lorem Impsum Lorrem Ipsum Lorem Ipsum | <br>+234 81 XXXXXXXX</span>
+                                                            <span style="font-size:11px;color:#555;font-family:Helvetica, Arial, sans-serif;line-height:200%;">4 Salako street. Magodo-Isheri, Isheri Magodo, Kosofe, Lagos <br>+2348038103697</span>
                                                             <br/>
                                                         </div>
                                                     </div>

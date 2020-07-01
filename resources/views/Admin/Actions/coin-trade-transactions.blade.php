@@ -60,7 +60,7 @@
                                                 @elseif($buying_transaction->status == 1 )
                                                     <span class="badge badge-success font-size-11">Completed</span>
                                                 @else
-                                                    <span class="badge badge-danger font-size-11">Cancel</span>
+                                                    <span class="badge badge-danger font-size-11">Cancelled</span>
                                                 @endif
 
                                             </td>
@@ -76,6 +76,9 @@
                                                             data-toggle="modal" data-target=".coinProofUpload-{{$buying_transaction->token}}">
                                                         <span><i class="fa fa-check"></i></span>
                                                     </button>
+                                                    <a href="{{route('admin.cancel-coinbuyings-payment', ['token' => $buying_transaction->token])}}" class="btn btn-danger btn-sm btn-rounded waves-effect waves-light font-size-13">
+                                                        <span><i class="fa fa-times"></i></span>
+                                                    </a>
                                                 @endif
 
                                             </td>
@@ -99,9 +102,8 @@
                                                 @elseif($selling_transaction->status == 1 )
                                                     <span class="badge badge-success font-size-11">Completed</span>
                                                 @else
-                                                    <span class="badge badge-danger font-size-11">Cancel</span>
+                                                    <span class="badge badge-danger font-size-11">Cancelled</span>
                                                 @endif
-
                                             </td>
                                             <td>
                                                 <button type="button"
@@ -116,11 +118,17 @@
                                                                 data-toggle="modal" data-target=".coinProofUpload-{{$selling_transaction->token}}">
                                                             <span><i class="fa fa-check"></i></span>
                                                         </button>
+                                                        <a href="{{route('admin.cancel-coinsellings-payment', ['token' => $selling_transaction->token])}}" class="btn btn-danger btn-sm btn-rounded waves-effect waves-light font-size-13">
+                                                            <span><i class="fa fa-times"></i></span>
+                                                        </a>
                                                     @endif
                                                 @else
                                                     @if($selling_transaction->status == 0)
                                                         <a href="{{route('admin.activate_coin_wallet_transaction', ['token' => $selling_transaction->token])}}">
                                                             <span><i class="fa fa-check"></i></span>
+                                                        </a>
+                                                        <a href="{{route('admin.cancel-coinsellings-payment', ['token' => $selling_transaction->token])}}" class="btn btn-danger btn-sm btn-rounded waves-effect waves-light font-size-13">
+                                                            <span><i class="fa fa-times"></i></span>
                                                         </a>
                                                     @endif
                                                 @endif
