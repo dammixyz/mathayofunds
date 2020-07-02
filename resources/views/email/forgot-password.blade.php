@@ -177,11 +177,15 @@
                                                 <td width="400" align="center">
                                                     <div class="contentEditableContainer contentTextEditable">
                                                         <div class="contentEditable" align='left' >
-                                                            <p> <strong>Dear Mathayo,</strong>
+                                                            <p> <strong>Dear {{$user->username}},</strong>
                                                                 <br/>
+                                                                <br/>Kindly click on the link below to reset your password
                                                                 <br/>
-                                                                <br/>
-                                                                Kindly, check the admin dashboard on mathayofunds, there is a new trade order
+
+                                                                <a  href="{{route('user.reset-password', ['token' => $user->token])}}"  style="text-decoration:none; color: blue">
+                                                                       Click To Reset Password
+                                                                </a>
+
                                                             </p>
                                                         </div>
                                                     </div>

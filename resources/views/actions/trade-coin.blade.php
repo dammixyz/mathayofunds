@@ -262,8 +262,15 @@
                     </div>
                     <div class="tab-pane fade no-pt no-mt" id="buy-coin-tab">
 
-                        <div class="row text-center">
-                            <div class="col-md-3 col-md-offset-0 col-sm-12 col-sm-offset-2 res-m-bttm"
+                        <div class="row text-center" style="display: flex !important; justify-content: center !important;">
+                            <div
+                                class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-2 res-m-bttm"
+                            >
+                                <div class="box round " style="background: #fff1e0; background: transparent">
+                                    <h3>Coming Soon ... <span style="color: red">*</span></h3>
+                                </div>
+                            </div>
+                            {{--<div class="col-md-3 col-md-offset-0 col-sm-12 col-sm-offset-2 res-m-bttm"
                                  style="padding-right: 0px; padding-left: 0px;">
                                 <div class="row" style="margin: 5px;">
                                     <div class="box round shadow-alt pricing-box highlited light ucap shadow">
@@ -412,7 +419,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--}}
                         </div>
                     </div>
                 </div>

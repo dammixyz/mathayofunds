@@ -53,7 +53,9 @@
 
     //First upload
     var firstUpload = new FileUploadWithPreview('bitcoinProofSell')
+/*
     var firstUpload = new FileUploadWithPreview('bitcoinProofBuy')
+*/
     $(document).ready(function () {
         $('#image-preview-placeholder-bitcoin-sell').hide()
         $('#close_image_preview-bitcoin-sell').hide()

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
     Route::get('/view-page', function (){
-        return view('admin.actions.users-management');
+        return view('email.forgot-password');
     })->name('welcome');
 
    /* Route::get('/view-page', function (){
@@ -49,6 +49,26 @@ use Illuminate\Support\Facades\Route;
     Route::get('/logout', [
         'as' => 'logout',
         'uses' => 'Authentication\AuthenticationController@Logout'
+    ]);
+
+    Route::get('/forgot-password', [
+        'as' => 'forgot-password',
+        'uses' => 'Authentication\AuthenticationController@forgotPassword'
+    ]);
+
+    Route::get('/reset-password/{token}', [
+        'as' => 'user.reset-password',
+        'uses' => 'Authentication\AuthenticationController@resetPassword'
+    ]);
+
+    Route::post('/forgot-password-email', [
+        'as' => 'forgot-password-email',
+        'uses' => 'Authentication\AuthenticationController@forgotPasswordEmail'
+    ]);
+
+    Route::post('/final-change-password/{token}', [
+        'as' => 'user.final-change-password',
+        'uses' => 'Authentication\AuthenticationController@finalChangePassword'
     ]);
 
     Route::post('/newsletter-subscription', [
@@ -250,6 +270,21 @@ use Illuminate\Support\Facades\Route;
         'uses' => 'Admin\AdminController@confirmCardSellingWallet'
     ])->middleware('checkAdmin');
 
+    Route::get('/admin/cancel-card-payment/{token}', [
+        'as' => 'admin.cancel-card-payment',
+        'uses' => 'Admin\AdminController@cancelCardSelling'
+    ])->middleware('checkAdmin');
+
+    Route::get('/admin/cancel-coinbuyings-payment/{token}', [
+        'as' => 'admin.cancel-coinbuyings-payment',
+        'uses' => 'Admin\AdminController@cancelCoinBuyings'
+    ])->middleware('checkAdmin');
+
+    Route::get('/admin/cancel-coinsellings-payment/{token}', [
+        'as' => 'admin.cancel-coinsellings-payment',
+        'uses' => 'Admin\AdminController@cancelCoinSellings'
+    ])->middleware('checkAdmin');
+
     Route::get('/admin/card-images-upload/{token}', [
         'as' => 'admin.card-images-upload',
         'uses' => 'Admin\AdminController@viewCardImages'
@@ -428,6 +463,21 @@ use Illuminate\Support\Facades\Route;
     Route::get('/admin/view-ecodes', [
         'as' => 'admin.view-ecodes',
         'uses' => 'Admin\EcodeController@viewEcode'
+    ])->middleware('checkAdmin');
+
+    Route::get('/admin/user-wallets', [
+        'as' => 'admin.user-wallets',
+        'uses' => 'Admin\WalletRequestController@userWallets'
+    ])->middleware('checkAdmin');
+
+    Route::get('/admin/approve-wallet-payment-request/{withdrawal}', [
+        'as' => 'admin.approve-wallet-payment-request',
+        'uses' => 'Admin\WalletRequestController@approveWalletPaymentRequest'
+    ])->middleware('checkAdmin');
+
+    Route::post('/admin/cancellation-message/{withdrawal}/{user}', [
+        'as' => 'admin.cancellation-message',
+        'uses' => 'Admin\WalletRequestController@cancellationMessage'
     ])->middleware('checkAdmin');
 
 

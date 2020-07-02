@@ -65,6 +65,9 @@
                                 <li><a href="{{route('user.card-transactions')}}"><span class="fa fa-credit-card"></span> Cards Transactions</a></li>
                             </ul>
                         </li>
+                    @else
+                        <li><a href="{{route('login')}}">Login</a></li>
+                        <li><a href="{{route('register')}}">Register</a></li>
                     @endif
                     <li><a href="{{route('about-us')}}">About Us</a></li>
                     <li><a href="{{route('faqs')}}">FAQs</a></li>

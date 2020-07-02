@@ -225,7 +225,7 @@ class RateController extends Controller
                 $card_rate->rate = $request->rate;
                 $card_rate->token = Str::random(15);
                 $card_rate->card_id = $request->card;
-                $card_rate->country = $request->country;
+                $card_rate->country_id = $request->country;
                 $card_rate->save();
                 return redirect()->back()->with('success', 'Card Rate Successfully Updated');
             }
@@ -362,7 +362,7 @@ class RateController extends Controller
 
     public function editCard(Request $request, $token){
         $this->validate($request, [
-            'name' => 'bail|required|unique:cards',
+            'name' => 'bail|required',
         ]);
         try {
             if ($request->hasFile('image')){

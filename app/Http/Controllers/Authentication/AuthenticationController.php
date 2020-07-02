@@ -9,6 +9,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class AuthenticationController extends Controller
 {
@@ -93,6 +94,60 @@ class AuthenticationController extends Controller
         }
         catch(\Exception $exception){
             return redirect()->back()->with('failure', "Action Could not be Performed");
+        }
+    }
+
+
+    public function forgotPassword()
+    {
+        return view('actions.forgot-password');
+    }
+
+    public function forgotPasswordEmail(Request $request)
+    {
+        //Validate input form
+        $this->validate($request, [
+            'email' => 'bail|required',
+        ]);
+        try {
+            $user = User::where('email', $request['email'])->first();
+            if (!$user){
+                return redirect()->back()->with('failure', 'Email Does Not Exist');
+            }
+            else{
+                Mail::to($user->email)->send(new \App\Mail\ForgotPassword($user)); // send email to user
+                return redirect()->back()->with('success', 'A link has been sent to your email, use the link to reset your password');
+            }
+        }
+        catch (\Exception $exception){
+            return redirect()->back()->with('failure', 'Action could not be completed');
+        }
+
+    }
+
+    public function resetPassword($token){
+        $user = User::where('token', $token)->first();
+        if ($user){
+            return view('actions.change-password', compact('user'));
+        }
+        else{
+            return redirect(route('login'))->with('failure', 'This operation cannot be completed');
+        }
+    }
+
+    function finalChangePassword(Request $request, $token){
+        $this->validate($request, [
+            'password' => 'bail|required|confirmed'
+        ]);
+        $user = User::where('token', $token)->first();
+        if ($user){
+            $user->password = bcrypt($request->password);
+            $user->token = Str::random(15);
+            $user->save();
+            return redirect(route('login'))->with('success', 'Password Successfully Changed');
+        }
+        else{
+            return redirect(route('login'))->with('failure', 'Operation cannot be completed');
         }
     }
 }
